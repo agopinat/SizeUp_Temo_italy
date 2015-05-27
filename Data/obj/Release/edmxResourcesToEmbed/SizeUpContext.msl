@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataStoreContainer" CdmEntityContainer="SizeUpContext">
+    <EntitySetMapping Name="Industries">
+      <EntityTypeMapping TypeName="Data.Industry">
+        <MappingFragment StoreEntitySet="Industry">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CervedAteco" ColumnName="CervedAteco" />
+          <ScalarProperty Name="OfficialAteco" ColumnName="OfficialAteco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeographicLocations">
+      <EntityTypeMapping TypeName="Data.GeographicLocation">
+        <MappingFragment StoreEntitySet="GeographicLocation">
+          <ScalarProperty Name="PRO_COM" ColumnName="PRO_COM" />
+          <ScalarProperty Name="COD_REG" ColumnName="COD_REG" />
+          <ScalarProperty Name="COD_PRO" ColumnName="COD_PRO" />
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="GranularityId" ColumnName="GranularityId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

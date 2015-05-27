@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69a4a16d145a4475b8fb4d43843ee55b" Name="Diagram1">
+        <EntityTypeShape EntityType="SizeUpItaly.Data.API.APIKey" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SizeUpItaly.Data.API.APIKeyRoleMapping" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SizeUpItaly.Data.API.Role" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="SizeUpItaly.Data.API.FK_APIKeyRoleMapping_APIKey" ManuallyRouted="false" />
+        <AssociationConnector Association="SizeUpItaly.Data.API.FK_APIKeyRoleMapping_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

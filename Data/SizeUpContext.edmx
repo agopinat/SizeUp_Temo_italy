@@ -1,0 +1,1631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Data.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DataStoreContainer">
+          <EntitySet Name="Attribute" EntityType="Data.Store.Attribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Band" EntityType="Data.Store.Band" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Branch" EntityType="Data.Store.Branch" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Business" EntityType="Data.Store.Business" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BusinessCity" EntityType="Data.Store.BusinessCity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BusinessData" EntityType="Data.Store.BusinessData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="City" EntityType="Data.Store.City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="County" EntityType="Data.Store.County" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GeographicLocation" EntityType="Data.Store.GeographicLocation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GeographicLocationGeographicLocation" EntityType="Data.Store.GeographicLocationGeographicLocation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Geography" EntityType="Data.Store.Geography" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Granularity" EntityType="Data.Store.Granularity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Industry" EntityType="Data.Store.Industry" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IndustryData" EntityType="Data.Store.IndustryData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IndustryDataBand" EntityType="Data.Store.IndustryDataBand" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IndustryKeyword" EntityType="Data.Store.IndustryKeyword" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Nation" EntityType="Data.Store.Nation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Place" EntityType="Data.Store.Place" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SitemapBusiness" EntityType="Data.Store.SitemapBusiness" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="State" EntityType="Data.Store.State" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ZipCode" EntityType="Data.Store.ZipCode" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Band_Attribute" Association="Data.Store.FK_Band_Attribute">
+            <End Role="Attribute" EntitySet="Attribute" />
+            <End Role="Band" EntitySet="Band" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Business_Industry" Association="Data.Store.FK_Business_Industry">
+            <End Role="Industry" EntitySet="Industry" />
+            <End Role="Business" EntitySet="Business" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Business_State" Association="Data.Store.FK_Business_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="Business" EntitySet="Business" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessCity_Business" Association="Data.Store.FK_BusinessCity_Business">
+            <End Role="Business" EntitySet="Business" />
+            <End Role="BusinessCity" EntitySet="BusinessCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessCity_City" Association="Data.Store.FK_BusinessCity_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="BusinessCity" EntitySet="BusinessCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessData_Business" Association="Data.Store.FK_BusinessData_Business">
+            <End Role="Business" EntitySet="Business" />
+            <End Role="BusinessData" EntitySet="BusinessData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessData_GeographicLocation" Association="Data.Store.FK_BusinessData_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="BusinessData" EntitySet="BusinessData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessData_Industry" Association="Data.Store.FK_BusinessData_Industry">
+            <End Role="Industry" EntitySet="Industry" />
+            <End Role="BusinessData" EntitySet="BusinessData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_County" Association="Data.Store.FK_City_County">
+            <End Role="County" EntitySet="County" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_GeographicLocation" Association="Data.Store.FK_City_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_State" Association="Data.Store.FK_City_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_County_GeographicLocation" Association="Data.Store.FK_County_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="County" EntitySet="County" />
+          </AssociationSet>
+          <AssociationSet Name="FK_County_State" Association="Data.Store.FK_County_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="County" EntitySet="County" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeographicLocation_Granularity" Association="Data.Store.FK_GeographicLocation_Granularity">
+            <End Role="Granularity" EntitySet="Granularity" />
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeographicLocationGeographicLocation_GeographicLocation" Association="Data.Store.FK_GeographicLocationGeographicLocation_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="GeographicLocationGeographicLocation" EntitySet="GeographicLocationGeographicLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeographicLocationGeographicLocation_IntersectedGeographicLocation" Association="Data.Store.FK_GeographicLocationGeographicLocation_IntersectedGeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="GeographicLocationGeographicLocation" EntitySet="GeographicLocationGeographicLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Geography_GeographicLocation" Association="Data.Store.FK_Geography_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="Geography" EntitySet="Geography" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndustryData_GeographicLocation" Association="Data.Store.FK_IndustryData_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="IndustryData" EntitySet="IndustryData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndustryData_Industry" Association="Data.Store.FK_IndustryData_Industry">
+            <End Role="Industry" EntitySet="Industry" />
+            <End Role="IndustryData" EntitySet="IndustryData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndustryDataBand_Band" Association="Data.Store.FK_IndustryDataBand_Band">
+            <End Role="Band" EntitySet="Band" />
+            <End Role="IndustryDataBand" EntitySet="IndustryDataBand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndustryDataBand_IndustryData" Association="Data.Store.FK_IndustryDataBand_IndustryData">
+            <End Role="IndustryData" EntitySet="IndustryData" />
+            <End Role="IndustryDataBand" EntitySet="IndustryDataBand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndustryKeyword_Industry" Association="Data.Store.FK_IndustryKeyword_Industry">
+            <End Role="Industry" EntitySet="Industry" />
+            <End Role="IndustryKeyword" EntitySet="IndustryKeyword" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_City" Association="Data.Store.FK_Place_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Place" EntitySet="Place" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_County" Association="Data.Store.FK_Place_County">
+            <End Role="County" EntitySet="County" />
+            <End Role="Place" EntitySet="Place" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_GeographicLocation" Association="Data.Store.FK_Place_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="Place" EntitySet="Place" />
+          </AssociationSet>
+          <AssociationSet Name="FK_State_GeographicLocation" Association="Data.Store.FK_State_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+            <End Role="State" EntitySet="State" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Attribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Band">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AttributeId" Type="bigint" Nullable="false" />
+          <Property Name="Min" Type="decimal" Precision="38" Scale="10" />
+          <Property Name="Max" Type="decimal" Precision="38" Scale="10" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="varchar" MaxLength="5" />
+          <Property Name="ItaDescription" Type="varchar(max)" />
+          <Property Name="EngDescription" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Business">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Address" Type="nvarchar" MaxLength="60" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="CervedId" Type="bigint" />
+          <Property Name="YearAppeared" Type="int" />
+          <Property Name="Lat" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="Long" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="IndustryId" Type="bigint" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="StateId" Type="bigint" />
+          <Property Name="CountyId" Type="bigint" />
+          <Property Name="SEOKey" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessCity">
+          <Key>
+            <PropertyRef Name="CityId" />
+            <PropertyRef Name="BusinessId" />
+          </Key>
+          <Property Name="CityId" Type="bigint" Nullable="false" />
+          <Property Name="BusinessId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Quarter" Type="int" Nullable="false" />
+          <Property Name="IndustryId" Type="bigint" />
+          <Property Name="GeographicLocationId" Type="bigint" Nullable="false" />
+          <Property Name="BusinessId" Type="bigint" Nullable="false" />
+          <Property Name="BranchTypeCode" Type="int" />
+          <Property Name="Revenue" Type="bigint" />
+          <Property Name="Employees" Type="bigint" />
+          <Property Name="YearStarted" Type="int" />
+          <Property Name="OperatingCost" Type="bigint" />
+          <Property Name="NetProfit" Type="bigint" />
+          <Property Name="DebtEquityRatio" Type="float" />
+          <Property Name="NetWorth" Type="bigint" />
+          <Property Name="CostOfPersonnel" Type="bigint" />
+          <Property Name="TotalBranchesNumber" Type="bigint" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="SEOKey" Type="nvarchar" MaxLength="150" />
+          <Property Name="CountyId" Type="bigint" Nullable="false" />
+          <Property Name="StateId" Type="bigint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="County">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Abbreviation" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="SEOKey" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="StateId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GeographicLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GranularityId" Type="bigint" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="128" />
+          <Property Name="LongName" Type="nvarchar" MaxLength="256" />
+          <Property Name="COD_PRO" Type="bigint" />
+          <Property Name="COD_REG" Type="bigint" />
+          <Property Name="PRO_COM" Type="bigint" />
+          <Property Name="Frazione" Type="nvarchar" MaxLength="256" />
+          <Property Name="CapId" Type="bigint" />
+          <Property Name="CityId" Type="bigint" />
+          <Property Name="CountyId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="GeographicLocationGeographicLocation">
+          <Key>
+            <PropertyRef Name="GeographicLocationId" />
+            <PropertyRef Name="IntersectedGeographicLocationId" />
+          </Key>
+          <Property Name="GeographicLocationId" Type="bigint" Nullable="false" />
+          <Property Name="IntersectedGeographicLocationId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Geography">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Polygon" Type="geography" />
+          <Property Name="GeographicLocationId" Type="bigint" />
+          <Property Name="North" Type="float" />
+          <Property Name="South" Type="float" />
+          <Property Name="East" Type="float" />
+          <Property Name="West" Type="float" />
+          <Property Name="CenterLat" Type="float" />
+          <Property Name="CenterLong" Type="float" />
+          <Property Name="COD_REG" Type="bigint" />
+          <Property Name="COD_PRO" Type="bigint" />
+          <Property Name="PRO_COM" Type="bigint" />
+          <Property Name="CapId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Granularity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Industry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="CervedAteco" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="OfficialAteco" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="SEOKey" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="IndustryData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Quarter" Type="int" Nullable="false" />
+          <Property Name="IndustryId" Type="bigint" />
+          <Property Name="GeographicLocationId" Type="bigint" Nullable="false" />
+          <Property Name="AverageEmployees" Type="bigint" />
+          <Property Name="TotalEmployees" Type="bigint" />
+          <Property Name="MedianEmployees" Type="bigint" />
+          <Property Name="TotalRevenue" Type="bigint" />
+          <Property Name="AverageRevenue" Type="bigint" />
+          <Property Name="MedianRevenue" Type="bigint" />
+          <Property Name="TotalOperatingCost" Type="bigint" />
+          <Property Name="AverageOperatingCost" Type="bigint" />
+          <Property Name="TotalNetProfit" Type="bigint" />
+          <Property Name="AverageNetProfit" Type="bigint" />
+          <Property Name="TotalDebtEquityRatio" Type="float" />
+          <Property Name="AverageDebtEquityRatio" Type="float" />
+          <Property Name="TotalNetWorth" Type="bigint" />
+          <Property Name="AverageNetWorth" Type="bigint" />
+          <Property Name="BusinessCount" Type="bigint" />
+          <Property Name="AverageAnnualSalary" Type="bigint" />
+          <Property Name="CostEffectiveness" Type="float" />
+        </EntityType>
+        <EntityType Name="IndustryDataBand">
+          <Key>
+            <PropertyRef Name="IndustryDataId" />
+            <PropertyRef Name="BandId" />
+          </Key>
+          <Property Name="IndustryDataId" Type="bigint" Nullable="false" />
+          <Property Name="BandId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IndustryKeyword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IndustryId" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="SEOKey" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Nation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="SEOKey" Type="nvarchar" MaxLength="150" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="CityId" Type="bigint" Nullable="false" />
+          <Property Name="CountyId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SitemapBusiness">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="County" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Industry" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="BusinessId" Type="bigint" Nullable="false" />
+          <Property Name="Business" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SEOKey" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NationId" Type="bigint" Nullable="false" />
+          <Property Name="Abbreviation" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="ZipCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Zip" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="CityId" Type="bigint" />
+          <Property Name="CountyId" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_Band_Attribute">
+          <End Role="Attribute" Type="Data.Store.Attribute" Multiplicity="1" />
+          <End Role="Band" Type="Data.Store.Band" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attribute">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Band">
+              <PropertyRef Name="AttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Business_Industry">
+          <End Role="Industry" Type="Data.Store.Industry" Multiplicity="0..1" />
+          <End Role="Business" Type="Data.Store.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Business">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Business_State">
+          <End Role="State" Type="Data.Store.State" Multiplicity="0..1" />
+          <End Role="Business" Type="Data.Store.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Business">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessCity_Business">
+          <End Role="Business" Type="Data.Store.Business" Multiplicity="1" />
+          <End Role="BusinessCity" Type="Data.Store.BusinessCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Business">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessCity">
+              <PropertyRef Name="BusinessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessCity_City">
+          <End Role="City" Type="Data.Store.City" Multiplicity="1" />
+          <End Role="BusinessCity" Type="Data.Store.BusinessCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessCity">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessData_Business">
+          <End Role="Business" Type="Data.Store.Business" Multiplicity="1" />
+          <End Role="BusinessData" Type="Data.Store.BusinessData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Business">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessData">
+              <PropertyRef Name="BusinessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessData_GeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+          <End Role="BusinessData" Type="Data.Store.BusinessData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessData">
+              <PropertyRef Name="GeographicLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessData_Industry">
+          <End Role="Industry" Type="Data.Store.Industry" Multiplicity="0..1" />
+          <End Role="BusinessData" Type="Data.Store.BusinessData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessData">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_County">
+          <End Role="County" Type="Data.Store.County" Multiplicity="1" />
+          <End Role="City" Type="Data.Store.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_GeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+          <End Role="City" Type="Data.Store.City" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_State">
+          <End Role="State" Type="Data.Store.State" Multiplicity="1" />
+          <End Role="City" Type="Data.Store.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_County_GeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+          <End Role="County" Type="Data.Store.County" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="County">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_County_State">
+          <End Role="State" Type="Data.Store.State" Multiplicity="1" />
+          <End Role="County" Type="Data.Store.County" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="County">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeographicLocation_Granularity">
+          <End Role="Granularity" Type="Data.Store.Granularity" Multiplicity="1" />
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Granularity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GeographicLocation">
+              <PropertyRef Name="GranularityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeographicLocationGeographicLocation_GeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+          <End Role="GeographicLocationGeographicLocation" Type="Data.Store.GeographicLocationGeographicLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GeographicLocationGeographicLocation">
+              <PropertyRef Name="GeographicLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeographicLocationGeographicLocation_IntersectedGeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+          <End Role="GeographicLocationGeographicLocation" Type="Data.Store.GeographicLocationGeographicLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GeographicLocationGeographicLocation">
+              <PropertyRef Name="IntersectedGeographicLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Geography_GeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="0..1" />
+          <End Role="Geography" Type="Data.Store.Geography" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Geography">
+              <PropertyRef Name="GeographicLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndustryData_GeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+          <End Role="IndustryData" Type="Data.Store.IndustryData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndustryData">
+              <PropertyRef Name="GeographicLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndustryData_Industry">
+          <End Role="Industry" Type="Data.Store.Industry" Multiplicity="0..1" />
+          <End Role="IndustryData" Type="Data.Store.IndustryData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndustryData">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndustryDataBand_Band">
+          <End Role="Band" Type="Data.Store.Band" Multiplicity="1" />
+          <End Role="IndustryDataBand" Type="Data.Store.IndustryDataBand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Band">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndustryDataBand">
+              <PropertyRef Name="BandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndustryDataBand_IndustryData">
+          <End Role="IndustryData" Type="Data.Store.IndustryData" Multiplicity="1" />
+          <End Role="IndustryDataBand" Type="Data.Store.IndustryDataBand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IndustryData">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndustryDataBand">
+              <PropertyRef Name="IndustryDataId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndustryKeyword_Industry">
+          <End Role="Industry" Type="Data.Store.Industry" Multiplicity="1" />
+          <End Role="IndustryKeyword" Type="Data.Store.IndustryKeyword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndustryKeyword">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Place_City">
+          <End Role="City" Type="Data.Store.City" Multiplicity="1" />
+          <End Role="Place" Type="Data.Store.Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Place_County">
+          <End Role="County" Type="Data.Store.County" Multiplicity="1" />
+          <End Role="Place" Type="Data.Store.Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="CountyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Place_GeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+          <End Role="Place" Type="Data.Store.Place" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_State_GeographicLocation">
+          <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+          <End Role="State" Type="Data.Store.State" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Data" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SizeUpContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Attributes" EntityType="Data.Attribute" />
+          <EntitySet Name="Bands" EntityType="Data.Band" />
+          <EntitySet Name="Branches" EntityType="Data.Branch" />
+          <EntitySet Name="Businesses" EntityType="Data.Business" />
+          <EntitySet Name="BusinessDatas" EntityType="Data.BusinessData" />
+          <EntitySet Name="Cities" EntityType="Data.City" />
+          <EntitySet Name="Counties" EntityType="Data.County" />
+          <EntitySet Name="GeographicLocations" EntityType="Data.GeographicLocation" />
+          <EntitySet Name="Geographies" EntityType="Data.Geography" />
+          <EntitySet Name="Granularities" EntityType="Data.Granularity" />
+          <EntitySet Name="Industries" EntityType="Data.Industry" />
+          <EntitySet Name="IndustryDatas" EntityType="Data.IndustryData" />
+          <EntitySet Name="IndustryKeywords" EntityType="Data.IndustryKeyword" />
+          <EntitySet Name="Nations" EntityType="Data.Nation" />
+          <EntitySet Name="SitemapBusinesses" EntityType="Data.SitemapBusiness" />
+          <EntitySet Name="States" EntityType="Data.State" />
+          <EntitySet Name="ZipCodes" EntityType="Data.ZipCode" />
+          <AssociationSet Name="FK_Band_Attribute" Association="Data.FK_Band_Attribute">
+            <End Role="Attribute" EntitySet="Attributes" />
+            <End Role="Band" EntitySet="Bands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Business_Industry" Association="Data.FK_Business_Industry">
+            <End Role="Industry" EntitySet="Industries" />
+            <End Role="Business" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessData_Business" Association="Data.FK_BusinessData_Business">
+            <End Role="Business" EntitySet="Businesses" />
+            <End Role="BusinessData" EntitySet="BusinessDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessData_GeographicLocation" Association="Data.FK_BusinessData_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocations" />
+            <End Role="BusinessData" EntitySet="BusinessDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessData_Industry" Association="Data.FK_BusinessData_Industry">
+            <End Role="Industry" EntitySet="Industries" />
+            <End Role="BusinessData" EntitySet="BusinessDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_GeographicLocation" Association="Data.FK_City_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocations" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_State" Association="Data.FK_City_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeographicLocation_Granularity" Association="Data.FK_GeographicLocation_Granularity">
+            <End Role="Granularity" EntitySet="Granularities" />
+            <End Role="GeographicLocation" EntitySet="GeographicLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndustryData_GeographicLocation" Association="Data.FK_IndustryData_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocations" />
+            <End Role="IndustryData" EntitySet="IndustryDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_State_GeographicLocation" Association="Data.FK_State_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocations" />
+            <End Role="State" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndustryData_Industry" Association="Data.FK_IndustryData_Industry">
+            <End Role="Industry" EntitySet="Industries" />
+            <End Role="IndustryData" EntitySet="IndustryDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndustryKeyword_Industry" Association="Data.FK_IndustryKeyword_Industry">
+            <End Role="Industry" EntitySet="Industries" />
+            <End Role="IndustryKeyword" EntitySet="IndustryKeywords" />
+          </AssociationSet>
+          <AssociationSet Name="GeographicLocationGeographicLocation" Association="Data.GeographicLocationGeographicLocation">
+            <End Role="IntersectedGeographicLocations" EntitySet="GeographicLocations" />
+            <End Role="GeographicLocations" EntitySet="GeographicLocations" />
+          </AssociationSet>
+          <AssociationSet Name="IndustryDataBand" Association="Data.IndustryDataBand">
+            <End Role="Band" EntitySet="Bands" />
+            <End Role="IndustryData" EntitySet="IndustryDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Geography_GeographicLocation" Association="Data.FK_Geography_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocations" />
+            <End Role="Geography" EntitySet="Geographies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_County" Association="Data.FK_City_County">
+            <End Role="County" EntitySet="Counties" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Business_State" Association="Data.FK_Business_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="Business" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_County_GeographicLocation" Association="Data.FK_County_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocations" />
+            <End Role="County" EntitySet="Counties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_County_State" Association="Data.FK_County_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="County" EntitySet="Counties" />
+          </AssociationSet>
+          <EntitySet Name="Places" EntityType="Data.Place" />
+          <AssociationSet Name="FK_Place_City" Association="Data.FK_Place_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Place" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_County" Association="Data.FK_Place_County">
+            <End Role="County" EntitySet="Counties" />
+            <End Role="Place" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_GeographicLocation" Association="Data.FK_Place_GeographicLocation">
+            <End Role="GeographicLocation" EntitySet="GeographicLocations" />
+            <End Role="Place" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="BusinessCity" Association="Data.BusinessCity">
+            <End Role="Business" EntitySet="Businesses" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Attribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Bands" Relationship="Data.FK_Band_Attribute" FromRole="Attribute" ToRole="Band" />
+        </EntityType>
+        <EntityType Name="Band">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="AttributeId" Nullable="false" />
+          <Property Type="Decimal" Name="Min" Precision="38" Scale="10" />
+          <Property Type="Decimal" Name="Max" Precision="38" Scale="10" />
+          <NavigationProperty Name="Attribute" Relationship="Data.FK_Band_Attribute" FromRole="Band" ToRole="Attribute" />
+          <NavigationProperty Name="IndustryDatas" Relationship="Data.IndustryDataBand" FromRole="Band" ToRole="IndustryData" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ItaDescription" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EngDescription" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Business">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CervedId" />
+          <Property Type="Int32" Name="YearAppeared" />
+          <Property Type="Decimal" Name="Lat" Precision="10" Scale="6" />
+          <Property Type="Decimal" Name="Long" Precision="10" Scale="6" />
+          <Property Type="Int64" Name="IndustryId" />
+          <Property Type="String" Name="ZipCode" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="StateId" />
+          <Property Type="Int64" Name="CountyId" />
+          <Property Type="String" Name="SEOKey" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="Industry" Relationship="Data.FK_Business_Industry" FromRole="Business" ToRole="Industry" />
+          <NavigationProperty Name="BusinessDatas" Relationship="Data.FK_BusinessData_Business" FromRole="Business" ToRole="BusinessData" />
+          <NavigationProperty Name="State" Relationship="Data.FK_Business_State" FromRole="Business" ToRole="State" />
+          <NavigationProperty Name="Cities" Relationship="Data.BusinessCity" FromRole="Business" ToRole="City" />
+        </EntityType>
+        <EntityType Name="BusinessData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="Int32" Name="Quarter" Nullable="false" />
+          <Property Type="Int64" Name="IndustryId" />
+          <Property Type="Int64" Name="GeographicLocationId" Nullable="false" />
+          <Property Type="Int64" Name="BusinessId" Nullable="false" />
+          <Property Type="Int32" Name="BranchTypeCode" />
+          <Property Type="Int64" Name="Revenue" />
+          <Property Type="Int64" Name="Employees" />
+          <Property Type="Int32" Name="YearStarted" />
+          <Property Type="Int64" Name="OperatingCost" />
+          <Property Type="Int64" Name="NetProfit" />
+          <Property Type="Double" Name="DebtEquityRatio" />
+          <Property Type="Int64" Name="NetWorth" />
+          <Property Type="Int64" Name="CostOfPersonnel" />
+          <Property Type="Int64" Name="TotalBranchesNumber" />
+          <NavigationProperty Name="Business" Relationship="Data.FK_BusinessData_Business" FromRole="BusinessData" ToRole="Business" />
+          <NavigationProperty Name="GeographicLocation" Relationship="Data.FK_BusinessData_GeographicLocation" FromRole="BusinessData" ToRole="GeographicLocation" />
+          <NavigationProperty Name="Industry" Relationship="Data.FK_BusinessData_Industry" FromRole="BusinessData" ToRole="Industry" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEOKey" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CountyId" Nullable="false" />
+          <Property Type="Int64" Name="StateId" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="GeographicLocation" Relationship="Data.FK_City_GeographicLocation" FromRole="City" ToRole="GeographicLocation" />
+          <NavigationProperty Name="State" Relationship="Data.FK_City_State" FromRole="City" ToRole="State" />
+          <NavigationProperty Name="County" Relationship="Data.FK_City_County" FromRole="City" ToRole="County" />
+          <NavigationProperty Name="Places" Relationship="Data.FK_Place_City" FromRole="City" ToRole="Place" />
+          <NavigationProperty Name="Businesses" Relationship="Data.BusinessCity" FromRole="City" ToRole="Business" />
+        </EntityType>
+        <EntityType Name="County">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Abbreviation" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEOKey" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="StateId" Nullable="false" />
+          <NavigationProperty Name="Cities" Relationship="Data.FK_City_County" FromRole="County" ToRole="City" />
+          <NavigationProperty Name="GeographicLocation" Relationship="Data.FK_County_GeographicLocation" FromRole="County" ToRole="GeographicLocation" />
+          <NavigationProperty Name="State" Relationship="Data.FK_County_State" FromRole="County" ToRole="State" />
+          <NavigationProperty Name="Places" Relationship="Data.FK_Place_County" FromRole="County" ToRole="Place" />
+        </EntityType>
+        <EntityType Name="GeographicLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="GranularityId" Nullable="false" />
+          <Property Type="String" Name="ShortName" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LongName" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="COD_PRO" />
+          <Property Type="Int64" Name="COD_REG" />
+          <Property Type="Int64" Name="PRO_COM" />
+          <Property Type="String" Name="Frazione" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CapId" />
+          <Property Type="Int64" Name="CityId" />
+          <NavigationProperty Name="BusinessDatas" Relationship="Data.FK_BusinessData_GeographicLocation" FromRole="GeographicLocation" ToRole="BusinessData" />
+          <NavigationProperty Name="City" Relationship="Data.FK_City_GeographicLocation" FromRole="GeographicLocation" ToRole="City" />
+          <NavigationProperty Name="Granularity" Relationship="Data.FK_GeographicLocation_Granularity" FromRole="GeographicLocation" ToRole="Granularity" />
+          <NavigationProperty Name="IndustryDatas" Relationship="Data.FK_IndustryData_GeographicLocation" FromRole="GeographicLocation" ToRole="IndustryData" />
+          <NavigationProperty Name="State" Relationship="Data.FK_State_GeographicLocation" FromRole="GeographicLocation" ToRole="State" />
+          <NavigationProperty Name="IntersectedGeographicLocations" Relationship="Data.GeographicLocationGeographicLocation" FromRole="IntersectedGeographicLocations" ToRole="GeographicLocations" />
+          <NavigationProperty Name="GeographicLocations" Relationship="Data.GeographicLocationGeographicLocation" FromRole="GeographicLocations" ToRole="IntersectedGeographicLocations" />
+          <NavigationProperty Name="Geographies" Relationship="Data.FK_Geography_GeographicLocation" FromRole="GeographicLocation" ToRole="Geography" />
+          <NavigationProperty Name="County" Relationship="Data.FK_County_GeographicLocation" FromRole="GeographicLocation" ToRole="County" />
+          <NavigationProperty Name="Place" Relationship="Data.FK_Place_GeographicLocation" FromRole="GeographicLocation" ToRole="Place" />
+          <Property Type="Int64" Name="CountyId" />
+        </EntityType>
+        <EntityType Name="Geography">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Geography" Name="Polygon" />
+          <Property Type="Int64" Name="GeographicLocationId" />
+          <Property Type="Double" Name="North" />
+          <Property Type="Double" Name="South" />
+          <Property Type="Double" Name="East" />
+          <Property Type="Double" Name="West" />
+          <Property Type="Double" Name="CenterLat" />
+          <Property Type="Double" Name="CenterLong" />
+          <Property Type="Int64" Name="COD_REG" />
+          <Property Type="Int64" Name="COD_PRO" />
+          <Property Type="Int64" Name="PRO_COM" />
+          <Property Type="Int64" Name="CapId" />
+          <NavigationProperty Name="GeographicLocation" Relationship="Data.FK_Geography_GeographicLocation" FromRole="Geography" ToRole="GeographicLocation" />
+        </EntityType>
+        <EntityType Name="Granularity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GeographicLocations" Relationship="Data.FK_GeographicLocation_Granularity" FromRole="Granularity" ToRole="GeographicLocation" />
+        </EntityType>
+        <EntityType Name="Industry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CervedAteco" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OfficialAteco" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <NavigationProperty Name="Businesses" Relationship="Data.FK_Business_Industry" FromRole="Industry" ToRole="Business" />
+          <NavigationProperty Name="BusinessDatas" Relationship="Data.FK_BusinessData_Industry" FromRole="Industry" ToRole="BusinessData" />
+          <NavigationProperty Name="IndustryDatas" Relationship="Data.FK_IndustryData_Industry" FromRole="Industry" ToRole="IndustryData" />
+          <NavigationProperty Name="IndustryKeywords" Relationship="Data.FK_IndustryKeyword_Industry" FromRole="Industry" ToRole="IndustryKeyword" />
+          <Property Type="String" Name="SEOKey" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IndustryData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="Int32" Name="Quarter" Nullable="false" />
+          <Property Type="Int64" Name="IndustryId" />
+          <Property Type="Int64" Name="GeographicLocationId" Nullable="false" />
+          <Property Type="Int64" Name="AverageEmployees" />
+          <Property Type="Int64" Name="TotalEmployees" />
+          <Property Type="Int64" Name="MedianEmployees" />
+          <Property Type="Int64" Name="TotalRevenue" />
+          <Property Type="Int64" Name="AverageRevenue" />
+          <Property Type="Int64" Name="MedianRevenue" />
+          <Property Type="Int64" Name="TotalOperatingCost" />
+          <Property Type="Int64" Name="AverageOperatingCost" />
+          <Property Type="Int64" Name="TotalNetProfit" />
+          <Property Type="Int64" Name="AverageNetProfit" />
+          <Property Type="Double" Name="TotalDebtEquityRatio" />
+          <Property Type="Double" Name="AverageDebtEquityRatio" />
+          <Property Type="Int64" Name="TotalNetWorth" />
+          <Property Type="Int64" Name="AverageNetWorth" />
+          <Property Type="Int64" Name="BusinessCount" />
+          <Property Type="Int64" Name="AverageAnnualSalary" />
+          <Property Type="Double" Name="CostEffectiveness" />
+          <NavigationProperty Name="GeographicLocation" Relationship="Data.FK_IndustryData_GeographicLocation" FromRole="IndustryData" ToRole="GeographicLocation" />
+          <NavigationProperty Name="Industry" Relationship="Data.FK_IndustryData_Industry" FromRole="IndustryData" ToRole="Industry" />
+          <NavigationProperty Name="Bands" Relationship="Data.IndustryDataBand" FromRole="IndustryData" ToRole="Band" />
+        </EntityType>
+        <EntityType Name="IndustryKeyword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="IndustryId" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SortOrder" Nullable="false" />
+          <NavigationProperty Name="Industry" Relationship="Data.FK_IndustryKeyword_Industry" FromRole="IndustryKeyword" ToRole="Industry" />
+          <Property Type="String" Name="SEOKey" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Nation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEOKey" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Int64" Name="Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SitemapBusiness">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="County" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Industry" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="BusinessId" Nullable="false" />
+          <Property Type="String" Name="Business" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEOKey" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="NationId" Nullable="false" />
+          <NavigationProperty Name="Cities" Relationship="Data.FK_City_State" FromRole="State" ToRole="City" />
+          <NavigationProperty Name="GeographicLocation" Relationship="Data.FK_State_GeographicLocation" FromRole="State" ToRole="GeographicLocation" />
+          <NavigationProperty Name="Businesses" Relationship="Data.FK_Business_State" FromRole="State" ToRole="Business" />
+          <NavigationProperty Name="Counties" Relationship="Data.FK_County_State" FromRole="State" ToRole="County" />
+          <Property Type="String" Name="Abbreviation" MaxLength="3" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ZipCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Zip" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CityId" />
+          <Property Type="Int64" Name="CountyId" />
+        </EntityType>
+        <Association Name="FK_Band_Attribute">
+          <End Type="Data.Attribute" Role="Attribute" Multiplicity="1" />
+          <End Type="Data.Band" Role="Band" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attribute">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Band">
+              <PropertyRef Name="AttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Business_Industry">
+          <End Type="Data.Industry" Role="Industry" Multiplicity="0..1" />
+          <End Type="Data.Business" Role="Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Business">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessData_Business">
+          <End Type="Data.Business" Role="Business" Multiplicity="1" />
+          <End Type="Data.BusinessData" Role="BusinessData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Business">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessData">
+              <PropertyRef Name="BusinessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessData_GeographicLocation">
+          <End Type="Data.GeographicLocation" Role="GeographicLocation" Multiplicity="1" />
+          <End Type="Data.BusinessData" Role="BusinessData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessData">
+              <PropertyRef Name="GeographicLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessData_Industry">
+          <End Type="Data.Industry" Role="Industry" Multiplicity="0..1" />
+          <End Type="Data.BusinessData" Role="BusinessData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessData">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_GeographicLocation">
+          <End Type="Data.GeographicLocation" Role="GeographicLocation" Multiplicity="1" />
+          <End Type="Data.City" Role="City" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_State">
+          <End Type="Data.State" Role="State" Multiplicity="1" />
+          <End Type="Data.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeographicLocation_Granularity">
+          <End Type="Data.Granularity" Role="Granularity" Multiplicity="1" />
+          <End Type="Data.GeographicLocation" Role="GeographicLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Granularity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GeographicLocation">
+              <PropertyRef Name="GranularityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndustryData_GeographicLocation">
+          <End Type="Data.GeographicLocation" Role="GeographicLocation" Multiplicity="1" />
+          <End Type="Data.IndustryData" Role="IndustryData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndustryData">
+              <PropertyRef Name="GeographicLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_State_GeographicLocation">
+          <End Type="Data.GeographicLocation" Role="GeographicLocation" Multiplicity="1" />
+          <End Type="Data.State" Role="State" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndustryData_Industry">
+          <End Type="Data.Industry" Role="Industry" Multiplicity="0..1" />
+          <End Type="Data.IndustryData" Role="IndustryData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndustryData">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndustryKeyword_Industry">
+          <End Type="Data.Industry" Role="Industry" Multiplicity="1" />
+          <End Type="Data.IndustryKeyword" Role="IndustryKeyword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndustryKeyword">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GeographicLocationGeographicLocation">
+          <End Type="Data.GeographicLocation" Role="IntersectedGeographicLocations" Multiplicity="*" />
+          <End Type="Data.GeographicLocation" Role="GeographicLocations" Multiplicity="*" />
+        </Association>
+        <Association Name="IndustryDataBand">
+          <End Type="Data.Band" Role="Band" Multiplicity="*" />
+          <End Type="Data.IndustryData" Role="IndustryData" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Geography_GeographicLocation">
+          <End Type="Data.GeographicLocation" Role="GeographicLocation" Multiplicity="0..1" />
+          <End Type="Data.Geography" Role="Geography" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Geography">
+              <PropertyRef Name="GeographicLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_County">
+          <End Type="Data.County" Role="County" Multiplicity="1" />
+          <End Type="Data.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Business_State">
+          <End Type="Data.State" Role="State" Multiplicity="0..1" />
+          <End Type="Data.Business" Role="Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Business">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_County_GeographicLocation">
+          <End Type="Data.GeographicLocation" Role="GeographicLocation" Multiplicity="1" />
+          <End Type="Data.County" Role="County" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="County">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_County_State">
+          <End Type="Data.State" Role="State" Multiplicity="1" />
+          <End Type="Data.County" Role="County" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="County">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CityId" Nullable="false" />
+          <Property Type="Int64" Name="CountyId" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="Data.FK_Place_City" FromRole="Place" ToRole="City" />
+          <NavigationProperty Name="County" Relationship="Data.FK_Place_County" FromRole="Place" ToRole="County" />
+          <NavigationProperty Name="GeographicLocation" Relationship="Data.FK_Place_GeographicLocation" FromRole="Place" ToRole="GeographicLocation" />
+        </EntityType>
+        <Association Name="FK_Place_City">
+          <End Type="Data.City" Role="City" Multiplicity="1" />
+          <End Type="Data.Place" Role="Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Place_County">
+          <End Type="Data.County" Role="County" Multiplicity="1" />
+          <End Type="Data.Place" Role="Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="CountyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Place_GeographicLocation">
+          <End Type="Data.GeographicLocation" Role="GeographicLocation" Multiplicity="1" />
+          <End Type="Data.Place" Role="Place" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GeographicLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BusinessCity">
+          <End Type="Data.Business" Role="Business" Multiplicity="*" />
+          <End Type="Data.City" Role="City" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataStoreContainer" CdmEntityContainer="SizeUpContext">
+          <EntitySetMapping Name="Attributes">
+            <EntityTypeMapping TypeName="Data.Attribute">
+              <MappingFragment StoreEntitySet="Attribute">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bands">
+            <EntityTypeMapping TypeName="Data.Band">
+              <MappingFragment StoreEntitySet="Band">
+                <ScalarProperty Name="Max" ColumnName="Max" />
+                <ScalarProperty Name="Min" ColumnName="Min" />
+                <ScalarProperty Name="AttributeId" ColumnName="AttributeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Branches">
+            <EntityTypeMapping TypeName="Data.Branch">
+              <MappingFragment StoreEntitySet="Branch">
+                <ScalarProperty Name="EngDescription" ColumnName="EngDescription" />
+                <ScalarProperty Name="ItaDescription" ColumnName="ItaDescription" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Businesses">
+            <EntityTypeMapping TypeName="Data.Business">
+              <MappingFragment StoreEntitySet="Business">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+                <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+                <ScalarProperty Name="Long" ColumnName="Long" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="YearAppeared" ColumnName="YearAppeared" />
+                <ScalarProperty Name="CervedId" ColumnName="CervedId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessDatas">
+            <EntityTypeMapping TypeName="Data.BusinessData">
+              <MappingFragment StoreEntitySet="BusinessData">
+                <ScalarProperty Name="TotalBranchesNumber" ColumnName="TotalBranchesNumber" />
+                <ScalarProperty Name="CostOfPersonnel" ColumnName="CostOfPersonnel" />
+                <ScalarProperty Name="NetWorth" ColumnName="NetWorth" />
+                <ScalarProperty Name="DebtEquityRatio" ColumnName="DebtEquityRatio" />
+                <ScalarProperty Name="NetProfit" ColumnName="NetProfit" />
+                <ScalarProperty Name="OperatingCost" ColumnName="OperatingCost" />
+                <ScalarProperty Name="YearStarted" ColumnName="YearStarted" />
+                <ScalarProperty Name="Employees" ColumnName="Employees" />
+                <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+                <ScalarProperty Name="BranchTypeCode" ColumnName="BranchTypeCode" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+                <ScalarProperty Name="GeographicLocationId" ColumnName="GeographicLocationId" />
+                <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+                <ScalarProperty Name="Quarter" ColumnName="Quarter" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="Data.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+                <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Counties">
+            <EntityTypeMapping TypeName="Data.County">
+              <MappingFragment StoreEntitySet="County">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GeographicLocations">
+            <EntityTypeMapping TypeName="Data.GeographicLocation">
+              <MappingFragment StoreEntitySet="GeographicLocation">
+                <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CapId" ColumnName="CapId" />
+                <ScalarProperty Name="Frazione" ColumnName="Frazione" />
+                <ScalarProperty Name="PRO_COM" ColumnName="PRO_COM" />
+                <ScalarProperty Name="COD_REG" ColumnName="COD_REG" />
+                <ScalarProperty Name="COD_PRO" ColumnName="COD_PRO" />
+                <ScalarProperty Name="LongName" ColumnName="LongName" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="GranularityId" ColumnName="GranularityId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Geographies">
+            <EntityTypeMapping TypeName="Data.Geography">
+              <MappingFragment StoreEntitySet="Geography">
+                <ScalarProperty Name="CapId" ColumnName="CapId" />
+                <ScalarProperty Name="PRO_COM" ColumnName="PRO_COM" />
+                <ScalarProperty Name="COD_PRO" ColumnName="COD_PRO" />
+                <ScalarProperty Name="COD_REG" ColumnName="COD_REG" />
+                <ScalarProperty Name="CenterLong" ColumnName="CenterLong" />
+                <ScalarProperty Name="CenterLat" ColumnName="CenterLat" />
+                <ScalarProperty Name="West" ColumnName="West" />
+                <ScalarProperty Name="East" ColumnName="East" />
+                <ScalarProperty Name="South" ColumnName="South" />
+                <ScalarProperty Name="North" ColumnName="North" />
+                <ScalarProperty Name="GeographicLocationId" ColumnName="GeographicLocationId" />
+                <ScalarProperty Name="Polygon" ColumnName="Polygon" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Granularities">
+            <EntityTypeMapping TypeName="Data.Granularity">
+              <MappingFragment StoreEntitySet="Granularity">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Industries">
+            <EntityTypeMapping TypeName="Data.Industry">
+              <MappingFragment StoreEntitySet="Industry">
+                <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="OfficialAteco" ColumnName="OfficialAteco" />
+                <ScalarProperty Name="CervedAteco" ColumnName="CervedAteco" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndustryDatas">
+            <EntityTypeMapping TypeName="Data.IndustryData">
+              <MappingFragment StoreEntitySet="IndustryData">
+                <ScalarProperty Name="CostEffectiveness" ColumnName="CostEffectiveness" />
+                <ScalarProperty Name="AverageAnnualSalary" ColumnName="AverageAnnualSalary" />
+                <ScalarProperty Name="BusinessCount" ColumnName="BusinessCount" />
+                <ScalarProperty Name="AverageNetWorth" ColumnName="AverageNetWorth" />
+                <ScalarProperty Name="TotalNetWorth" ColumnName="TotalNetWorth" />
+                <ScalarProperty Name="AverageDebtEquityRatio" ColumnName="AverageDebtEquityRatio" />
+                <ScalarProperty Name="TotalDebtEquityRatio" ColumnName="TotalDebtEquityRatio" />
+                <ScalarProperty Name="AverageNetProfit" ColumnName="AverageNetProfit" />
+                <ScalarProperty Name="TotalNetProfit" ColumnName="TotalNetProfit" />
+                <ScalarProperty Name="AverageOperatingCost" ColumnName="AverageOperatingCost" />
+                <ScalarProperty Name="TotalOperatingCost" ColumnName="TotalOperatingCost" />
+                <ScalarProperty Name="MedianRevenue" ColumnName="MedianRevenue" />
+                <ScalarProperty Name="AverageRevenue" ColumnName="AverageRevenue" />
+                <ScalarProperty Name="TotalRevenue" ColumnName="TotalRevenue" />
+                <ScalarProperty Name="MedianEmployees" ColumnName="MedianEmployees" />
+                <ScalarProperty Name="TotalEmployees" ColumnName="TotalEmployees" />
+                <ScalarProperty Name="AverageEmployees" ColumnName="AverageEmployees" />
+                <ScalarProperty Name="GeographicLocationId" ColumnName="GeographicLocationId" />
+                <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+                <ScalarProperty Name="Quarter" ColumnName="Quarter" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndustryKeywords">
+            <EntityTypeMapping TypeName="Data.IndustryKeyword">
+              <MappingFragment StoreEntitySet="IndustryKeyword">
+                <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nations">
+            <EntityTypeMapping TypeName="Data.Nation">
+              <MappingFragment StoreEntitySet="Nation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SitemapBusinesses">
+            <EntityTypeMapping TypeName="Data.SitemapBusiness">
+              <MappingFragment StoreEntitySet="SitemapBusiness">
+                <ScalarProperty Name="Business" ColumnName="Business" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="Data.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="NationId" ColumnName="NationId" />
+                <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZipCodes">
+            <EntityTypeMapping TypeName="Data.ZipCode">
+              <MappingFragment StoreEntitySet="ZipCode">
+                <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="GeographicLocationGeographicLocation" TypeName="Data.GeographicLocationGeographicLocation" StoreEntitySet="GeographicLocationGeographicLocation">
+            <EndProperty Name="GeographicLocations">
+              <ScalarProperty Name="Id" ColumnName="IntersectedGeographicLocationId" />
+            </EndProperty>
+            <EndProperty Name="IntersectedGeographicLocations">
+              <ScalarProperty Name="Id" ColumnName="GeographicLocationId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="IndustryDataBand" TypeName="Data.IndustryDataBand" StoreEntitySet="IndustryDataBand">
+            <EndProperty Name="IndustryData">
+              <ScalarProperty Name="Id" ColumnName="IndustryDataId" />
+            </EndProperty>
+            <EndProperty Name="Band">
+              <ScalarProperty Name="Id" ColumnName="BandId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Places">
+            <EntityTypeMapping TypeName="Data.Place">
+              <MappingFragment StoreEntitySet="Place">
+                <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+    
+          <AssociationSetMapping Name="BusinessCity" TypeName="Data.BusinessCity" StoreEntitySet="BusinessCity" >
+            <EndProperty Name="City">
+              <ScalarProperty Name="Id" ColumnName="CityId" />
+            </EndProperty>
+            <EndProperty Name="Business">
+              <ScalarProperty Name="Id" ColumnName="BusinessId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

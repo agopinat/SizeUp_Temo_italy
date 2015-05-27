@@ -1,0 +1,7 @@
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\bin\Core.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\bin\Core.pdb
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\bin\Data.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\bin\Data.pdb
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\obj\Debug\Core.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\obj\Debug\Core.pdb

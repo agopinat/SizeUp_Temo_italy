@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #container { display: block; clear: both; float: none; margin: 0 auto; padding: 0; width: 960px; }
+</style>
+
+
+<script src="http://api-it.sizeup.localhost/js/?callback=loaded&apikey=6C110D76-71C9-426B-ABB6-97010D08E3A1"></script>
+
+
+
+
+<div id="container">
+    <p id="placeResults"></p>
+    <br />
+    <p id="industryResults"></p>
+
+    <script type="text/javascript">
+        var loaded = function () {
+            sizeup.api.data.findPlace({ term: 'roma, rm' }, function (data) {
+                var d = '';
+                for (var x = 0; x < data.length; x++) {
+                    d = d + data[x].ShortName;
+                    d = d + '<br/>';
+                }
+                document.getElementById('placeResults').innerHTML = d;
+            });
+
+            sizeup.api.data.findIndustry({ term: 'coltivazione non permanente' }, function (data) {
+                var d = '';
+                for (var x = 0; x < data.length; x++) {
+                    d = d + data[x].Name + '<br/>';
+                }
+                document.getElementById('industryResults').innerHTML = d;
+            });
+
+        };
+    </script>
+</div>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Data.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DataStoreContainer">
+    <EntitySet Name="GeographicLocation" EntityType="Data.Store.GeographicLocation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Industry" EntityType="Data.Store.Industry" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="GeographicLocation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GranularityId" Type="bigint" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="128" />
+    <Property Name="LongName" Type="nvarchar" MaxLength="256" />
+    <Property Name="COD_PRO" Type="bigint" />
+    <Property Name="COD_REG" Type="bigint" />
+    <Property Name="PRO_COM" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Industry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CervedAteco" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="OfficialAteco" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+</Schema>

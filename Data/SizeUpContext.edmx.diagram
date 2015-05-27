@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6417058da75d405c987015e04641ce16" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="Data.Attribute" Width="1.5" PointX="4.2831324619628175" PointY="0.78390030599380855" />
+        <EntityTypeShape EntityType="Data.Band" Width="1.5" PointX="8.09245619368388" PointY="5.380998152019921" />
+        <EntityTypeShape EntityType="Data.Branch" Width="1.5" PointX="4.0477129761351796" PointY="27.836887447087509" />
+        <EntityTypeShape EntityType="Data.Business" Width="1.5" PointX="1.9735449692111207" PointY="13.449839702551179" />
+        <EntityTypeShape EntityType="Data.BusinessData" Width="1.5" PointX="1.3544212288010964" PointY="29.21593873073158" />
+        <EntityTypeShape EntityType="Data.City" Width="1.5" PointX="2.785532758937" PointY="6.3269065796988579" />
+        <EntityTypeShape EntityType="Data.County" Width="1.5" PointX="1.2858046224740356" PointY="1.9957576403374586" />
+        <EntityTypeShape EntityType="Data.GeographicLocation" Width="2.875" PointX="3" PointY="43.5" />
+        <EntityTypeShape EntityType="Data.Geography" Width="1.5" PointX="11.125" PointY="26.875" />
+        <EntityTypeShape EntityType="Data.Granularity" Width="1.5" PointX="5.5467873297383949" PointY="14.2911311454564" />
+        <EntityTypeShape EntityType="Data.Industry" Width="1.5" PointX="7.7213936037017934" PointY="18.958742806203077" />
+        <EntityTypeShape EntityType="Data.IndustryData" Width="1.5" PointX="3.2416379150197088" PointY="21.939912195289466" />
+        <EntityTypeShape EntityType="Data.IndustryKeyword" Width="1.5" PointX="6.1426698854857449" PointY="2.8763000531477387" />
+        <EntityTypeShape EntityType="Data.Nation" Width="1.5" PointX="9.8383469627417384" PointY="23.775375451788015" />
+        <EntityTypeShape EntityType="Data.SitemapBusiness" Width="1.5" PointX="5.8321269330718213" PointY="25.777115580522043" />
+        <EntityTypeShape EntityType="Data.State" Width="1.5" PointX="5.9915817109828726" PointY="10.06666294209038" />
+        <EntityTypeShape EntityType="Data.ZipCode" Width="1.5" PointX="1.3291343680252947" PointY="11.498696392168615" />
+        <AssociationConnector Association="Data.FK_Band_Attribute" />
+        <AssociationConnector Association="Data.FK_Business_Industry" />
+        <AssociationConnector Association="Data.FK_BusinessData_Business" />
+        <AssociationConnector Association="Data.FK_BusinessData_GeographicLocation" />
+        <AssociationConnector Association="Data.FK_BusinessData_Industry" />
+        <AssociationConnector Association="Data.FK_City_GeographicLocation" />
+        <AssociationConnector Association="Data.FK_City_State" />
+        <AssociationConnector Association="Data.FK_GeographicLocation_Granularity" />
+        <AssociationConnector Association="Data.FK_IndustryData_GeographicLocation" />
+        <AssociationConnector Association="Data.FK_State_GeographicLocation" />
+        <AssociationConnector Association="Data.FK_IndustryData_Industry" />
+        <AssociationConnector Association="Data.FK_IndustryKeyword_Industry" />
+        <AssociationConnector Association="Data.GeographicLocationGeographicLocation" />
+        <AssociationConnector Association="Data.IndustryDataBand" />
+        <AssociationConnector Association="Data.FK_Geography_GeographicLocation" />
+        <AssociationConnector Association="Data.FK_City_County" />
+        <AssociationConnector Association="Data.FK_Business_State" />
+        <AssociationConnector Association="Data.FK_County_GeographicLocation" />
+        <AssociationConnector Association="Data.FK_County_State" />
+        <EntityTypeShape EntityType="Data.Place" Width="1.5" PointX="7.1474784962588362" PointY="8.2667875477423838" />
+        <AssociationConnector Association="Data.FK_Place_City" />
+        <AssociationConnector Association="Data.FK_Place_County" />
+        <AssociationConnector Association="Data.FK_Place_GeographicLocation" />
+        <AssociationConnector Association="Data.BusinessCity" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,200 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #container { display: block; clear: both; float: none; margin: 0 auto; padding: 0; width: 960px; }
+</style>
+
+
+<script src="http://api-it.sizeup.localhost/js/?callback=apiLoaded&apikey=729AB381-4F9C-451C-94A6-A8EAB245B2DE"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/views/home.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/controls/industrySelector.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/controls/placeSelector.js")"></script>
+
+
+ <form id="form">
+        <fieldset>
+            <div id="industry-container" class="container input-group col-lg-7 col-md-10 col-sm-12 col-xs-12">
+                <span class="input-group-addon input-group-blue">My industry is</span>
+                <input id="searchIndustry" type="text" class="form-control" placeholder="Enter Your Industry">
+            </div>
+            <div id="location-container" class="container input-group col-lg-7 col-md-10 col-sm-12 col-xs-12">
+                <span class="input-group-addon input-group-blue">I'm located in</span>
+                <input id="searchCommunity" type="text" class="form-control" placeholder="Enter Your City">
+                <p id="enteredLocation" class="text-center location hidden">
+                    Your city is <a class="changeLocation" href="javascript:void(0);"><span class="locationText"></span>&nbsp;<span class="hint">[change]</span></a>
+                </p>
+                <p id="detectedLocation" class="text-center location hidden">
+                    We think you are in <a class="changeLocation" href="javascript:void(0);"><span class="locationText"></span>&nbsp;<span class="hint">[change]</span></a>
+                </p>
+            </div>
+            <button type="button" id="row-continue" class="btn btn-green btn-primary btn-lg">Continue</button>
+            <div id="error-container" class="container input-group col-lg-7 col-md-10 col-sm-12 col-xs-12">
+                <p id="noIndustryMatchesMessage" class="info hidden">
+                    No industry matched your keyword. Please search again and select from the dropdown.
+                </p>
+                <p id="invalidCityMessage" class="info hidden">
+                    Please enter a valid city name and select from the dropdown.
+                </p>
+                <p id="noValuesEntered" class="info hidden">
+                    Please enter a city and industry and select from the dropdowns.
+                </p>
+            </div>
+        </fieldset>
+     <fieldset id="step-two" class="text-center">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12">
+                <div class="col-lg-4 col-md-4 container">
+                    <div class="card">
+                        <div class="gray-bg face front">
+                        </div>
+                        <div class="gray-bg face back">
+                            <img src="@Url.Content("~/Content/images/gauge-card.png")" alt="Performance"/>
+                            <p>Compare your business to your industry competitors.</p>
+                            <a href="#" id="myBusiness" class="btn btn-green btn-primary btn-lg">My Business</a>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 container">
+                    <div class="card">
+                        <div class="gray-bg face front">
+                        </div>
+                        <div class="gray-bg face back">
+                            <img src="@Url.Content("~/Content/images/compete-card.png")" alt="Competition"/>
+                            <p>Map your customers, competitors, suppliers.</p>
+                            <a href="#" id="competing" class="btn btn-green btn-primary btn-lg">Competition</a>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 container">
+                    <div class="card">
+                        <div class="gray-bg face front">
+                        </div>
+                        <div class="gray-bg face back">
+                            <img src="@Url.Content("~/Content/images/advertise-card.png")" alt="Advertisement"/>
+                            <p>Find best places to target your next advertising campaign.</p>
+                            <a href="#" id="advertising" class="btn btn-green btn-primary btn-lg">Advertising</a>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+
+
+<div id="decisions" class="col-lg-12">
+    <div id="section-header" class="row text-center">
+        <h2>SizeUp your business</h2>
+        <div class="col-md-8 col-md-offset-2">
+            <p class="text-center">
+                Make smarter decisions through data with SizeUp and learn the
+                answers to the burning questions that keep every business owner and aspiring entrepreneur
+                up at night.
+            </p>
+        </div>
+    </div>
+    <div id="options" class="row">
+        <div class="col-wrapper col-lg-4 clearfix">
+            <div class="col-lg-4 text-center">
+                <img src="@Url.Content("~/Content/images/gauge-home.png")" alt="My Business Logo"/><br />
+                <a class="left-col btn btn-blue" href="#" onclick="$('html, body').animate({scrollTop: $('#performance').offset().top }, 1000);" role="button">Learn more</a>
+            </div>
+            <div class="copy text-left col-lg-8">
+                <h3 class="text-blue">How do I compare?</h3>
+                <p>
+                    Find out how you measure up to the rest of the competition in your industry.
+                    <a href="#" onclick="$('html, body').animate({scrollTop: $('#performance').offset().top }, 1000);">Learn more.</a>
+                </p>
+                <a class="right-col btn btn-blue" href="#" onclick="$('html, body').animate({scrollTop: $('#performance').offset().top }, 1000);" role="button">Learn more</a>
+            </div>
+        </div>
+        <div class="col-wrapper col-lg-4 clearfix">
+            <div class="col-lg-4 text-center">
+                <img src="@Url.Content("~/Content/images/compete-home.png")" alt="Competition Logo"/><br />
+                <a class="left-col btn btn-blue" href="#" onclick="$('html, body').animate({scrollTop: $('#competition').offset().top }, 1000);" role="button">Learn more</a>
+            </div>
+            <div class="copy text-left col-lg-8">
+                <h3 class="text-blue">Where are my customers?</h3>
+                <p>
+                    See the locations of potential customers, suppliers, and competitors.
+                    <a href="#" onclick="$('html, body').animate({scrollTop: $('#competition').offset().top }, 1000);">Learn more.</a>
+                </p>
+                <a class="right-col btn btn-blue" href="#" onclick="$('html, body').animate({scrollTop: $('#competition').offset().top }, 1000);" role="button">Learn more</a>
+            </div>
+        </div>
+        <div class="col-wrapper col-lg-4 clearfix">
+            <div class="col-lg-4 text-center">
+                <img src="@Url.Content("~/Content/images/advertise-home.png")" alt="Advertisement Logo"/><br />
+                <a class="left-col btn btn-blue" href="#" onclick="$('html, body').animate({scrollTop: $('#advertisement').offset().top }, 1000);" role="button">Learn more</a>
+            </div>
+            <div class="copy text-left col-lg-8">
+                <h3 class="text-blue">Where should I advertise?</h3>
+                <p>Invest your advertising budget in the right place. <a href="#" onclick="$('html, body').animate({scrollTop: $('#advertisement').offset().top }, 1000);">Learn more.</a></p>
+                <a class="right-col btn btn-blue" href="#" onclick="$('html, body').animate({scrollTop: $('#advertisement').offset().top }, 1000);" role="button">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">       
+        var done = function () {
+            var opts = {
+                currentInfo: @Html.Raw(ViewBag.CurrentInfoJSON)
+                };
+            var driver = new sizeup.views.home(opts);
+        };
+        var notifier = new sizeup.core.notifier(done);
+        var apiLoaded = notifier.getNotifier();
+        var doc = notifier.getNotifier();
+
+        $(document).ready(function(){
+            doc();
+
+            $('#searchIndustry').data('holder', $('#searchIndustry').attr('placeholder'));
+            $('#searchIndustry').focusin(function(){$(this).attr('placeholder','');});
+            $('#searchIndustry').focusout(function(){ $(this).attr('placeholder',$(this).data('holder'));});
+
+            $('#searchCommunity').data('holder',$('#searchCommunity').attr('placeholder'));
+            $('#searchCommunity').focusin(function(){$(this).attr('placeholder','');});
+            $('#searchCommunity').focusout(function(){$(this).attr('placeholder',$(this).data('holder'));});
+
+
+
+            $('#decisions a.right-col').hide();
+            var activeId = $("#advertise-selection a.active").attr("id");
+            $(".marker-set#" + activeId).addClass('active');
+
+            $("#advertise-selection a").on('click', function(e){
+                $(".marker-set.active").fadeOut(0);
+                $("#advertise-selection a.active, .marker-set.active").removeClass('active');
+                
+                $(this).addClass('active');
+                var activeId = $("#advertise-selection a.active").attr("id");
+             
+                $(".marker-set#" + activeId).fadeIn(500);
+                $(".marker-set#" + activeId).addClass('active');
+                return false;
+            });
+
+            $("#step-two-back").on('click', function(e){
+                $("#step-two .container .card").toggleClass("flipped");
+                var current_fs = $("#form fieldset:last-child");
+                var prev_fs = $("#form fieldset:first-child");
+                setTimeout(function() {
+                    current_fs.hide();
+                    prev_fs.css('opacity', '1').show();
+                    $("#step-two-back").hide();
+                    $("#login-form h1").removeClass("col-lg-6").removeClass("col-lg-offset-2")
+                        .removeClass("col-md-7").removeClass("col-md-offset-2")
+                        .removeClass("col-sm-10")
+                        .removeClass("col-xs-12");
+                }, 500);                
+            });            
+        });
+    </script>
+}

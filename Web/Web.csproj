@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8621249B-09DC-4E3F-B9A8-6CF6C24C8319}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg">
+      <HintPath>Svg\bin\Debug\Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
+    <Compile Include="Areas\Api\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Api\Controllers\PlaceController.cs" />
+    <Compile Include="Areas\Api\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Api\Controllers\UserController.cs" />
+    <Compile Include="Areas\Pins\Controllers\BusinessController.cs" />
+    <Compile Include="Areas\Pins\Controllers\HeatController.cs" />
+    <Compile Include="Areas\Pins\PinsAreaRegistration.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CompetitionController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Header.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\admin\css\bootstrap.css" />
+    <Content Include="Content\admin\css\bootstrap.min.css" />
+    <Content Include="Content\admin\css\plugins\dataTables.bootstrap.css" />
+    <Content Include="Content\admin\css\plugins\metisMenu\metisMenu.css" />
+    <Content Include="Content\admin\css\plugins\metisMenu\metisMenu.min.css" />
+    <Content Include="Content\admin\css\plugins\morris.css" />
+    <Content Include="Content\admin\css\plugins\social-buttons.css" />
+    <Content Include="Content\admin\css\plugins\timeline.css" />
+    <Content Include="Content\admin\css\sb-admin-2.css" />
+    <Content Include="Content\admin\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\admin\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\admin\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\admin\images\4f5d9923-510f-4beb-b916-a82beb3321dd.jpg" />
+    <Content Include="Content\admin\images\f0f8dbff-3a61-4f07-a206-5bd0f83a2b24.jpg" />
+    <Content Include="Content\base.css" />
+    <Content Include="Content\images\actionbutton.png" />
+    <Content Include="Content\images\advertise-card.png" />
+    <Content Include="Content\images\advertise-home.png" />
+    <Content Include="Content\images\advertise-ribbon-home.png" />
+    <Content Include="Content\images\advertise.png" />
+    <Content Include="Content\images\advertiseSmall.png" />
+    <Content Include="Content\images\advertisingMap2.png" />
+    <Content Include="Content\images\apple-touch-icon-114x114-precomposed.png" />
+    <Content Include="Content\images\apple-touch-icon-57x57-precomposed-a.png" />
+    <Content Include="Content\images\apple-touch-icon-57x57-precomposed-c.png" />
+    <Content Include="Content\images\apple-touch-icon-57x57-precomposed-o.png" />
+    <Content Include="Content\images\apple-touch-icon-57x57-precomposed.png" />
+    <Content Include="Content\images\apple-touch-icon-72x72-precomposed.png" />
+    <Content Include="Content\images\btn_close.png" />
+    <Content Include="Content\images\check-blue.png" />
+    <Content Include="Content\images\checkmark.png" />
+    <Content Include="Content\images\cog-wheel-hover.png" />
+    <Content Include="Content\images\cog-wheel.png" />
+    <Content Include="Content\images\compete-card.png" />
+    <Content Include="Content\images\compete-home.png" />
+    <Content Include="Content\images\compete-ribbon-home.png" />
+    <Content Include="Content\images\compete.png" />
+    <Content Include="Content\images\competeSmall.png" />
+    <Content Include="Content\images\comprehensive-icon.png" />
+    <Content Include="Content\images\dashboardIcons.png" />
+    <Content Include="Content\images\dashboardIconsDemo.png" />
+    <Content Include="Content\images\dashboardIcons_disabled.png" />
+    <Content Include="Content\images\dashbuttons.png" />
+    <Content Include="Content\images\demo\background_navi.gif" />
+    <Content Include="Content\images\demo\background_verlauf.gif" />
+    <Content Include="Content\images\demo\bar_shadow.gif" />
+    <Content Include="Content\images\demo\big-business.gif" />
+    <Content Include="Content\images\demo\dashboardIconsDemo.png" />
+    <Content Include="Content\images\demo\db_germany.gif" />
+    <Content Include="Content\images\demo\db_italy.gif" />
+    <Content Include="Content\images\demo\db_USA.gif" />
+    <Content Include="Content\images\demo\germany-lending.png" />
+    <Content Include="Content\images\demo\germany-rev.png" />
+    <Content Include="Content\images\demo\italy-lending.png" />
+    <Content Include="Content\images\demo\italy-rev.png" />
+    <Content Include="Content\images\demo\login_feld.gif" />
+    <Content Include="Content\images\demo\logo.gif" />
+    <Content Include="Content\images\demo\suchfeld.gif" />
+    <Content Include="Content\images\demo\trennung_ccc.gif" />
+    <Content Include="Content\images\demo\trennung_navi.gif" />
+    <Content Include="Content\images\desktop.png" />
+    <Content Include="Content\images\destination-icon.png" />
+    <Content Include="Content\images\externalLink.gif" />
+    <Content Include="Content\images\fact-1.png" />
+    <Content Include="Content\images\fact-2.png" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\flyer.png" />
+    <Content Include="Content\images\gauge-card.png" />
+    <Content Include="Content\images\gauge-home.png" />
+    <Content Include="Content\images\gauge-ribbon-home.png" />
+    <Content Include="Content\images\gauge.png" />
+    <Content Include="Content\images\heatmaplegend.png" />
+    <Content Include="Content\images\heatPinShadow.png" />
+    <Content Include="Content\images\home-gradient.png" />
+    <Content Include="Content\images\icon-startUp.png" />
+    <Content Include="Content\images\icon-sweetSpots.png" />
+    <Content Include="Content\images\info.png" />
+    <Content Include="Content\images\innovation-icon.png" />
+    <Content Include="Content\images\land-grab-icon.png" />
+    <Content Include="Content\images\legend2.png" />
+    <Content Include="Content\images\Loading.gif" />
+    <Content Include="Content\images\loadingSmall.gif" />
+    <Content Include="Content\images\logosmall.gif" />
+    <Content Include="Content\images\magazine.png" />
+    <Content Include="Content\images\map-advertising.png" />
+    <Content Include="Content\images\mapBar.png" />
+    <Content Include="Content\images\marker.png" />
+    <Content Include="Content\images\markerBuyer.png" />
+    <Content Include="Content\images\markerCompetitor.png" />
+    <Content Include="Content\images\markerHighlightBuyer.png" />
+    <Content Include="Content\images\markerHighlightCompetitor.png" />
+    <Content Include="Content\images\markerHighlightSupplier.png" />
+    <Content Include="Content\images\markerShadow.png" />
+    <Content Include="Content\images\markerSupplier.png" />
+    <Content Include="Content\images\medals.png" />
+    <Content Include="Content\images\menuArrow.png" />
+    <Content Include="Content\images\menuTriangle.png" />
+    <Content Include="Content\images\mybusiness.png" />
+    <Content Include="Content\images\mybusinessSmall.png" />
+    <Content Include="Content\images\onoff.png" />
+    <Content Include="Content\images\pencil.png" />
+    <Content Include="Content\images\pinShadow.png" />
+    <Content Include="Content\images\PinTemplate.png" />
+    <Content Include="Content\images\SizeUp-FI-box.png" />
+    <Content Include="Content\images\SizeUp-FI-dollar.png" />
+    <Content Include="Content\images\SizeUp-FI-hands.png" />
+    <Content Include="Content\images\SizeUp-FI-light.png" />
+    <Content Include="Content\images\SizeUp-FI-people.png" />
+    <Content Include="Content\images\SizeUp-FI-shapes.png" />
+    <Content Include="Content\images\SizeUp.png" />
+    <Content Include="Content\images\SizeUpFI-magazine.png" />
+    <Content Include="Content\images\slider-dot-blue.png" />
+    <Content Include="Content\images\slider-dot-green.png" />
+    <Content Include="Content\images\slider-dot-red.png" />
+    <Content Include="Content\images\slider-nav-next.png" />
+    <Content Include="Content\images\slider-nav-prev-white.png" />
+    <Content Include="Content\images\slider-nav-prev.png" />
+    <Content Include="Content\images\slideRevenue.png" />
+    <Content Include="Content\images\sliders-screen-map.png" />
+    <Content Include="Content\images\sliders-zoom-map.png" />
+    <Content Include="Content\images\slideScorecard.png" />
+    <Content Include="Content\images\slideYear.png" />
+    <Content Include="Content\images\square-advertise.png" />
+    <Content Include="Content\images\square-layers.png" />
+    <Content Include="Content\images\square-pushpin.png" />
+    <Content Include="Content\images\up-down.png" />
+    <Content Include="Content\layout-responsive.css" />
+    <Content Include="Content\layout.css" />
+    <Content Include="Content\LBI\home-responsive.css" />
+    <Content Include="Content\LBI\images\button-close.png" />
+    <Content Include="Content\LBI\images\computerDemo.png" />
+    <Content Include="Content\LBI\images\favicon.ico" />
+    <Content Include="Content\LBI\images\icon-advertise.png" />
+    <Content Include="Content\LBI\images\icon-benchmark.png" />
+    <Content Include="Content\LBI\images\icon-checkmark.png" />
+    <Content Include="Content\LBI\images\icon-competition.png" />
+    <Content Include="Content\LBI\images\icon-demographic.png" />
+    <Content Include="Content\LBI\images\icon-love.png" />
+    <Content Include="Content\LBI\images\icon-retention.png" />
+    <Content Include="Content\LBI\images\SizeUpLBI-logo.png" />
+    <Content Include="Content\LBI\layout-responsive.css" />
+    <Content Include="Content\LBI\print.css" />
+    <Content Include="Content\LBI\reset.css" />
+    <Content Include="Content\LBI\Site.css" />
+    <Content Include="Content\prettify\prettify.css" />
+    <Content Include="Content\print.css" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\themes\highContrast\highContrast.css" />
+    <Content Include="Content\themes\highContrast\images\actionbutton.png" />
+    <Content Include="Content\themes\highContrast\images\dashbuttons.png" />
+    <Content Include="Content\themes\wide\wide.css" />
+    <Content Include="Content\thirdParty\add2home.css" />
+    <Content Include="Content\thirdParty\animations.css" />
+    <Content Include="Content\thirdParty\jquery-ui-1.8.21.custom.css" />
+    <Content Include="Content\thirdParty\toggle-switch.css" />
+    <Content Include="Content\views\accessibility\index.css" />
+    <Content Include="Content\views\advertising\index.css" />
+    <Content Include="Content\views\advertising\print.css" />
+    <Content Include="Content\views\bestPlaces\index.css" />
+    <Content Include="Content\views\bestPlaces\pickIndustry.css" />
+    <Content Include="Content\views\business\business.css" />
+    <Content Include="Content\views\business\find.css" />
+    <Content Include="Content\views\community\community.css" />
+    <Content Include="Content\views\community\communityWithIndustry.css" />
+    <Content Include="Content\views\community\find.css" />
+    <Content Include="Content\views\company\about.css" />
+    <Content Include="Content\views\company\team.css" />
+    <Content Include="Content\views\competition\index.css" />
+    <Content Include="Content\views\competition\print.css" />
+    <Content Include="Content\views\dashboard\index.css" />
+    <Content Include="Content\views\dashboard\print.css" />
+    <Content Include="Content\views\demo\index.css" />
+    <Content Include="Content\views\developers\documentation.css" />
+    <Content Include="Content\views\developers\index.css" />
+    <Content Include="Content\views\help\contact.css" />
+    <Content Include="Content\views\help\faq.css" />
+    <Content Include="Content\views\help\howitworks.css" />
+    <Content Include="Content\views\home-responsive.css" />
+    <Content Include="Content\views\home.css" />
+    <Content Include="Content\views\product\privacy.css" />
+    <Content Include="Content\views\product\terms.css" />
+    <Content Include="Content\views\user\optout.css" />
+    <Content Include="Content\views\user\profile.css" />
+    <Content Include="Content\views\user\register.css" />
+    <Content Include="Content\views\user\resetpassword.css" />
+    <Content Include="Content\views\user\signin.css" />
+    <Content Include="Content\widget\base.css" />
+    <Content Include="Content\widget\layout.css" />
+    <Content Include="Content\widget\print.css" />
+    <Content Include="Content\widget\Views\advertising\index.css" />
+    <Content Include="Content\widget\Views\authorize\index.css" />
+    <Content Include="Content\widget\Views\bestIndustries\index.css" />
+    <Content Include="Content\widget\Views\bestPlaces\index.css" />
+    <Content Include="Content\widget\Views\community\index.css" />
+    <Content Include="Content\widget\Views\community\print.css" />
+    <Content Include="Content\widget\Views\competition\index.css" />
+    <Content Include="Content\widget\Views\competition\print.css" />
+    <Content Include="Content\widget\Views\dashboard\index.css" />
+    <Content Include="Content\widget\Views\dashboard\print.css" />
+    <Content Include="Content\widget\Views\help\help.css" />
+    <Content Include="Content\widget\Views\select\select.css" />
+    <Content Include="Content\widget\Views\user\register.css" />
+    <Content Include="Content\widget\Views\user\signin.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\charts\BarChart.js" />
+    <Content Include="Scripts\charts\lineChart.js" />
+    <Content Include="Scripts\charts\tableChart.js" />
+    <Content Include="Scripts\controls\flashBox.js" />
+    <Content Include="Scripts\controls\gauge.js" />
+    <Content Include="Scripts\controls\industrySelector.js" />
+    <Content Include="Scripts\controls\pager.js" />
+    <Content Include="Scripts\controls\placeSelector.js" />
+    <Content Include="Scripts\controls\promptBox.js" />
+    <Content Include="Scripts\controls\question.js" />
+    <Content Include="Scripts\controls\rangeLabel.js" />
+    <Content Include="Scripts\controls\rangeSlider.js" />
+    <Content Include="Scripts\controls\selectList.js" />
+    <Content Include="Scripts\controls\share.js" />
+    <Content Include="Scripts\controls\toggleButton.js" />
+    <Content Include="Scripts\core\analytics.js" />
+    <Content Include="Scripts\core\namespace.js" />
+    <Content Include="Scripts\core\notifier.js" />
+    <Content Include="Scripts\core\profile.js" />
+    <Content Include="Scripts\core\templates.js" />
+    <Content Include="Scripts\editor\bootstrap-wysiwyg.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-apollo.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-basic.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-clj.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-css.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-dart.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-erlang.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-go.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-hs.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-lisp.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-llvm.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-lua.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-matlab.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-ml.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-mumps.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-n.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-pascal.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-proto.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-r.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-rd.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-scala.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-sql.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-tcl.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-tex.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-vb.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-vhdl.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-wiki.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-xq.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\lang-yaml.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\prettify.css" />
+    <Content Include="Scripts\editor\external\google-code-prettify\prettify.js" />
+    <Content Include="Scripts\editor\external\google-code-prettify\run_prettify.js" />
+    <Content Include="Scripts\editor\external\jquery.hotkeys.js" />
+    <Content Include="Scripts\industrySelector.js" />
+    <Content Include="Scripts\LBI\home-ui.js" />
+    <Content Include="Scripts\maps\businessMarker.js" />
+    <Content Include="Scripts\maps\circle.js" />
+    <Content Include="Scripts\maps\heatmapColors.js" />
+    <Content Include="Scripts\maps\heatMapOverlays.js" />
+    <Content Include="Scripts\maps\heatPin.js" />
+    <Content Include="Scripts\maps\imagePin.js" />
+    <Content Include="Scripts\maps\infoWindow.js" />
+    <Content Include="Scripts\maps\latLng.js" />
+    <Content Include="Scripts\maps\latLngBounds.js" />
+    <Content Include="Scripts\maps\legend.js" />
+    <Content Include="Scripts\maps\map.js" />
+    <Content Include="Scripts\maps\mapOptions.js" />
+    <Content Include="Scripts\maps\mapStyles.js" />
+    <Content Include="Scripts\maps\overlay.js" />
+    <Content Include="Scripts\placeSelector.js" />
+    <Content Include="Scripts\prettify\lang-apollo.js" />
+    <Content Include="Scripts\prettify\lang-basic.js" />
+    <Content Include="Scripts\prettify\lang-clj.js" />
+    <Content Include="Scripts\prettify\lang-css.js" />
+    <Content Include="Scripts\prettify\lang-dart.js" />
+    <Content Include="Scripts\prettify\lang-erlang.js" />
+    <Content Include="Scripts\prettify\lang-go.js" />
+    <Content Include="Scripts\prettify\lang-hs.js" />
+    <Content Include="Scripts\prettify\lang-lisp.js" />
+    <Content Include="Scripts\prettify\lang-llvm.js" />
+    <Content Include="Scripts\prettify\lang-lua.js" />
+    <Content Include="Scripts\prettify\lang-matlab.js" />
+    <Content Include="Scripts\prettify\lang-ml.js" />
+    <Content Include="Scripts\prettify\lang-mumps.js" />
+    <Content Include="Scripts\prettify\lang-n.js" />
+    <Content Include="Scripts\prettify\lang-pascal.js" />
+    <Content Include="Scripts\prettify\lang-proto.js" />
+    <Content Include="Scripts\prettify\lang-r.js" />
+    <Content Include="Scripts\prettify\lang-rd.js" />
+    <Content Include="Scripts\prettify\lang-scala.js" />
+    <Content Include="Scripts\prettify\lang-sql.js" />
+    <Content Include="Scripts\prettify\lang-tcl.js" />
+    <Content Include="Scripts\prettify\lang-tex.js" />
+    <Content Include="Scripts\prettify\lang-vb.js" />
+    <Content Include="Scripts\prettify\lang-vhdl.js" />
+    <Content Include="Scripts\prettify\lang-wiki.js" />
+    <Content Include="Scripts\prettify\lang-xq.js" />
+    <Content Include="Scripts\prettify\lang-yaml.js" />
+    <Content Include="Scripts\prettify\prettify.js" />
+    <Content Include="Scripts\prettify\run_prettify.js" />
+    <Content Include="Scripts\thirdParty\add2home.js" />
+    <Content Include="Scripts\thirdParty\bootstrap-hover-dropdown.min.js" />
+    <Content Include="Scripts\thirdParty\jquery.ba-bbq.min.js" />
+    <Content Include="Scripts\thirdParty\mustache.js" />
+    <Content Include="Scripts\thirdParty\raphael-min.js" />
+    <Content Include="Scripts\thirdParty\tinycolor-min.js" />
+    <Content Include="Scripts\tracking\outboundLinks.js" />
+    <Content Include="Scripts\util\bestPlaces\bestPlaces.js" />
+    <Content Include="Scripts\util\bestPlaces\pickIndustry.js" />
+    <Content Include="Scripts\util\numbers\format.js" />
+    <Content Include="Scripts\views\advertising\advertising.js" />
+    <Content Include="Scripts\views\bestPlaces\bestPlaces.js" />
+    <Content Include="Scripts\views\bestPlaces\pickIndustry.js" />
+    <Content Include="Scripts\views\business\business.js" />
+    <Content Include="Scripts\views\community\cityCommunity.js" />
+    <Content Include="Scripts\views\community\communityWithIndustry.js" />
+    <Content Include="Scripts\views\community\countyCommunity.js" />
+    <Content Include="Scripts\views\community\metroCommunity.js" />
+    <Content Include="Scripts\views\community\stateCommunity.js" />
+    <Content Include="Scripts\views\competition\competition.js" />
+    <Content Include="Scripts\views\dashboard\averageSalary.js" />
+    <Content Include="Scripts\views\dashboard\costEffectiveness.js" />
+    <Content Include="Scripts\views\dashboard\dashboard.js" />
+    <Content Include="Scripts\views\dashboard\employees.js" />
+    <Content Include="Scripts\views\dashboard\healthcareCost.js" />
+    <Content Include="Scripts\views\dashboard\reportContainer.js" />
+    <Content Include="Scripts\views\dashboard\revenue.js" />
+    <Content Include="Scripts\views\dashboard\revenuePerCapita.js" />
+    <Content Include="Scripts\views\dashboard\turnover.js" />
+    <Content Include="Scripts\views\dashboard\workersComp.js" />
+    <Content Include="Scripts\views\dashboard\yearStarted.js" />
+    <Content Include="Scripts\views\home-demo.js" />
+    <Content Include="Scripts\views\home-ui.js" />
+    <Content Include="Scripts\views\home.js" />
+    <Content Include="Scripts\views\shared\signin.js" />
+    <Content Include="Scripts\views\user\profile.js" />
+    <Content Include="Scripts\views\user\register.js" />
+    <Content Include="Scripts\views\user\resetpassword.js" />
+    <Content Include="Scripts\views\user\signin.js" />
+    <Content Include="Scripts\widget\core.js" />
+    <Content Include="Scripts\widget\messager.js" />
+    <Content Include="Scripts\widget\views\bestIndustries\bestIndustries.js" />
+    <Content Include="Scripts\widget\views\community\communityWithIndustry.js" />
+    <Content Include="Scripts\widget\views\select\select.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Models\" />
+    <Folder Include="Areas\Api\Views\Shared\" />
+    <Folder Include="Areas\Pins\Models\" />
+    <Folder Include="Areas\Pins\Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Copy of Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\admin\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\admin\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\admin\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\admin\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\admin\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\admin\font-awesome\less\core.less" />
+    <Content Include="Content\admin\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\admin\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\admin\font-awesome\less\icons.less" />
+    <Content Include="Content\admin\font-awesome\less\larger.less" />
+    <Content Include="Content\admin\font-awesome\less\list.less" />
+    <Content Include="Content\admin\font-awesome\less\mixins.less" />
+    <Content Include="Content\admin\font-awesome\less\path.less" />
+    <Content Include="Content\admin\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\admin\font-awesome\less\spinning.less" />
+    <Content Include="Content\admin\font-awesome\less\stacked.less" />
+    <Content Include="Content\admin\font-awesome\less\variables.less" />
+    <Content Include="Content\admin\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_core.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_list.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_path.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_spinning.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\admin\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\admin\less\mixins.less" />
+    <Content Include="Content\admin\less\sb-admin-2.less" />
+    <Content Include="Content\admin\less\variables.less" />
+    <Content Include="Content\files\Large Enterprise Portals to Serve SMB Customers.pdf" />
+    <Content Include="Content\files\SizeUp-FI.pdf" />
+    <Content Include="Content\LBI\SizeUpLBI-EmpowerLocalBusinesses.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dashboard\AverageSalary.cshtml" />
+    <Content Include="Views\Dashboard\CostEffectiveness.cshtml" />
+    <Content Include="Views\Dashboard\Employees.cshtml" />
+    <Content Include="Views\Dashboard\HealthcareCost.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\Revenue.cshtml" />
+    <Content Include="Views\Dashboard\RevenuePerCapita.cshtml" />
+    <Content Include="Views\Dashboard\Turnover.cshtml" />
+    <Content Include="Views\Dashboard\WorkersComp.cshtml" />
+    <Content Include="Views\Dashboard\YearStarted.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{07aef3e9-1ddc-4e19-9aaf-332e448bd73c}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{51aff237-cde4-4e6f-8799-4af7697c16f2}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Api\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Copy %282%29 of Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Competition\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Pins\Views\Web.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:30548/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

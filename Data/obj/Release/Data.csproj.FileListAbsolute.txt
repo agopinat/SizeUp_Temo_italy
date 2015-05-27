@@ -1,0 +1,7 @@
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\bin\Data.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\bin\Data.pdb
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\bin\EntityFramework.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\bin\EntityFramework.xml
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\obj\Release\Data.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\obj\Release\Data.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\obj\Release\Data.pdb
