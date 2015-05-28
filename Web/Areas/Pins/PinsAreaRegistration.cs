@@ -20,35 +20,35 @@ namespace Web.Areas.Pins
                "BusinessMarker",
                "Pins/Business/Marker/{section}/{index}",
                new { controller = "Business", action = "Marker" },
-               new string[] { "SizeUp.Web.Areas.Pins.Controllers" }
+               new string[] { "Web.Areas.Pins.Controllers" }
            );
 
             context.MapRoute(
                 "BusinessMarkerHighlight",
                 "Pins/Business/Marker/{section}/{index}/Highlight",
                 new { controller = "Business", action = "MarkerHighlight" },
-                new string[] { "SizeUp.Web.Areas.Pins.Controllers" }
+                new string[] { "Web.Areas.Pins.Controllers" }
             );
 
             context.MapRoute(
                "BusinessMarkerShadow",
                "Pins/Business/MarkerShadow",
                new { controller = "Business", action = "MarkerShadow" },
-               new string[] { "SizeUp.Web.Areas.Pins.Controllers" }
+               new string[] { "Web.Areas.Pins.Controllers" }
            );
 
             context.MapRoute(
                 "BusinessPin",
                 "Pins/Business/Pin/{color}",
                 new { controller = "Business", action = "Pin" },
-                new string[] { "SizeUp.Web.Areas.Pins.Controllers" }
+                new string[] { "Web.Areas.Pins.Controllers" }
             );
 
             context.MapRoute(
                "BusinessPinShadow",
                "Pins/Business/PinShadow",
                new { controller = "Business", action = "PinShadow" },
-               new string[] { "SizeUp.Web.Areas.Pins.Controllers" }
+               new string[] { "Web.Areas.Pins.Controllers" }
            );
 
 

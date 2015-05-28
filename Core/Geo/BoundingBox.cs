@@ -41,6 +41,14 @@ namespace Core.Geo
 
         public DbGeography GetDbGeography()
         {
+
+
+            // get the sqlgeography version
+            // run make valid
+            // convert back to dbgeography
+            //SqlGeography geog1 = GetSqlGeography().MakeValid();
+            //return DbGeography.FromText(geog1.ToString(), 4326);
+
             return DbGeography.FromText(string.Format("POLYGON (({0} {2}, {1} {2}, {1} {3}, {0} {3}, {0} {2}))", BoundLng(SouthWest.Lng), BoundLng(NorthEast.Lng), BoundLat(SouthWest.Lat), BoundLat(NorthEast.Lat)));
         }
     }

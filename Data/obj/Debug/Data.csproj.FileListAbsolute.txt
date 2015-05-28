@@ -4,3 +4,4 @@ C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\bin\Entit
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\bin\EntityFramework.xml
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\obj\Debug\Data.dll
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\obj\Debug\Data.pdb
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

@@ -16,7 +16,8 @@
             place: {},
             params: {},
             opacity:0.9,
-            smallestGranularity: sizeup.api.granularity.ZIP_CODE,
+            //smallestGranularity: sizeup.api.granularity.ZIP_CODE,
+            smallestGranularity: sizeup.api.granularity.CITY,
             attributeLabel: 'Unknown',
             format: function (val) { return val; },
             legendData: function () { },
@@ -169,6 +170,7 @@
 
         var getOverlays = function () {
             var overlays = [];
+            me.opts.smallestGranularity = sizeup.api.granularity.COUNTY;
             if (me.opts.smallestGranularity == sizeup.api.granularity.ZIP_CODE) {
                 overlays = getZipCodeOverlays();
             }
