@@ -991,9 +991,12 @@
             }
 
             var html = '';
+            var businessNameMaxLength = 40;
             for (var x = 0; x < data.Items.length; x++) {
+                var businessItem = data.Items[x];
                 var template = templates.get('businessItem');
-                html = html + templates.bind(template, { index: me.data.activeIndex, number: x + 1, business: data.Items[x] });
+                businessItem.Name = businessItem.Name.length > businessNameMaxLength ? businessItem.Name.substr(0, businessNameMaxLength) + '...' : businessItem.Name;
+                html = html + templates.bind(template, { index: me.data.activeIndex, number: x + 1, business: businessItem });
             };
             me.content.businessList.html(html);
         };
