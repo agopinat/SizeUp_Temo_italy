@@ -84,13 +84,24 @@
         @Html.Partial("Revenue")
         </div>
 
-      @*  <div id="yearStarted" class="report">
+       <div id="yearStarted" class="report">
         @Html.Partial("YearStarted")
         </div>
-
+        
         <div id="salary" class="report">
         @Html.Partial("AverageSalary")
-        </div>*@
+        </div>
+
+
+        <div id="employees" class="report">
+        @Html.Partial("Employees")
+        </div>
+
+        <div id="costEffectiveness" class="report">
+        @Html.Partial("CostEffectiveness")        
+        </div>
+
+
  @*
         @if (HttpContext.Current.User.Identity.IsAuthenticated)
         {
