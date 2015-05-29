@@ -207,17 +207,17 @@
 
             sizeup.api.data.getYearStarted({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.City.Id, startYear: me.opts.startYear, endYear: me.opts.endYear}, chartNotifier.getNotifier(function (data) { chartData.City = data; }));
             sizeup.api.data.getYearStarted({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.County.Id, startYear: me.opts.startYear, endYear: me.opts.endYear }, chartNotifier.getNotifier(function (data) { chartData.County = data; }));
-            if (me.opts.report.CurrentPlace.Metro.Id) {
-                sizeup.api.data.getYearStarted({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Metro.Id, startYear: me.opts.startYear, endYear: me.opts.endYear }, chartNotifier.getNotifier(function (data) { chartData.Metro = data; }));
-            }
+            //if (me.opts.report.CurrentPlace.Metro.Id) {
+            //    sizeup.api.data.getYearStarted({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Metro.Id, startYear: me.opts.startYear, endYear: me.opts.endYear }, chartNotifier.getNotifier(function (data) { chartData.Metro = data; }));
+            //}
             sizeup.api.data.getYearStarted({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.State.Id, startYear: me.opts.startYear, endYear: me.opts.endYear }, chartNotifier.getNotifier(function (data) { chartData.State = data; }));
             sizeup.api.data.getYearStarted({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Nation.Id, startYear: me.opts.startYear, endYear: me.opts.endYear }, chartNotifier.getNotifier(function (data) { chartData.Nation = data; }));
 
             sizeup.api.data.getYearStartedPercentile({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.City.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.City = data; }));
             sizeup.api.data.getYearStartedPercentile({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.County.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.County = data; }));
-            if (me.opts.report.CurrentPlace.Metro.Id) {
-                sizeup.api.data.getYearStartedPercentile({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Metro.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.Metro = data; }));
-            }
+            //if (me.opts.report.CurrentPlace.Metro.Id) {
+            //    sizeup.api.data.getYearStartedPercentile({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Metro.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.Metro = data; }));
+            //}
             sizeup.api.data.getYearStartedPercentile({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.State.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.State = data; }));
             sizeup.api.data.getYearStartedPercentile({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Nation.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.Nation = data; }));
         };
@@ -233,9 +233,9 @@
             if (data.County) {
                 me.data.percentiles.County = data.County.Percentile < 1 ? 'less than 99%' : data.County.Percentile > 99 ? 'longer than 99%' : 'as long as or longer than ' + sizeup.util.numbers.format.percentage(data.County.Percentile);
             }
-            if (data.Metro) {
-                me.data.percentiles.Metro = data.Metro.Percentile < 1 ? 'less than 99%' : data.Metro.Percentile > 99 ? 'longer than 99%' : 'as long as or longer than ' + sizeup.util.numbers.format.percentage(data.Metro.Percentile);
-            }
+            //if (data.Metro) {
+            //    me.data.percentiles.Metro = data.Metro.Percentile < 1 ? 'less than 99%' : data.Metro.Percentile > 99 ? 'longer than 99%' : 'as long as or longer than ' + sizeup.util.numbers.format.percentage(data.Metro.Percentile);
+            //}
             if (data.State) {
                 me.data.percentiles.State = data.State.Percentile < 1 ? 'less than 99%' : data.State.Percentile > 99 ? 'longer than 99%' : 'as long as or longer than ' + sizeup.util.numbers.format.percentage(data.State.Percentile);
             }
@@ -278,7 +278,7 @@
             me.data.counts = {
                 City: getCounts(data.City, me.data.enteredValue),
                 County: getCounts(data.County, me.data.enteredValue),
-                Metro: getCounts(data.Metro, me.data.enteredValue),
+                //Metro: getCounts(data.Metro, me.data.enteredValue),
                 State: getCounts(data.State, me.data.enteredValue),
                 Nation: getCounts(data.Nation, me.data.enteredValue),
             };
@@ -301,15 +301,15 @@
                     plots: data['County']
                 };
             }
-            if (data['Metro']) {
-                me.data.noData = false;
-                me.data.chart.series['Metro'] =
-                {
+            //if (data['Metro']) {
+            //    me.data.noData = false;
+            //    me.data.chart.series['Metro'] =
+            //    {
 
-                    color: '#6AC',
-                    plots: data['Metro']
-                };
-            }
+            //        color: '#6AC',
+            //        plots: data['Metro']
+            //    };
+            //}
             if (data['State']) {
                 me.data.noData = false;
                 me.data.chart.series['State'] =

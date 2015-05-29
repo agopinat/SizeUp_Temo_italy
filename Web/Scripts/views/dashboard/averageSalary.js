@@ -256,16 +256,16 @@
             me.data.enteredValue = me.reportContainer.getValue();
             jQuery.bbq.pushState({ salary: me.data.enteredValue });
             sizeup.api.data.getAverageSalary({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.County.Id }, chartNotifier.getNotifier(function (data) { chartData.County = data; }));
-            if (me.opts.report.CurrentPlace.Metro.Id) {
-                sizeup.api.data.getAverageSalary({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Metro.Id }, chartNotifier.getNotifier(function (data) { chartData.Metro = data; }));
-            }
+            //if (me.opts.report.CurrentPlace.Metro.Id) {
+            //    sizeup.api.data.getAverageSalary({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Metro.Id }, chartNotifier.getNotifier(function (data) { chartData.Metro = data; }));
+            //}
             sizeup.api.data.getAverageSalary({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.State.Id }, chartNotifier.getNotifier(function (data) { chartData.State = data; }));
             sizeup.api.data.getAverageSalary({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Nation.Id }, chartNotifier.getNotifier(function (data) { chartData.Nation = data; }));
 
             sizeup.api.data.getAverageSalaryPercentage({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.County.Id, value: me.data.enteredValue}, percentileNotifier.getNotifier(function (data) { percentileData.County = data; }));
-            if (me.opts.report.CurrentPlace.Metro.Id) {
-                sizeup.api.data.getAverageSalaryPercentage({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Metro.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.Metro = data; }));
-            }
+            //if (me.opts.report.CurrentPlace.Metro.Id) {
+            //    sizeup.api.data.getAverageSalaryPercentage({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Metro.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.Metro = data; }));
+            //}
             sizeup.api.data.getAverageSalaryPercentage({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.State.Id, value: me.data.enteredValue}, percentileNotifier.getNotifier(function (data) { percentileData.State = data; }));
             sizeup.api.data.getAverageSalaryPercentage({ industryId: me.opts.report.CurrentIndustry.Id, geographicLocationId: me.opts.report.CurrentPlace.Nation.Id, value: me.data.enteredValue }, percentileNotifier.getNotifier(function (data) { percentileData.Nation = data; }));
         };
@@ -279,11 +279,11 @@
                  var percentage = sizeup.util.numbers.format.percentage(Math.abs(data.County.Percentage));
                  me.data.percentages.County = data.County.Percentage < 0 ? percentage + ' below average' : data.County.Percentage == 0 ? ' average' : percentage + ' Above average';
             }
-             if (data.Metro != null) {
-                var val = 50 + (data.Metro.Percentage / 2);
-                var percentage = sizeup.util.numbers.format.percentage(Math.abs(data.Metro.Percentage));
-                me.data.percentages.Metro = data.Metro.Percentage < 0 ? percentage + ' below average' : data.Metro.Percentage == 0 ? ' average' : percentage + ' Above average';
-            }
+            // if (data.Metro != null) {
+            //    var val = 50 + (data.Metro.Percentage / 2);
+            //    var percentage = sizeup.util.numbers.format.percentage(Math.abs(data.Metro.Percentage));
+            //    me.data.percentages.Metro = data.Metro.Percentage < 0 ? percentage + ' below average' : data.Metro.Percentage == 0 ? ' average' : percentage + ' Above average';
+            //}
              if (data.State != null) {
                 var val = 50 + (data.State.Percentage / 2);
                 var percentage = sizeup.util.numbers.format.percentage(Math.abs(data.State.Percentage));

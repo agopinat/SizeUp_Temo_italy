@@ -119,6 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Data\Controllers\AdvertisingController.cs" />
     <Compile Include="Areas\Data\Controllers\AverageEmployeesController.cs" />
     <Compile Include="Areas\Data\Controllers\AverageRevenueController.cs" />
     <Compile Include="Areas\Data\Controllers\AverageSalaryController.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Areas\Data\Controllers\IndustryController.cs" />
     <Compile Include="Areas\Data\Controllers\PlaceController.cs" />
     <Compile Include="Areas\Data\Controllers\TotalEmployeesController.cs" />
+    <Compile Include="Areas\Data\Controllers\YearStartedController.cs" />
     <Compile Include="Areas\Data\DataAreaRegistration.cs" />
     <Compile Include="Areas\Tiles\Controllers\AverageRevenueController.cs" />
     <Compile Include="Areas\Tiles\Controllers\BaseController.cs" />

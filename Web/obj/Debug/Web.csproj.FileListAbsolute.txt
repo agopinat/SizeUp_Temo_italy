@@ -25,3 +25,11 @@ C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\Core.p
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\Data.pdb
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\Svg.dll
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\Svg.pdb
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\System.Data.Entity.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\System.Net.Http.Formatting.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\System.Web.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\System.Web.Http.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\System.Web.Http.WebHost.dll
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\System.Net.Http.Formatting.xml
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\System.Web.Http.xml
+C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Web\bin\System.Web.Http.WebHost.xml

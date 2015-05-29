@@ -1,19 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DataStoreContainer" CdmEntityContainer="SizeUpContext">
-    <EntitySetMapping Name="Industries">
-      <EntityTypeMapping TypeName="Data.Industry">
-        <MappingFragment StoreEntitySet="Industry">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+    <EntitySetMapping Name="Attributes">
+      <EntityTypeMapping TypeName="Data.Attribute">
+        <MappingFragment StoreEntitySet="Attribute">
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="CervedAteco" ColumnName="CervedAteco" />
-          <ScalarProperty Name="OfficialAteco" ColumnName="OfficialAteco" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bands">
+      <EntityTypeMapping TypeName="Data.Band">
+        <MappingFragment StoreEntitySet="Band">
+          <ScalarProperty Name="Max" ColumnName="Max" />
+          <ScalarProperty Name="Min" ColumnName="Min" />
+          <ScalarProperty Name="AttributeId" ColumnName="AttributeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="Data.Branch">
+        <MappingFragment StoreEntitySet="Branch">
+          <ScalarProperty Name="EngDescription" ColumnName="EngDescription" />
+          <ScalarProperty Name="ItaDescription" ColumnName="ItaDescription" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Businesses">
+      <EntityTypeMapping TypeName="Data.Business">
+        <MappingFragment StoreEntitySet="Business">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+          <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="YearAppeared" ColumnName="YearAppeared" />
+          <ScalarProperty Name="CervedId" ColumnName="CervedId" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessDatas">
+      <EntityTypeMapping TypeName="Data.BusinessData">
+        <MappingFragment StoreEntitySet="BusinessData">
+          <ScalarProperty Name="TotalBranchesNumber" ColumnName="TotalBranchesNumber" />
+          <ScalarProperty Name="CostOfPersonnel" ColumnName="CostOfPersonnel" />
+          <ScalarProperty Name="NetWorth" ColumnName="NetWorth" />
+          <ScalarProperty Name="DebtEquityRatio" ColumnName="DebtEquityRatio" />
+          <ScalarProperty Name="NetProfit" ColumnName="NetProfit" />
+          <ScalarProperty Name="OperatingCost" ColumnName="OperatingCost" />
+          <ScalarProperty Name="YearStarted" ColumnName="YearStarted" />
+          <ScalarProperty Name="Employees" ColumnName="Employees" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="BranchTypeCode" ColumnName="BranchTypeCode" />
+          <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+          <ScalarProperty Name="GeographicLocationId" ColumnName="GeographicLocationId" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="Quarter" ColumnName="Quarter" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Data.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+          <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Counties">
+      <EntityTypeMapping TypeName="Data.County">
+        <MappingFragment StoreEntitySet="County">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GeographicLocations">
       <EntityTypeMapping TypeName="Data.GeographicLocation">
         <MappingFragment StoreEntitySet="GeographicLocation">
+          <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CapId" ColumnName="CapId" />
+          <ScalarProperty Name="Frazione" ColumnName="Frazione" />
           <ScalarProperty Name="PRO_COM" ColumnName="PRO_COM" />
           <ScalarProperty Name="COD_REG" ColumnName="COD_REG" />
           <ScalarProperty Name="COD_PRO" ColumnName="COD_PRO" />
@@ -24,5 +112,177 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Geographies">
+      <EntityTypeMapping TypeName="Data.Geography">
+        <MappingFragment StoreEntitySet="Geography">
+          <ScalarProperty Name="CapId" ColumnName="CapId" />
+          <ScalarProperty Name="PRO_COM" ColumnName="PRO_COM" />
+          <ScalarProperty Name="COD_PRO" ColumnName="COD_PRO" />
+          <ScalarProperty Name="COD_REG" ColumnName="COD_REG" />
+          <ScalarProperty Name="CenterLong" ColumnName="CenterLong" />
+          <ScalarProperty Name="CenterLat" ColumnName="CenterLat" />
+          <ScalarProperty Name="West" ColumnName="West" />
+          <ScalarProperty Name="East" ColumnName="East" />
+          <ScalarProperty Name="South" ColumnName="South" />
+          <ScalarProperty Name="North" ColumnName="North" />
+          <ScalarProperty Name="GeographicLocationId" ColumnName="GeographicLocationId" />
+          <ScalarProperty Name="Polygon" ColumnName="Polygon" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Granularities">
+      <EntityTypeMapping TypeName="Data.Granularity">
+        <MappingFragment StoreEntitySet="Granularity">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Industries">
+      <EntityTypeMapping TypeName="Data.Industry">
+        <MappingFragment StoreEntitySet="Industry">
+          <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OfficialAteco" ColumnName="OfficialAteco" />
+          <ScalarProperty Name="CervedAteco" ColumnName="CervedAteco" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IndustryDatas">
+      <EntityTypeMapping TypeName="Data.IndustryData">
+        <MappingFragment StoreEntitySet="IndustryData">
+          <ScalarProperty Name="CostEffectiveness" ColumnName="CostEffectiveness" />
+          <ScalarProperty Name="AverageAnnualSalary" ColumnName="AverageAnnualSalary" />
+          <ScalarProperty Name="BusinessCount" ColumnName="BusinessCount" />
+          <ScalarProperty Name="AverageNetWorth" ColumnName="AverageNetWorth" />
+          <ScalarProperty Name="TotalNetWorth" ColumnName="TotalNetWorth" />
+          <ScalarProperty Name="AverageDebtEquityRatio" ColumnName="AverageDebtEquityRatio" />
+          <ScalarProperty Name="TotalDebtEquityRatio" ColumnName="TotalDebtEquityRatio" />
+          <ScalarProperty Name="AverageNetProfit" ColumnName="AverageNetProfit" />
+          <ScalarProperty Name="TotalNetProfit" ColumnName="TotalNetProfit" />
+          <ScalarProperty Name="AverageOperatingCost" ColumnName="AverageOperatingCost" />
+          <ScalarProperty Name="TotalOperatingCost" ColumnName="TotalOperatingCost" />
+          <ScalarProperty Name="MedianRevenue" ColumnName="MedianRevenue" />
+          <ScalarProperty Name="AverageRevenue" ColumnName="AverageRevenue" />
+          <ScalarProperty Name="TotalRevenue" ColumnName="TotalRevenue" />
+          <ScalarProperty Name="MedianEmployees" ColumnName="MedianEmployees" />
+          <ScalarProperty Name="TotalEmployees" ColumnName="TotalEmployees" />
+          <ScalarProperty Name="AverageEmployees" ColumnName="AverageEmployees" />
+          <ScalarProperty Name="GeographicLocationId" ColumnName="GeographicLocationId" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="Quarter" ColumnName="Quarter" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IndustryKeywords">
+      <EntityTypeMapping TypeName="Data.IndustryKeyword">
+        <MappingFragment StoreEntitySet="IndustryKeyword">
+          <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nations">
+      <EntityTypeMapping TypeName="Data.Nation">
+        <MappingFragment StoreEntitySet="Nation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SitemapBusinesses">
+      <EntityTypeMapping TypeName="Data.SitemapBusiness">
+        <MappingFragment StoreEntitySet="SitemapBusiness">
+          <ScalarProperty Name="Business" ColumnName="Business" />
+          <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="Data.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="NationId" ColumnName="NationId" />
+          <ScalarProperty Name="SEOKey" ColumnName="SEOKey" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZipCodes">
+      <EntityTypeMapping TypeName="Data.ZipCode">
+        <MappingFragment StoreEntitySet="ZipCode">
+          <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="GeographicLocationGeographicLocation" TypeName="Data.GeographicLocationGeographicLocation" StoreEntitySet="GeographicLocationGeographicLocation">
+      <EndProperty Name="GeographicLocations">
+        <ScalarProperty Name="Id" ColumnName="IntersectedGeographicLocationId" />
+      </EndProperty>
+      <EndProperty Name="IntersectedGeographicLocations">
+        <ScalarProperty Name="Id" ColumnName="GeographicLocationId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="IndustryDataBand" TypeName="Data.IndustryDataBand" StoreEntitySet="IndustryDataBand">
+      <EndProperty Name="IndustryData">
+        <ScalarProperty Name="Id" ColumnName="IndustryDataId" />
+      </EndProperty>
+      <EndProperty Name="Band">
+        <ScalarProperty Name="Id" ColumnName="BandId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="Data.Place">
+        <MappingFragment StoreEntitySet="Place">
+          <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BusinessCity" TypeName="Data.BusinessCity" StoreEntitySet="BusinessCity">
+      <EndProperty Name="City">
+        <ScalarProperty Name="Id" ColumnName="CityId" />
+      </EndProperty>
+      <EndProperty Name="Business">
+        <ScalarProperty Name="Id" ColumnName="BusinessId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ZipCodeCounty" TypeName="Data.ZipCodeCounty" StoreEntitySet="ZipCodeCounty">
+      <EndProperty Name="ZipCode">
+        <ScalarProperty Name="Id" ColumnName="ZipCodeId" />
+      </EndProperty>
+      <EndProperty Name="County">
+        <ScalarProperty Name="Id" ColumnName="CountyId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ZipCodePlace" TypeName="Data.ZipCodePlace" StoreEntitySet="ZipCodePlace">
+      <EndProperty Name="ZipCode">
+        <ScalarProperty Name="Id" ColumnName="ZipCodeId" />
+      </EndProperty>
+      <EndProperty Name="Place">
+        <ScalarProperty Name="Id" ColumnName="PlaceId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

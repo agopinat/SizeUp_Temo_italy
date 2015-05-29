@@ -31,7 +31,7 @@ namespace Core.DataLayer
         {
             var p = new Projections.Industry.Default();
             return Get(context)
-                //.Where(i => i.SEOKey == SEOKey)
+                .Where(i => i.SEOKey == SEOKey)
                 .Select(p.Expression)
                 .FirstOrDefault();
         }

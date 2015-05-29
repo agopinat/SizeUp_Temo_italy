@@ -268,5 +268,21 @@
         <ScalarProperty Name="Id" ColumnName="BusinessId" />
       </EndProperty>
     </AssociationSetMapping>
+    <AssociationSetMapping Name="ZipCodeCounty" TypeName="Data.ZipCodeCounty" StoreEntitySet="ZipCodeCounty">
+      <EndProperty Name="ZipCode">
+        <ScalarProperty Name="Id" ColumnName="ZipCodeId" />
+      </EndProperty>
+      <EndProperty Name="County">
+        <ScalarProperty Name="Id" ColumnName="CountyId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ZipCodePlace" TypeName="Data.ZipCodePlace" StoreEntitySet="ZipCodePlace">
+      <EndProperty Name="ZipCode">
+        <ScalarProperty Name="Id" ColumnName="ZipCodeId" />
+      </EndProperty>
+      <EndProperty Name="Place">
+        <ScalarProperty Name="Id" ColumnName="PlaceId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -22,6 +22,8 @@
     <EntitySet Name="SitemapBusiness" EntityType="Data.Store.SitemapBusiness" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="State" EntityType="Data.Store.State" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ZipCode" EntityType="Data.Store.ZipCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZipCodeCounty" EntityType="Data.Store.ZipCodeCounty" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZipCodePlace" EntityType="Data.Store.ZipCodePlace" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_Band_Attribute" Association="Data.Store.FK_Band_Attribute">
       <End Role="Attribute" EntitySet="Attribute" />
       <End Role="Band" EntitySet="Band" />
@@ -125,6 +127,26 @@
     <AssociationSet Name="FK_State_GeographicLocation" Association="Data.Store.FK_State_GeographicLocation">
       <End Role="GeographicLocation" EntitySet="GeographicLocation" />
       <End Role="State" EntitySet="State" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZipCode_GeographicLocation" Association="Data.Store.FK_ZipCode_GeographicLocation">
+      <End Role="GeographicLocation" EntitySet="GeographicLocation" />
+      <End Role="ZipCode" EntitySet="ZipCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZipCodeCounty_County" Association="Data.Store.FK_ZipCodeCounty_County">
+      <End Role="County" EntitySet="County" />
+      <End Role="ZipCodeCounty" EntitySet="ZipCodeCounty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZipCodeCounty_ZipCode" Association="Data.Store.FK_ZipCodeCounty_ZipCode">
+      <End Role="ZipCode" EntitySet="ZipCode" />
+      <End Role="ZipCodeCounty" EntitySet="ZipCodeCounty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZipCodePlace_Place" Association="Data.Store.FK_ZipCodePlace_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="ZipCodePlace" EntitySet="ZipCodePlace" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZipCodePlace_ZipCode" Association="Data.Store.FK_ZipCodePlace_ZipCode">
+      <End Role="ZipCode" EntitySet="ZipCode" />
+      <End Role="ZipCodePlace" EntitySet="ZipCodePlace" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Attribute">
@@ -375,6 +397,22 @@
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
     <Property Name="CityId" Type="bigint" />
     <Property Name="CountyId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ZipCodeCounty">
+    <Key>
+      <PropertyRef Name="ZipCodeId" />
+      <PropertyRef Name="CountyId" />
+    </Key>
+    <Property Name="ZipCodeId" Type="bigint" Nullable="false" />
+    <Property Name="CountyId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZipCodePlace">
+    <Key>
+      <PropertyRef Name="PlaceId" />
+      <PropertyRef Name="ZipCodeId" />
+    </Key>
+    <Property Name="PlaceId" Type="bigint" Nullable="false" />
+    <Property Name="ZipCodeId" Type="bigint" Nullable="false" />
   </EntityType>
   <Association Name="FK_Band_Attribute">
     <End Role="Attribute" Type="Data.Store.Attribute" Multiplicity="1" />
@@ -685,6 +723,66 @@
       </Principal>
       <Dependent Role="State">
         <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZipCode_GeographicLocation">
+    <End Role="GeographicLocation" Type="Data.Store.GeographicLocation" Multiplicity="1" />
+    <End Role="ZipCode" Type="Data.Store.ZipCode" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GeographicLocation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZipCode">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZipCodeCounty_County">
+    <End Role="County" Type="Data.Store.County" Multiplicity="1" />
+    <End Role="ZipCodeCounty" Type="Data.Store.ZipCodeCounty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="County">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZipCodeCounty">
+        <PropertyRef Name="CountyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZipCodeCounty_ZipCode">
+    <End Role="ZipCode" Type="Data.Store.ZipCode" Multiplicity="1" />
+    <End Role="ZipCodeCounty" Type="Data.Store.ZipCodeCounty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZipCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZipCodeCounty">
+        <PropertyRef Name="ZipCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZipCodePlace_Place">
+    <End Role="Place" Type="Data.Store.Place" Multiplicity="1" />
+    <End Role="ZipCodePlace" Type="Data.Store.ZipCodePlace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZipCodePlace">
+        <PropertyRef Name="PlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZipCodePlace_ZipCode">
+    <End Role="ZipCode" Type="Data.Store.ZipCode" Multiplicity="1" />
+    <End Role="ZipCodePlace" Type="Data.Store.ZipCodePlace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZipCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZipCodePlace">
+        <PropertyRef Name="ZipCodeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -42,6 +42,9 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("Data", "FK_Place_County", "County", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Data.County), "Place", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Data.Place), true)]
 [assembly: EdmRelationshipAttribute("Data", "FK_Place_GeographicLocation", "GeographicLocation", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Data.GeographicLocation), "Place", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Data.Place), true)]
 [assembly: EdmRelationshipAttribute("Data", "BusinessCity", "Business", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Data.Business), "City", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Data.City))]
+[assembly: EdmRelationshipAttribute("Data", "FK_ZipCode_GeographicLocation", "GeographicLocation", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Data.GeographicLocation), "ZipCode", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Data.ZipCode), true)]
+[assembly: EdmRelationshipAttribute("Data", "ZipCodeCounty", "County", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Data.County), "ZipCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Data.ZipCode))]
+[assembly: EdmRelationshipAttribute("Data", "ZipCodePlace", "Place", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Data.Place), "ZipCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Data.ZipCode))]
 
 #endregion
 
@@ -2652,6 +2655,28 @@ namespace Data
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("Data", "ZipCodeCounty", "ZipCode")]
+        public EntityCollection<ZipCode> ZipCodes
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ZipCode>("Data.ZipCodeCounty", "ZipCode");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ZipCode>("Data.ZipCodeCounty", "ZipCode", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -3251,6 +3276,44 @@ namespace Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Place>("Data.FK_Place_GeographicLocation", "Place", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("Data", "FK_ZipCode_GeographicLocation", "ZipCode")]
+        public ZipCode ZipCode
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ZipCode>("Data.FK_ZipCode_GeographicLocation", "ZipCode").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ZipCode>("Data.FK_ZipCode_GeographicLocation", "ZipCode").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ZipCode> ZipCodeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ZipCode>("Data.FK_ZipCode_GeographicLocation", "ZipCode");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ZipCode>("Data.FK_ZipCode_GeographicLocation", "ZipCode", value);
                 }
             }
         }
@@ -5244,6 +5307,28 @@ namespace Data
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("Data", "ZipCodePlace", "ZipCode")]
+        public EntityCollection<ZipCode> ZipCodes
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ZipCode>("Data.ZipCodePlace", "ZipCode");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ZipCode>("Data.ZipCodePlace", "ZipCode", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -5878,6 +5963,92 @@ namespace Data
         private Nullable<global::System.Int64> _CountyId;
         partial void OnCountyIdChanging(Nullable<global::System.Int64> value);
         partial void OnCountyIdChanged();
+
+        #endregion
+
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("Data", "FK_ZipCode_GeographicLocation", "GeographicLocation")]
+        public GeographicLocation GeographicLocation
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GeographicLocation>("Data.FK_ZipCode_GeographicLocation", "GeographicLocation").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GeographicLocation>("Data.FK_ZipCode_GeographicLocation", "GeographicLocation").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<GeographicLocation> GeographicLocationReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GeographicLocation>("Data.FK_ZipCode_GeographicLocation", "GeographicLocation");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<GeographicLocation>("Data.FK_ZipCode_GeographicLocation", "GeographicLocation", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("Data", "ZipCodeCounty", "County")]
+        public EntityCollection<County> Counties
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<County>("Data.ZipCodeCounty", "County");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<County>("Data.ZipCodeCounty", "County", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("Data", "ZipCodePlace", "Place")]
+        public EntityCollection<Place> Places
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Place>("Data.ZipCodePlace", "Place");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Place>("Data.ZipCodePlace", "Place", value);
+                }
+            }
+        }
 
         #endregion
 

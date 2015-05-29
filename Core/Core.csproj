@@ -72,6 +72,7 @@
     <Compile Include="API\APIToken.cs" />
     <Compile Include="API\RandomString.cs" />
     <Compile Include="Crypto\Crypto.cs" />
+    <Compile Include="DataLayer\Advertising.cs" />
     <Compile Include="DataLayer\AverageEmployees.cs" />
     <Compile Include="DataLayer\AverageRevenue.cs" />
     <Compile Include="DataLayer\AverageSalary.cs" />
@@ -85,6 +86,8 @@
     <Compile Include="DataLayer\IndustryAttribute.cs" />
     <Compile Include="DataLayer\IndustryData.cs" />
     <Compile Include="DataLayer\Industry.cs" />
+    <Compile Include="DataLayer\Models\Advertising.cs" />
+    <Compile Include="DataLayer\Models\AdvertisingFilters.cs" />
     <Compile Include="DataLayer\Models\Band.cs" />
     <Compile Include="DataLayer\Models\BarChartItem.cs" />
     <Compile Include="DataLayer\Models\Business.cs" />
@@ -97,6 +100,7 @@
     <Compile Include="DataLayer\Models\GeographicLocation.cs" />
     <Compile Include="DataLayer\Models\Industry.cs" />
     <Compile Include="DataLayer\Models\KeyValue.cs" />
+    <Compile Include="DataLayer\Models\LineChartItem.cs" />
     <Compile Include="DataLayer\Models\Metro.cs" />
     <Compile Include="DataLayer\Models\NAICS.cs" />
     <Compile Include="DataLayer\Models\Nation.cs" />
@@ -104,6 +108,7 @@
     <Compile Include="DataLayer\Models\PercentileItem.cs" />
     <Compile Include="DataLayer\Models\Place.cs" />
     <Compile Include="DataLayer\Models\State.cs" />
+    <Compile Include="DataLayer\Models\ZipCode.cs" />
     <Compile Include="DataLayer\Models\ZoomExtent.cs" />
     <Compile Include="DataLayer\Place.cs" />
     <Compile Include="DataLayer\Projections\AverageEmployees.cs" />
@@ -119,6 +124,7 @@
     <Compile Include="DataLayer\Projections\TotalEmployees.cs" />
     <Compile Include="DataLayer\Projections\TotalRevenue.cs" />
     <Compile Include="DataLayer\TotalEmployees.cs" />
+    <Compile Include="DataLayer\YearStarted.cs" />
     <Compile Include="Diagnostics\HandleErrorAndLogAttribute.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Geo\BoundingBox.cs" />
@@ -144,6 +150,7 @@
     <Compile Include="Web\CookieFactory.cs" />
     <Compile Include="Web\Feature.cs" />
     <Compile Include="Web\JsonpResult.cs" />
+    <Compile Include="Web\QueryString.cs" />
     <Compile Include="Web\RequestValidator.cs" />
     <Compile Include="Web\WebContext.cs" />
   </ItemGroup>
