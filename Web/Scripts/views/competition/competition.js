@@ -997,7 +997,8 @@
                 var template = templates.get('businessItem');
                 businessItem.Name = businessItem.Name.length > businessNameMaxLength ? businessItem.Name.substr(0, businessNameMaxLength) + '...' : businessItem.Name;
                 html = html + templates.bind(template, { index: me.data.activeIndex, number: x + 1, business: businessItem });
-            };
+
+            }
             me.content.businessList.html(html);
         };
 
