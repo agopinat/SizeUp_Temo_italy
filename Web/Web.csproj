@@ -153,6 +153,12 @@
     <Content Include="Content\admin\images\4f5d9923-510f-4beb-b916-a82beb3321dd.jpg" />
     <Content Include="Content\admin\images\f0f8dbff-3a61-4f07-a206-5bd0f83a2b24.jpg" />
     <Content Include="Content\base.css" />
+    <Content Include="Content\db.css">
+      <DependentUpon>db.less</DependentUpon>
+    </Content>
+    <Content Include="Content\db.min.css">
+      <DependentUpon>db.less</DependentUpon>
+    </Content>
     <Content Include="Content\images\actionbutton.png" />
     <Content Include="Content\images\advertise-card.png" />
     <Content Include="Content\images\advertise-home.png" />
@@ -177,6 +183,8 @@
     <Content Include="Content\images\compete.png" />
     <Content Include="Content\images\competeSmall.png" />
     <Content Include="Content\images\comprehensive-icon.png" />
+    <Content Include="Content\images\db-arrow.jpg" />
+    <Content Include="Content\images\eXpandi_logo.png" />
     <Content Include="Content\images\dashboardIcons.png" />
     <Content Include="Content\images\dashboardIconsDemo.png" />
     <Content Include="Content\images\dashboardIcons_disabled.png" />
@@ -285,6 +293,7 @@
     <Content Include="Content\prettify\prettify.css" />
     <Content Include="Content\print.css" />
     <Content Include="Content\reset.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\themes\highContrast\highContrast.css" />
     <Content Include="Content\themes\highContrast\images\actionbutton.png" />
     <Content Include="Content\themes\highContrast\images\dashbuttons.png" />
@@ -305,6 +314,7 @@
     <Content Include="Content\views\community\find.css" />
     <Content Include="Content\views\company\about.css" />
     <Content Include="Content\views\company\team.css" />
+    <Content Include="Content\views\competition\index_old.css" />
     <Content Include="Content\views\competition\index.css" />
     <Content Include="Content\views\competition\print.css" />
     <Content Include="Content\views\dashboard\index.css" />
@@ -486,6 +496,32 @@
     <Content Include="Scripts\widget\views\bestIndustries\bestIndustries.js" />
     <Content Include="Scripts\widget\views\community\communityWithIndustry.js" />
     <Content Include="Scripts\widget\views\select\select.js" />
+    <Content Include="Content\images\backofcard.jpg" />
+    <Content Include="Content\images\bcsg-logo-blue.jpg" />
+    <Content Include="Content\images\bootstrap-formhelpers-countries.flags.png" />
+    <Content Include="Content\images\db-logo.jpg" />
+    <Content Include="Content\images\db.png" />
+    <Content Include="Content\images\db_Impresa_extra_logo-25.png" />
+    <Content Include="Content\images\drop-shadow-hero.jpg" />
+    <Content Include="Content\images\eXnova-logo.png" />
+    <Content Include="Content\images\hero-image-mobile.jpg" />
+    <Content Include="Content\images\Impresa_eXnova-52.png" />
+    <Content Include="Content\images\Impresa_eXnova-52_it.png" />
+    <Content Include="Content\images\Impresa_eXpandi-52.png" />
+    <Content Include="Content\images\Impresa_eXpandi-52_it.png" />
+    <Content Include="Content\images\Impresa_eXplora-52.png" />
+    <Content Include="Content\images\Impresa_eXplora-52_it.png" />
+    <Content Include="Content\images\Impresa_eXporta-52.png" />
+    <Content Include="Content\images\Impresa_eXporta-52_it.png" />
+    <Content Include="Content\images\In-2C-101px-R.png" />
+    <Content Include="Content\images\nav-gradient-background.jpg" />
+    <Content Include="Content\images\nav-gradient.jpg" />
+    <Content Include="Content\images\Preliminary-results-for-the-2014-financial-year.jpg" />
+    <Content Include="Content\images\shutterstock_126279959.jpg" />
+    <Content Include="Content\images\shutterstock_172870106_reversed.jpg" />
+    <Content Include="Content\images\spritesheet.png" />
+    <Content Include="Content\images\Twitter-logo1.png" />
+    <Content Include="Content\images\youtube-icon.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -504,9 +540,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -584,10 +617,22 @@
     <Content Include="Views\Home\Copy %282%29 of Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Competition\Index.cshtml" />
+    <Content Include="Views\Competition\Index_mod.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Pins\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Competition\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\db.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Competition\signin.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -20,8 +20,8 @@ namespace Core.DataLayer.Projections
                     return (i => new Models.Industry
                     {
                         Id = i.Id,
-                        Name = i.Name//,
-                        //SEOKey = i.SEOKey,
+                        Name = i.Name,
+                        SEOKey = i.SEOKey
                         //SICCode = i.SicCode,
                         //ParentName = i.Parent.Name,
                         //NAICS6 = new Models.NAICS

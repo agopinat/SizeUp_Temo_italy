@@ -1,0 +1,67 @@
+#tabs-container {
+  margin-top: 100px;
+}
+#tabs-container > ul {
+  list-style-type: none;
+  padding: 0px;
+  height: 20px;
+}
+#tabs-container > ul > li {
+  display: inline;
+  padding: 15px 25px;
+  cursor: pointer;
+  color: #ccc;
+}
+#tabs-container > ul > li.active {
+  display: inline;
+  background-color: #eaf9ff;
+  font-weight: bold;
+  color: #000;
+}
+#tabs-container > div {
+  background-color: #eaf9ff;
+  padding: 15px 25px 40px;
+}
+.businessList {
+  list-style-type: none;
+}
+.businessList dl {
+  display: inline-block;
+}
+.businessList img {
+  vertical-align: top;
+  margin-right: 10px;
+}
+.businessList .name {
+  font-weight: normal;
+  font-size: 16px;
+}
+.businessList .address {
+  color: #656565;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.prompt,
+.signinToggle {
+  color: #000;
+  text-decoration: none !important;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.prompt:hover,
+.signinToggle:hover {
+  color: #000;
+  text-decoration: none !important;
+}
+.signin-arrow {
+  position: absolute;
+  max-width: 20px;
+  vertical-align: top;
+  right: 0;
+  top: 0;
+  margin-top: 20px;
+}
+.border-dotted {
+  border-top: 3px dotted #ccc;
+}

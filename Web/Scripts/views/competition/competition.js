@@ -182,7 +182,7 @@
                 me.content.pager.setItemsPerPage(10);
 
             me.content.signinPanel = {
-                container: me.content.container.find('.signinWrapper').removeClass('hidden').hide(),
+                container: me.content.container.find('.signinWrapper'),
                 toggle: me.content.container.find('.signinWrapper .signinToggle'),
                 control: new sizeup.views.shared.signin({
                     container: me.content.container.find('.signinWrapper .signinPanel'),
@@ -977,10 +977,10 @@
             else {
                 me.content.noResults.hide();
                 me.content.businessListFootnote.show();
-                //if (!me.opts.IsAuthenticated && !me.opts.IsCustomTools) {
-                //    me.content.signinPanel.container.show();
-                //    me.content.signinPanel.toggle.html(templates.bind(me.content.signinPanel.templateText, me.content.pager.getPageData()));
-                //}
+                if (!me.opts.IsAuthenticated && !me.opts.IsCustomTools) {
+                    me.content.signinPanel.container.show();
+                    me.content.signinPanel.toggle.html(templates.bind(me.content.signinPanel.templateText, me.content.pager.getPageData()));
+                }
             }
             
             if (data.Count > me.opts.itemsPerPage && (me.opts.IsAuthenticated || me.opts.IsCustomTools)) {
@@ -992,7 +992,8 @@
 
             var html = '';
             var businessNameMaxLength = 40;
-            for (var x = 0; x < data.Items.length; x++) {
+            var shownItems = !me.opts.IsAuthenticated && data.Items.length > 3 ? 3 : data.Items.length;
+            for (var x = 0; x < shownItems; x++) {
                 var businessItem = data.Items[x];
                 var template = templates.get('businessItem');
                 businessItem.Name = businessItem.Name.length > businessNameMaxLength ? businessItem.Name.substr(0, businessNameMaxLength) + '...' : businessItem.Name;

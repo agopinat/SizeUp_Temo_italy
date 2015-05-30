@@ -40,12 +40,12 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/shared/signin.js")"></script>
 
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/competition/competition.js")"></script>
-
+    <link href="~/Content/db.min.css" rel="stylesheet" />
 }
 
 <div id="competition">
     <div class="headerWrapper">
-        <h2 class="heading">
+        <h2 class="heading hidden">
             <span>Map your competitors, customers and suppliers in the</span>
            
             <input type="text" id="industryBox" data-prompt="enter an industry" class="hidden selectBox" />
@@ -60,14 +60,30 @@
         </h2>
     </div>
 
+    <img src="~/Content/images/expandi_logo.png" />
+    <p style="margin-top:25px;">
+        eXpandi helps you understand how your business stacks up against the competition, and where
+        <br /> there’s opportunity to grow.
+    </p>
+    <div id="tabs-container">
+        <ul>
+            <li>My Business</li>
+            <li class="active">Competition</li>
+            <li>Advertising</li>
+        </ul>
+        <div>
+            Find where your nearest competitors are located to help make better strategic decisions.
+        </div>
+    </div>
+
     <div id="sessionLoadedBox" class="flash hidden">
         <div class="info">
             <p>Your previously entered values for this city and industry have been loaded.</p>
         </div>
     </div>
 
-    <div class="content container">
-        <div class="controls container">
+    <div class="content container" style="padding:0px;margin-top:30px;width:100%;">
+        <div class="controls container hidden">
              <ul class="tabs">
                 <li class="active competitors"><a href="javascript:void(0);" class="inverse">Competitors</a></li>
                 <li class="buyerQuestion question"><a href="javascript:void(0);" class="inverse" >Sell to other businesses?</a></li>
@@ -117,8 +133,8 @@
             </div>
         </div>
 
-        <div class="list container">
-            <div class="industryPicker container"> 
+        <div class="list container" style="padding:0px;display:inline-block;max-width:500px;">
+            <div class="industryPicker container hidden"> 
                 <ul class="industryList">
                     <li data-template="industryItem" class="item" data-id="{{Id}}">                        
                         <span title="{{Name}}"><span>{{Name}}</span><a href="javascript:void(0);" class="remove" data-id="{{Id}}"></a></span>
@@ -137,7 +153,7 @@
                 <p class="message">Loading Businesses</p>
             </div>
 
-            <ul class="businessList hidden">
+            <ul class="businessList hidden" style="padding:0px;margin-top:30px;">
                 <li data-template="businessItem">
                     <a href="javascript:void(0);" data-id="{{business.Id}}">
                         <img data-override-src="/pins/business/marker/{{index}}/{{number}}" />
@@ -174,20 +190,20 @@
                 </div>
             </div>
 
-            <p class="footNote hidden">businesses sorted by distance from center of the community</p>
+@*            <p class="footNote hidden">businesses sorted by distance from center of the community</p>*@
 
-      @*      @if(!HttpContext.Current.User.Identity.IsAuthenticated){
-            <div class="signinWrapper hidden">
+        @if(!HttpContext.Current.User.Identity.IsAuthenticated){
+            <div class="signinWrapper border-dotted" style="position:relative;width:100%;">
                     <a href="javascript:void(0);" class="signinToggle inverse" >
-                        <span class="prompt">See all {{totalItems}} businesses</span>
-                        <span class="viewing">Viewing {{start}}-{{end}} of {{totalItems}}</span>
+                        <h2 class="prompt">See all {{totalItems}} competitors in your area</h2>
+                        <img src="~/Content/images/db-arrow.jpg" class="signin-arrow" />
                     </a>
                     @Html.Partial("Signin")  
             </div>   
-            }*@
+        }
         </div>
 
-        <div class="mapWrapper container">
+        <div class="mapWrapper container" style="display:inline-block;float:right;padding:0px;width:550px;">
 
                 <div data-template="legendTitle" class="legend titleWrap">
                     <p class="backdrop edge title"><span class="text"></span></p>

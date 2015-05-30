@@ -1,16 +1,15 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
 
-    <link rel="icon" type="image/png" href="@Url.Content("~/content/images/favicon.ico")?" />
-    <link href="@Url.Content("~/Content/reset.css")?" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/thirdParty/jquery-ui-1.8.21.custom.css")?" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/base.css")?" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/layout.css")?" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/print.css")?" rel="stylesheet" type="text/css" media="print" />
-    @*@Html.Partial("Analytics")*@
+    <link rel="icon" type="image/png" href="@Url.Content("~/content//content/images/favicon.ico")?" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/core/namespace.js")?" type="text/javascript"></script>
@@ -22,19 +21,206 @@
 
     @RenderSection("head",false)
 </head>
-
 <body>
-    <div id="header">
-    @*@Html.Partial("Header")*@
-    </div>
-    <div id="content">
-        <div id="contentWrap">
-        @RenderBody()
-        </div>
-    </div>
-    <div id="footer">
-    @*@Html.Partial("Footer")*@
-    </div>
+    <div id="outer-wrap" ng-init="leftmenuon = false">
+        <div id="inner-wrap" ng-class="{'leftmenupush':leftmenuon==true}">
+            <div class="content-wrapper">
+            	<header>
+				    <!-- Desktop to iPad main menu -->
+				    <section class="top-nav hidden-xs">
+				        <div class="container">
+				            <div class="col-sm-3 hidden-xs">
+				                <a href="https://www.db.com/italia">
+                                    <img class="img-responsive" src="/content/images/db.png" alt="Deutsche Bank"></img>
+				                </a>
+                                <a href="https://dbimpresaextra.it">
+                                    <img class="impresa-logo" src="/content/images/db_Impresa_extra_logo-25.png" alt="db Impressa eXtra"></img>
+                                </a>
+				            </div>
+				            <div class="col-sm-5 col-xs-12 super-top-menu">
+				                <nav class="navbar navbar-default" ng-init="status.open = true">
+				                    <div class="collapse navbar-collapse" id="top-nav" ng-class="{'collapse': status.open}">
+				                        <ul class="nav navbar-nav">
+				                            <li class="first"><a href="https://dbimpresaextra.it/faq">Help</a></li>
+				                            <li><a href="https://dbimpresaextra.it/contatti">Contact us</a></li>
+				                            <li><a href="https://www.db.com/italia/en/content/947.html">Sitemap</a></li>
+				                        </ul>
+				                    </div>
+				                </nav>
+				            </div>
+				            <div class="col-sm-2 col-md-3">
+
+				            </div>
+				            <div class="col-sm-1 hidden-xs text-right">
+				                <a target="_blank" href="https://www.db.com/index_e.htm"><img class="db-logo" src="/content/images/db-logo.jpg" alt="Deutsche Bank"></img></a>
+				            </div>
+				        </div>
+				    </section>
+
+				    <!-- Mobile main menu -->
+				    <section class="top-nav visible-xs">
+				        <!-- Left Navigation -->
+				        <nav class="navbar navbar-default navbar-left" style="top: -10px;">
+				            <div class="navbar-collapse" id="top-nav">
+				                <div class="row header-top">
+				                    <div class="col-xs-6">
+				                        <a href="#"><img class="img-responsive" src="/content/images/db.png" alt="Deutsche Bank"></img></a>
+				                    </div>
+				                    <div class="col-xs-6">
+				                        <a target="_blank" href="https://www.db.com/index_e.htm"><img style="width: 30px;" class="pull-right" src="/content/images/db-logo.jpg" alt="Deutsche Bank"></img></a>
+				                    </div>
+				                </div>
+				                <div class="row mobile-login">
+				                    <div class="col-xs-6 text-center border-right">
+				                        <a class="login first" href="#">Login</a>
+				                    </div>
+				                    <div class="col-xs-6 text-center">
+				                        <a class="signup" href="#">Sign up</a>
+				                    </div>
+				                </div>
+				                <ul class="nav navbar-nav">
+			                        <li><a class="first" href="https://dbimpresaextra.it">Home<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+			                        <li><a href="https://dbimpresaextra.it/exnova">eXnova<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+			                        <li><a href>eXpandi<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+			                        <li><a href="https://dbimpresaextra.it/eXplora">eXplora<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+			                        <li><a href="https://expandi.dbimpresaextra.it" target="_blank">eXporta<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+			                        <li><a href="#">Pricing<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+				                </ul>
+				                <div class="row header-bot">
+				                    <div class="col-xs-6 text-center border-right">
+				                        <a href="#">Help</a>
+				                    </div>
+				                    <div class="col-xs-6 text-center">
+				                        <a href="https://dbimpresaextra.it/contatti">Contact us</a>
+				                    </div>
+				                </div>
+				            </div>
+				        </nav>
+				        <div class="container">
+				            <div class="row">
+				                <div class="col-xs-1 no-padding-left" >
+				                    <nav class="navbar navbar-default">
+				                        <div class="navbar-header">
+				                            <a type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav" ng-click="leftmenuon=!leftmenuon;">
+				                                <span class="sr-only">Toggle navigation</span>
+				                                <span class="first icon-bar black-box"></span>
+				                                <span class="icon-bar black-box"></span>
+				                                <span class="icon-bar black-box"></span>
+				                            </a>
+				                        </div>
+				                    </nav>
+				                </div>
+				                <div class="col-xs-4">
+				                    <a href="#"><img style="width: 80px;" src="/content/images/db.png" alt="Deutsche Bank"></img></a>
+				                </div>
+				                <div class="col-xs-5"></div>
+				                <div class="col-xs-2 no-padding-right">
+				                    <a target="_blank" class="pull-right" href="https://www.db.com/index_e.htm"><img style="width: 24px;" src="/content/images/db-logo.jpg" alt="Deutsche Bank"></img></a>
+				                </div>
+				            </div>
+				            <div class="row">
+				                <div class="col-xs-12 no-padding-left">
+				                    <img class="img-responsive impresa-logo" src="/content/images/db_Impresa_extra_logo-25.png" alt="Impresa eXtra"></img>
+				                </div>
+				            </div>
+				            <div class="row">
+				                <div class="col-xs-7 no-padding-left">
+
+				                </div>
+				            </div>
+				        </div>
+				    </section>
+				    <section class="hidden-xs">
+				        <div class="container">
+				            <div class="hero">
+				                <nav class="navbar navbar-default">
+				                    <div class="navbar-header">
+				                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hero-nav">
+				                            <span class="sr-only">Toggle navigation</span>
+				                            <span class="icon-bar"></span>
+				                            <span class="icon-bar"></span>
+				                            <span class="icon-bar"></span>
+				                        </button>
+				                    </div>
+				                    <div class="collapse navbar-collapse" id="hero-nav">
+				                        <ul class="nav navbar-nav navbar-left">
+			                                <li><a href="#"><span class="first">Home</span></a></li>
+			                                <li><a href="#"><span>eXnova</span></a></li>
+			                                <li><a href="#"><span>eXpandi</span></a></li>
+			                                <li><a href="#"><span>eXplora</span></a></li>
+			                                <li><a href="#" target="_blank"><span>eXporta</span></a></li>
+			                                <li><a href="#"><span class="last">Pricing</span></a></li>
+				                        </ul>
+
+				                        <ul class="nav navbar-nav navbar-right">
+				                            <li><a class="login" href="#">Login<span class="glyphicon glyphicon-play"></span></a></li>
+				                            <li>
+				                                <form name='gettingStartedForm'  action="#" method='post' ng-submit="submit()">
+				                                    <input type="hidden" name="${ctx._csrf.parameterName}" value="${ctx._csrf.token}" />
+				                                    <input type="hidden" name="gettingStarted" value="true"/>
+				                                    <input type="submit" value="Sign up" class="signup" /><span class="glyphicon glyphicon-play signup-span"></span>
+				                                </form>
+				                            </li>
+				                        </ul>
+				                    </div>
+				                </nav>
+				                <div class="breadcrumbs">
+				                    <p>You are here: <span>Home</span><a href="#">eXpandi</a></p>
+				                </div>
+				                <div class="drop-shadow-hero"></div>
+				            </div>
+
+				        </div>
+				    </section>
+				</header>
+			</div>
+            <div id="content" class="container">
+                <div id="contentWrap" style="padding:0px 20px;">
+                @RenderBody()
+                </div>
+            </div>
+			<footer>
+			    <section>
+			        <div class="container">
+			            <div class="row top">
+			                <div class="col-xs-12">
+			                    <p>In association with<i></i></p>
+			                </div>
+			            </div>
+			        </div>
+			    </section>
+			    <section class="bottom">
+			        <div class="container">
+			            <div class="row no-padding-left no-padding-right">
+			                <div class="visible-xs col-xs-12">
+			                    <ul class="large-social-icons">
+			                        <li><a href=""><img src="/content/images/Twitter-logo1.png" alt="" /></a></li>
+			                        <li><a href=""><img src="/content/images/In-2C-101px-R.png" alt="" /></a></li>
+			                        <li><a href=""><img src="/content/images/youtube-icon.png" alt="" /></a></li>
+			                    </ul>
+			                </div>
+			                <div class="col-sm-6 col-xs-12 no-padding-left">
+			                    <ul class="nav navbar-nav">
+			                        <li><a href="https://dbimpresaextra.it/disclaimer">Terms of use</a></li>
+			                        <li><a href="#">Privacy policy</a></li>
+			                    </ul>
+			                    <p>Copyright © 2015 Deutsche Bank S.p.A</p>
+			                </div>
+			                <div class="col-sm-6 hidden-xs no-padding-right">
+			                    <ul class="media-links">
+			                        <li><a href="#"><i class="twitter"></i></a>
+			                        <li><a href="#"><i class="linkedin"></i></a>
+			                        <li><a href="#"><i class="youtube"></i></a>
+			                        <li class="print-wrapper"><a href="#"><i class="printing"></i></a>
+			                        <li><a href="#"><i class="star"></i></a>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </section>
+			</footer>
+		</div>
+	</div>
     @RenderSection("scripts",false)
 </body>
 </html>
