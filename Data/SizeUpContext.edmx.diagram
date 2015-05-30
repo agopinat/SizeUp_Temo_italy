@@ -46,6 +46,9 @@
         <AssociationConnector Association="Data.FK_Place_County" />
         <AssociationConnector Association="Data.FK_Place_GeographicLocation" />
         <AssociationConnector Association="Data.BusinessCity" />
+        <AssociationConnector Association="Data.FK_ZipCode_GeographicLocation" />
+        <AssociationConnector Association="Data.ZipCodeCounty" />
+        <AssociationConnector Association="Data.ZipCodePlace" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

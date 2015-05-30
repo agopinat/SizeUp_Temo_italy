@@ -289,7 +289,7 @@
                 setHeatmap(me.data.consumerExpenditure.currentSelection.Id);
             }
             else {
-                //loadConsumerExpenditureVariables(me.data.consumerExpenditure.rootId);
+                loadConsumerExpenditureVariables(me.data.consumerExpenditure.rootId);
             }
 
             if (me.data.restoredSession) {
@@ -994,6 +994,7 @@
             var businessNameMaxLength = 40;
             var shownItems = !me.opts.IsAuthenticated && data.Items.length > 3 ? 3 : data.Items.length;
             for (var x = 0; x < shownItems; x++) {
+                var businessItem = data.Items[x];
                 var businessItem = data.Items[x];
                 var template = templates.get('businessItem');
                 businessItem.Name = businessItem.Name.length > businessNameMaxLength ? businessItem.Name.substr(0, businessNameMaxLength) + '...' : businessItem.Name;

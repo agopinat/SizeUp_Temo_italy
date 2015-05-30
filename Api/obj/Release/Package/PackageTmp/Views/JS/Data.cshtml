@@ -274,7 +274,7 @@
 
 
 
-@*@if(ViewBag.Permissions.Business){    
+@if(ViewBag.Permissions.Business){    
     <text>        
             getBusiness: function (params, success, error) {
                 var url = '/data/business/';
@@ -291,7 +291,7 @@
                 return sizeup.api.loader.getData(url, params, success, error);
             },
     </text>
-}*@
+}
 
 
 @if(ViewBag.Permissions.Place){   

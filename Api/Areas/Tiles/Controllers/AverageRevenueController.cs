@@ -32,13 +32,7 @@ namespace Api.Areas.Tiles.Controllers
                 double tolerance = GetPolygonTolerance(zoom);
                 var boundingGeo = boundingBox.GetDbGeography();
 
-
-                //var t = boundingBox.GetSqlGeography().MakeValid();
-                //DbGeography newGeography = DbGeography.FromText(t.ToString(), 4326);
-
-
                 var gran = Enum.GetName(typeof(Core.DataLayer.Granularity), granularity);
-               // var gran = Enum.GetName(typeof(Core.DataLayer.Granularity), Core.DataLayer.Granularity.City); 
 
                 var geos = Core.DataLayer.GeographicLocation.Get(context)
                     .Where(i => i.Granularity.Name == gran)

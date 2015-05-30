@@ -26,29 +26,24 @@ namespace Core.Geo
 
         private double BoundLat(double lat)
         {
-            return Math.Min(Math.Max(0.01, lat), 89.99);
+            //return Math.Min(Math.Max(0.01, lat), 89.99);
+            return lat;
         }
 
         private double BoundLng(double lng)
         {
-            return Math.Min(Math.Max(-179.99, lng), -0.01);
+            //return Math.Min(Math.Max(-179.99, lng), -0.01);
+            return lng;
         }
 
         public SqlGeography GetSqlGeography()
         {
             return SqlGeography.Parse(string.Format("POLYGON (({0} {2}, {1} {2}, {1} {3}, {0} {3}, {0} {2}))", BoundLng(SouthWest.Lng), BoundLng(NorthEast.Lng), BoundLat(SouthWest.Lat), BoundLat(NorthEast.Lat)));
+            
         }
 
         public DbGeography GetDbGeography()
         {
-
-
-            // get the sqlgeography version
-            // run make valid
-            // convert back to dbgeography
-            //SqlGeography geog1 = GetSqlGeography().MakeValid();
-            //return DbGeography.FromText(geog1.ToString(), 4326);
-
             return DbGeography.FromText(string.Format("POLYGON (({0} {2}, {1} {2}, {1} {3}, {0} {3}, {0} {2}))", BoundLng(SouthWest.Lng), BoundLng(NorthEast.Lng), BoundLat(SouthWest.Lat), BoundLat(NorthEast.Lat)));
         }
     }

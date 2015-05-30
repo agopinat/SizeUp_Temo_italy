@@ -11,7 +11,7 @@
 <div class="body ">
     <div class="loading">
         <p class="title">Employee Report</p>
-        <img src="@Url.Content("~/content/images/Loading.gif")?@SizeUp.Core.Web.CacheBuster.Buster" alt="Loading" />
+        <img src="@Url.Content("~/content/images/Loading.gif")" alt="Loading" />
         <p class="message">Generating Report</p>
     </div>
     <div class="reportContainer ">
@@ -22,7 +22,7 @@
             <h3>How you size up</h3>
             <p class="description">
                 <div data-template="averageEmployeesDescription">
-                @Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Description"])
+                @*@Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Description"])*@
                 </div>
             </p>
             <div class="chart">
@@ -50,7 +50,7 @@
                 </li>
             </ul>
             <div class="sourceContent " data-expandedClass="expanded">
-                @Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Source"])
+                @*@Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Source"])*@
             </div>
             <div class="mapWrapper container">
                 <div data-template="legendTitle" class="legend titleWrap">
@@ -67,7 +67,7 @@
         </div>
         <div class="reportSidebar  averageEmployees reportData">
             <div class="section considerations collapsable">
-                @Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Considerations"])
+                @*@Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Considerations"])*@
                 <div class="question">
                     <span>Are you a relatively <a href="javascript:void(0);" class="large">large</a> or <a href="javascript:void(0);" class="small">small</a> business?</span>
                 </div>
@@ -112,7 +112,7 @@
             </div>
             <a href="javascript:void(0);" class="considerationToggle fadeToggle" data-toggleText="More" data-toggleClass="collapsed">Less</a>
             <div class="section resources collapsable">
-                @Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Resources"])
+                @*@Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Resources"])*@
                 <p class="notice"><a href="/help/contact">Get listed as a resource</a></p>
             </div>
             <a href="javascript:void(0);" class="resourcesToggle fadeToggle" data-toggleText="More" data-toggleClass="collapsed">Less</a>
@@ -126,7 +126,7 @@
             <h3>How your community sizes up</h3>
             <p class="description">
                 <div data-template="employeesPerCapitaDescription">
-                @Html.Raw(ViewBag.Strings["Dashboard.EmployeesPerCapita.Description"])
+                @*@Html.Raw(ViewBag.Strings["Dashboard.EmployeesPerCapita.Description"])*@
                 </div>
             </p>
             <div class="chart">
@@ -154,7 +154,7 @@
                 </li>
             </ul>
             <div class="sourceContent " data-expandedClass="expanded">
-                @Html.Raw(ViewBag.Strings["Dashboard.EmployeesPerCapita.Source"])
+                @*@Html.Raw(ViewBag.Strings["Dashboard.EmployeesPerCapita.Source"])*@
             </div>
             <div class="mapWrapper container">
                 <div data-template="legendTitle" class="legend titleWrap">
@@ -171,7 +171,7 @@
         </div>
          <div class="reportSidebar  employeesPerCapita reportData">
             <div class="section considerations collapsable">
-                @Html.Raw(ViewBag.Strings["Dashboard.EmployeesPerCapita.Considerations"])
+                @*@Html.Raw(ViewBag.Strings["Dashboard.EmployeesPerCapita.Considerations"])*@
             </div>
             <a href="javascript:void(0);" class="considerationToggle fadeToggle" data-toggleText="More" data-toggleClass="collapsed">Less</a>
         </div>
