@@ -70,9 +70,9 @@
     </p>
     <div id="tabs-container">
         <ul>
-            <li>My Business</li>
+            <li id="bus">My Business</li>
             <li class="active">Competition</li>
-            <li>Advertising</li>
+            <li id="adv">Advertising</li>
         </ul>
         <div>
             Find where your nearest competitors are located to help make better strategic decisions.
@@ -86,7 +86,7 @@
     </div>
 
     <div class="content container" style="padding:0px;margin-top:30px;width:100%;">
-        <div class="controls container hidden">
+        <div class="controls container">
              <ul class="tabs">
                 <li class="active competitors"><a href="javascript:void(0);" class="inverse">Competitors</a></li>
                 <li class="buyerQuestion question"><a href="javascript:void(0);" class="inverse" >Sell to other businesses?</a></li>
@@ -95,8 +95,8 @@
                 <li class="suppliers hidden"><a href="javascript:void(0);" class="inverse">Suppliers</a></li>
              </ul>
 
-            <div class="mapControls container">
-                <div class="mapFilter container hidden">
+            <div class="mapControls container" style="padding:0px;width:600px;">
+                <div class="mapFilter container hidden" style="padding: 0px;float:left;width:350px;">
                     <ul>
                         <li class="competitor">
                             <input type="radio" id="competitorBox" data-index="competitor" name="mapFilter" value="competitor">
@@ -117,7 +117,7 @@
                     </ul>
                 </div>
 
-                <div class="consumerExpenditures container">
+                <div class="consumerExpenditures container" style="padding:0px;display:inline-block;float:right;width:200px;">
                     <a href="javascript:void(0);" class="menu">Consumer Expenditures</a>
                     <div class="consumerExpenditurePicker hidden">
                         <ul class="selection">
@@ -137,7 +137,7 @@
         </div>
 
         <div class="list container" style="padding:0px;display:inline-block;max-width:500px;">
-            <div class="industryPicker container hidden"> 
+            <div class="industryPicker container"> 
                 <ul class="industryList">
                     <li data-template="industryItem" class="item" data-id="{{Id}}">                        
                         <span title="{{Name}}"><span>{{Name}}</span><a href="javascript:void(0);" class="remove" data-id="{{Id}}"></a></span>
@@ -196,7 +196,7 @@
 @*            <p class="footNote hidden">businesses sorted by distance from center of the community</p>*@
 
         @if(!HttpContext.Current.User.Identity.IsAuthenticated){
-            <div class="signinWrapper border-dotted" style="position:relative;width:100%;">
+            <div class="signinWrapper border-dotted" style="position:relative;width:100%;padding:0px;">
                     <a href="javascript:void(0);" class="signinToggle inverse" >
                         <h2 class="prompt">See all {{totalItems}} competitors in your area</h2>
                         <img src="~/Content/images/db-arrow.jpg" class="signin-arrow" />
@@ -206,7 +206,7 @@
         }
         </div>
 
-        <div class="mapWrapper container" style="display:inline-block;float:right;padding:0px;width:550px;">
+        <div class="mapWrapper container" style="display:inline-block;float:right;padding:0px;width:550px;margin-bottom:20px;">
 
                 <div data-template="legendTitle" class="legend titleWrap">
                     <p class="backdrop edge title"><span class="text"></span></p>
@@ -241,6 +241,7 @@
             <div class="map"></div>
             <a href="javascript:void(0);" class="textAlternative">Text Alternative</a>
         </div>
+        <div class="border-dotted" style="clear:both;"></div>
     </div>
 </div>
 
@@ -250,12 +251,23 @@
 
     <script type="text/javascript">
 
+        function constructUrl(controllerName, info){
+            return '/' + controllerName + '/' + info.CurrentPlace.State.SEOKey + '/' + info.CurrentPlace.County.SEOKey + '/' + info.CurrentPlace.City.SEOKey + '/' + info.CurrentIndustry.SEOKey;
+        }
+
         var done = function(){
             var opts = {
                 CurrentInfo: @Html.Raw(ViewBag.CurrentInfoJSON),
                 IsAuthenticated: @(HttpContext.Current.User.Identity.IsAuthenticated ? "true" : "false")
                 };
             var driver = new sizeup.views.competition.competition(opts);
+            
+            $('#bus').click(function(){
+                window.location = constructUrl('dashboard', opts.CurrentInfo);
+            });
+            $('#adv').click(function(){
+                window.location = constructUrl('advertising', opts.CurrentInfo);
+            });
         };
 
         var notifier = new sizeup.core.notifier(done);

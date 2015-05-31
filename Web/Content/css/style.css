@@ -1301,10 +1301,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
-input[type=checkbox], input[type=radio] {
-    box-sizing: border-box;
-    padding: 0;
-}
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
     height: auto;
 }
@@ -2651,7 +2647,7 @@ pre code {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd;
 }
-.btn, .btn-group, .btn-group-vertical, .caret, .checkbox-inline, .radio-inline, input[type=checkbox], input[type=radio] {
+.btn, .btn-group, .btn-group-vertical, .caret, .checkbox-inline, .radio-inline, input[type=checkbox] {
     vertical-align: middle;
 }
 .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
@@ -2780,7 +2776,7 @@ input[type=search] {
     box-sizing: border-box;
     -webkit-appearance: none;
 }
-input[type=checkbox], input[type=radio] {
+input[type=checkbox] {
     margin: 4px 0 0;
     line-height: normal;
 }
@@ -2793,7 +2789,7 @@ input[type=range] {
 select[multiple], select[size] {
     height: auto;
 }
-input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus {
+input[type=file]:focus, input[type=checkbox]:focus {
     outline: dotted thin;
     outline: -webkit-focus-ring-color auto 5px;
     outline-offset: -2px;
@@ -2866,7 +2862,7 @@ input[type=date], input[type=time], input[type=datetime-local], input[type=month
     font-weight: 400;
     cursor: pointer;
 }
-.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio-inline  {
     position: absolute;
     margin-left: -20px;
 }
@@ -2884,7 +2880,7 @@ input[type=date], input[type=time], input[type=datetime-local], input[type=month
     margin-top: 0;
     margin-left: 10px;
 }
-.checkbox-inline.disabled, .checkbox.disabled label, .radio-inline.disabled, .radio.disabled label, fieldset[disabled] .checkbox label, fieldset[disabled] .checkbox-inline, fieldset[disabled] .radio label, fieldset[disabled] .radio-inline, fieldset[disabled] input[type=checkbox], fieldset[disabled] input[type=radio], input[type=checkbox].disabled, input[type=checkbox][disabled], input[type=radio].disabled, input[type=radio][disabled] {
+.checkbox-inline.disabled, .checkbox.disabled label, .radio-inline.disabled, .radio.disabled label, fieldset[disabled] .checkbox label, fieldset[disabled] .checkbox-inline, fieldset[disabled] .radio label, fieldset[disabled] .radio-inline, fieldset[disabled] input[type=checkbox], fieldset[disabled] , input[type=checkbox].disabled, input[type=checkbox][disabled].disabled[disabled] {
     cursor: not-allowed;
 }
 .form-control-static {
@@ -3047,7 +3043,7 @@ input[type=date], input[type=time], input[type=datetime-local], input[type=month
 .form-inline .checkbox label, .form-inline .radio label, .navbar-form .checkbox label, .navbar-form .radio label {
     padding-left: 0;
 }
-.form-inline .checkbox input[type=checkbox], .form-inline .radio input[type=radio], .navbar-form .checkbox input[type=checkbox], .navbar-form .radio input[type=radio] {
+.form-inline .checkbox input[type=checkbox], .form-inline .radio , .navbar-form .checkbox input[type=checkbox], .navbar-form .radio  {
     position: relative;
     margin-left: 0;
 }
@@ -3562,7 +3558,7 @@ tbody.collapse.in {
 .btn-group-justified>.btn-group .dropdown-menu {
     left: auto;
 }
-[data-toggle=buttons]>.btn>input[type=checkbox], [data-toggle=buttons]>.btn>input[type=radio] {
+[data-toggle=buttons]>.btn>input[type=checkbox], [data-toggle=buttons]>.btn> {
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -3621,7 +3617,7 @@ tbody.collapse.in {
     font-size: 18px;
     border-radius: 6px;
 }
-.input-group-addon input[type=checkbox], .input-group-addon input[type=radio] {
+.input-group-addon input[type=checkbox], .input-group-addon  {
     margin-top: 0;
 }
 .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
@@ -5778,11 +5774,11 @@ input[type=checkbox]+label:before {
     width: 25px;
     background: url(../images/spritesheet.png)-301px -71px;
 }
-input[type=radio]+label {
++label {
     cursor: pointer;
     padding-right: 20px;
 }
-input[type=radio]+label:before {
++label:before {
     content: "";
     display: inline-block;
     height: 25px;
@@ -5794,7 +5790,7 @@ input[type=radio]+label:before {
 input[type=checkbox]:checked+label:before {
     background: url(../images/spritesheet.png)-326px -71px;
 }
-input[type=radio]:checked+label:before {
+:checked+label:before {
     background: url(../images/spritesheet.png)-276px -71px;
 }
 .no-padding {
