@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
 using System.Configuration;
+using Data;
+using Core.DataLayer.Models;
 
 namespace Core.DataLayer
 {
-    public class CommonFilters
+    public static class CommonFilters
     {
         public static class TimeSlice
         {
+            public static class Demographics
+            {
+                public static int Year { get { return int.Parse(ConfigurationManager.AppSettings["TimeSlice.Demographics.Year"]); } }
+                public static int Quarter { get { return int.Parse(ConfigurationManager.AppSettings["TimeSlice.Demographics.Quarter"]); } }
+            }
 
             public static class Industry
             {
@@ -17,6 +26,11 @@ namespace Core.DataLayer
                 public static int Quarter { get { return int.Parse(ConfigurationManager.AppSettings["TimeSlice.Industry.Quarter"]); } }
             }
 
+            public static class ConsumerExpenditures
+            {
+                public static int Year { get { return int.Parse(ConfigurationManager.AppSettings["TimeSlice.ConsumerExpenditures.Year"]); } }
+                public static int Quarter { get { return int.Parse(ConfigurationManager.AppSettings["TimeSlice.ConsumerExpenditures.Quarter"]); } }
+            }
         }
 
         public static int MinimumBusinessCount

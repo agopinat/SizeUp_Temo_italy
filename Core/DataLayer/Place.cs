@@ -120,9 +120,9 @@ namespace Core.DataLayer
                         Search = i.City.Name
                     })
                     .Where(i => i.Search.StartsWith(city))
-                    .Where(i => i.Place.County.Abbreviation.StartsWith(county))
+                    //.Where(i => i.Place.County.Abbreviation.StartsWith(county))
                     .OrderBy(i => i.Place.City.Name)
-                    .ThenBy(i => i.Place.City.County.Abbreviation)
+                    //.ThenBy(i => i.Place.City.County.Abbreviation)
                     //.ThenByDescending(i => i.Place.City.GeographicLocation.Demographics.AsQueryable().Where(d => d.Year == CommonFilters.TimeSlice.Demographics.Year && d.Quarter == CommonFilters.TimeSlice.Demographics.Quarter).FirstOrDefault().TotalPopulation)
                     .Select(i => i.Place)
                     .Select(new Projections.Place.Default().Expression);
