@@ -28,7 +28,7 @@
              <div class="chart">
                 <a href="javascript:void(0);" class="mapToggle" data-toggleText="View Variations by Geography">Hide Variations by Geography</a>
                 <a href="javascript:void(0);" class="chartToggle" data-toggleText="View Chart">View Data Table</a>
-                <div class="container"></div>
+                <div class="container" style="width:100%;"></div>
             </div>
             <table class="table">
                 <thead>
@@ -37,7 +37,7 @@
                         <td class="value">Value</td>
                     </tr>
                 </thead>
-                <tbody class="container">
+                <tbody class="container" style="width:100%;">
                     <tr data-template="tableRow">
                         <td class="name">{{name}}</td>
                         <td class="value">{{value}}</td>
@@ -52,7 +52,7 @@
             <div class="sourceContent " data-expandedClass="expanded">
                 @*@Html.Raw(ViewBag.Strings["Dashboard.CostEffectiveness.Source"])*@
             </div>
-            <div class="mapWrapper container">
+            <div class="mapWrapper container" style="width:100%;">
                 <div data-template="legendTitle" class="legend titleWrap">
                     <p class="backdrop edge title"><span class="text"></span></p>
                 </div>

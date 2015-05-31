@@ -60,14 +60,28 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/shared/signin.js")"></script>
 
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/dashboard/dashboard.js")"></script>
-
+    <link href="~/Content/db.min.css" rel="stylesheet" />
 }
 
-
+<img src="~/Content/images/expandi_logo.png" />
+    <p style="margin-top:25px;">
+        eXpandi helps you understand how your business stacks up against the competition, and where
+        <br /> there’s opportunity to grow.
+    </p>
+    <div id="tabs-container">
+        <ul>
+            <li class="active">My Business</li>
+            <li id="comp">Competition</li>
+            <li id="adv">Advertising</li>
+        </ul>
+        <div>
+            Find where your nearest competitors are located to help make better strategic decisions.
+        </div>
+    </div>
 
 <div id="dashboard" class="hidden">
-    <div class="headerWrapper">
-        <h1 class="heading">
+    <div class="headerWrapper db-theme">
+        <h2 class="heading">
             <span>Compare your business to the competition in the</span>
            
             <input type="text" id="industryBox" data-prompt="enter an industry" class="hidden selectBox" />
@@ -79,7 +93,7 @@
             <input type="text" id="placeBox" data-prompt="enter a city" class="hidden selectBox" />
             <a href="javascript:void(0);" id="changePlace" class="changeLink">@ViewBag.CurrentInfo.CurrentPlace.City.Name, @ViewBag.CurrentInfo.CurrentPlace.State.Abbreviation</a>
 
-        </h1>
+        </h2>
     </div>
     <div class="reportWrapper">
         <div id="revenue" class="report">
@@ -238,12 +252,23 @@
 @section scripts{
 
 <script type="text/javascript">
+    function constructUrl(controllerName, info){
+        return '/' + controllerName + '/' + info.CurrentPlace.State.SEOKey + '/' + info.CurrentPlace.County.SEOKey + '/' + info.CurrentPlace.City.SEOKey + '/' + info.CurrentIndustry.SEOKey;
+    }
+
     var done = function(){
         var opts = {
             currentInfo: @Html.Raw(ViewBag.CurrentInfoJSON),
             isAuthenticated: @(HttpContext.Current.User.Identity.IsAuthenticated ? "true" : "false")
         };
         var driver = new sizeup.views.dashboard.dashboard(opts);
+
+        $('#comp').click(function(){
+            window.location = constructUrl('competition', opts.currentInfo);
+        });
+        $('#adv').click(function(){
+            window.location = constructUrl('advertising', opts.currentInfo);
+        });
     };
 
     var notifier = new sizeup.core.notifier(done);

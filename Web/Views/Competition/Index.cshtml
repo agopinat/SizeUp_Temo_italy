@@ -46,23 +46,7 @@
     <link href="~/Content/db.min.css" rel="stylesheet" />
 }
 
-<div id="competition">
-    <div class="headerWrapper">
-        <h2 class="heading hidden">
-            <span>Map your competitors, customers and suppliers in the</span>
-           
-            <input type="text" id="industryBox" data-prompt="enter an industry" class="hidden selectBox" />
-            <a href="javascript:void(0);" id="changeIndustry" class="changeLink">@ViewBag.CurrentInfo.CurrentIndustry.Name</a>
-
-            <span>industry around </span>
-
-
-            <input type="text" id="placeBox" data-prompt="enter a city" class="hidden selectBox" />
-            <a href="javascript:void(0);" id="changePlace" class="changeLink">@ViewBag.CurrentInfo.CurrentPlace.City.Name, @ViewBag.CurrentInfo.CurrentPlace.State.Abbreviation</a>
-
-        </h2>
-    </div>
-
+<div class="db-theme">
     <img src="~/Content/images/expandi_logo.png" />
     <p style="margin-top:25px;">
         eXpandi helps you understand how your business stacks up against the competition, and where
@@ -77,6 +61,25 @@
         <div>
             Find where your nearest competitors are located to help make better strategic decisions.
         </div>
+    </div>
+
+
+
+<div id="competition">
+    <div class="headerWrapper">
+        <h2 class="heading">
+            <span>Map your competitors, customers and suppliers in the</span>
+           
+            <input type="text" id="industryBox" data-prompt="enter an industry" class="hidden selectBox" />
+            <a href="javascript:void(0);" id="changeIndustry" class="changeLink">@ViewBag.CurrentInfo.CurrentIndustry.Name</a>
+
+            <span>industry around </span>
+
+
+            <input type="text" id="placeBox" data-prompt="enter a city" class="hidden selectBox" />
+            <a href="javascript:void(0);" id="changePlace" class="changeLink">@ViewBag.CurrentInfo.CurrentPlace.City.Name, @ViewBag.CurrentInfo.CurrentPlace.State.Abbreviation</a>
+
+        </h2>
     </div>
 
     <div id="sessionLoadedBox" class="flash hidden">
@@ -244,7 +247,7 @@
         <div class="border-dotted" style="clear:both;"></div>
     </div>
 </div>
-
+    </div>
 
 
 @section scripts{

@@ -161,6 +161,12 @@
     <Content Include="Content\admin\images\4f5d9923-510f-4beb-b916-a82beb3321dd.jpg" />
     <Content Include="Content\admin\images\f0f8dbff-3a61-4f07-a206-5bd0f83a2b24.jpg" />
     <Content Include="Content\base.css" />
+    <Content Include="Content\css\db-theme.css">
+      <DependentUpon>db-theme.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\db-theme.min.css">
+      <DependentUpon>db-theme.less</DependentUpon>
+    </Content>
     <Content Include="Content\db.css">
       <DependentUpon>db.less</DependentUpon>
     </Content>
@@ -652,6 +658,7 @@
     <Content Include="Views\Advertising\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\db-theme.less" />
     <None Include="Properties\PublishProfiles\prod.pubxml" />
   </ItemGroup>
   <PropertyGroup>

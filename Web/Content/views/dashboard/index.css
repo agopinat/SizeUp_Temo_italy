@@ -7,18 +7,18 @@
 #dashboard h4 { font-size: 1.7em; font-weight: normal; }
 #dashboard h5 { font-size: 1.3em; font-weight: bold; padding: 0 0 0 1em; }
 
-#dashboard .headerWrapper { text-align: left; margin:1em 0 2em 1em; padding:1em; }
+#dashboard .headerWrapper { text-align: left; margin:1em 0; }
 
-#dashboard .report {width:94em; background-color: #ccc; padding: 1em; position: relative; top: -2px; left: -2px; text-align: left; background-color:#fff; border-top:solid 2px #d7d7ce;border-left:solid 2px #d7d7ce;border-right:solid 2px #d7d7ce; -webkit-border-top-right-radius: 2em;-webkit-border-top-left-radius: 2em;-moz-border-radius-topright: 2em;-moz-border-radius-topleft: 2em;border-top-right-radius: 2em;border-top-left-radius: 2em;	}
+#dashboard .report { background-color: #ccc; padding: 1em; position: relative; top: -2px; left: -2px; text-align: left; background-color:#fff; border-top:solid 2px #d7d7ce;border-left:solid 2px #d7d7ce;border-right:solid 2px #d7d7ce; -webkit-border-top-right-radius: 2em;-webkit-border-top-left-radius: 2em;-moz-border-radius-topright: 2em;-moz-border-radius-topleft: 2em;border-top-right-radius: 2em;border-top-left-radius: 2em;	}
 
 #dashboard .report .header .icon { width:60px; height:60px; background-image:url(/content/images/dashboardIcons.png);background-repeat:no-repeat; }
 
-#dashboard .report .header h2 { font-size: 2.4em; font-weight: normal;  position: absolute; top: 1em; left: 3.5em;  }
-#dashboard .report .header .hint {font-size:1.1em; position: absolute; top: 5em; left: 8.5em;   }
+#dashboard .report .header h2 { font-size: 2em; font-weight: normal;  position: absolute; top: 10px; left: 3.5em;  }
+#dashboard .report .header .hint {font-size:14px; position: absolute; top: 60px; left: 100px; color:#aaa;   }
 #dashboard .report .header textarea,
-#dashboard .report .header input[type="text"] {font-family:  Trebuchet MS,Arial,Sans-Serif;  position: absolute;top: 1em;left: 21em;  font-weight: bold; padding: 0.5em;  width: 8em; text-align: right;}
+#dashboard .report .header input[type="text"] {position: absolute;top: 20px;left: 500px;  font-weight: bold; padding: 1px 0px;  width: 170px; text-align: right;}
 #dashboard .report .header .prompt {position: absolute; top: 1.25em;right: 4.75em; background-image: url("/content/images/dashbuttons.png"); background-repeat: no-repeat; color: #FFFFFF; display: block; font-size: 1.1em; font-weight: bold; height: 38px; line-height: 1.2em; padding: 11px 10px 0 35px; text-align: center; text-transform: uppercase; width: 270px; }
-#dashboard .report .header .gauge { position: absolute; top: 1em; right: 28em;  }
+#dashboard .report .header .gauge { position: absolute; top: 1em; right: 21em;  }
 #dashboard .report .header a.button { padding: 0.5em 0.75em; position: absolute; top: 1em; right: 12.5em;  }
 
 #dashboard .report .header .reportToggle { height: 30px; width: 30px; cursor: default; position: absolute; right: 1em; top: 2em; background-image: url("/content/images/dashbuttons.png"); background-position: -318px -28px; background-repeat: no-repeat; }
@@ -62,7 +62,7 @@
 
 
 
-#dashboard .report .body .reportContainer .reportContent { display: inline-block; width: 56em; padding: 1em; margin:  0 0 1em 0; }
+#dashboard .report .body .reportContainer .reportContent { display: inline-block; width: 650px; padding: 1em; margin:  0 0 1em 0; }
 #dashboard .report .body .reportContainer .reportContent.noDataError { font-size: 1.5em; margin: 1em 4em; }
 #dashboard .report .body .reportContainer .reportContent .chart { display:block; text-align:right; margin: 1em 0 0 0; }
 #dashboard .report .body .reportContainer .reportContent .chart a {font-size: 0.9em; font-weight:bold; display: inline-block; margin: 0 0 0 1em; }
@@ -120,7 +120,7 @@
 #dashboard #healthcareCost.report .body .reportContainer .reportContent .table .rank { width: 20%; padding: 0 0 0 0.5em; text-align: right; }
 
 
-#dashboard .report .body .reportContainer .reportSidebar { display: inline-block; width: 35em; margin:  0 0 1em 0; vertical-align:top; background-color:#F0F0F0; border-radius:1em;-moz-border-radius:1em;-webkit-border-radius:1em; }
+#dashboard .report .body .reportContainer .reportSidebar { display: inline-block; width: 350px; margin:  20px; vertical-align:top; background-color:#F0F0F0; border-radius:1em;-moz-border-radius:1em;-webkit-border-radius:1em;float:right; }
 #dashboard .report .body .reportContainer .reportSidebar .section { padding: 1.5em 0.5em; }
 #dashboard .report .body .reportContainer .reportSidebar .section p { padding: 0 1em; margin: 0 0 1em 0; line-height: 1.5em; }
 #dashboard .report .body .reportContainer .reportSidebar .section p.notice { text-align: right; }
