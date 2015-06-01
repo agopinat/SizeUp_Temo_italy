@@ -4,7 +4,7 @@
 
 @section head{
 <title>Business Dashboard - @ViewBag.CurrentInfo.CurrentIndustry.Name in @ViewBag.CurrentInfo.CurrentPlace.City.Name, @ViewBag.CurrentInfo.CurrentPlace.State.Abbreviation</title>
-<link href="@Url.Content("~/Content/views/dashboard/index.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/views/dashboard/index.css")?v=1" rel="stylesheet" type="text/css" />
 <link href="@Url.Content("~/Content/views/dashboard/print.css")" rel="stylesheet" type="text/css" media="print"  />
 
 <script src="http://api-it.sizeup.com/js/?callback=apiLoaded&apikey=729AB381-4F9C-451C-94A6-A8EAB245B2DE"></script>
@@ -60,7 +60,7 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/shared/signin.js")"></script>
 
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/dashboard/dashboard.js")"></script>
-    <link href="~/Content/db.min.css" rel="stylesheet" />
+    <link href="~/Content/db.min.css?v=1" rel="stylesheet" />
 }
 
 <img src="~/Content/images/expandi_logo.png" />

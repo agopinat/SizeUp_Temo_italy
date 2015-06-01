@@ -135,6 +135,7 @@
     <Compile Include="Controllers\CompetitionController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\HelperExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -649,17 +650,12 @@
     <Content Include="Views\Shared\signin.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Dashboard\NetProfit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Dashboard\OperatingCost.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Advertising\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\db-theme.less" />
-    <None Include="Properties\PublishProfiles\prod.pubxml" />
+    <None Include="Properties\PublishProfiles\sts.sizeup.com-PROD.pubxml" />
+    <None Include="Properties\PublishProfiles\sts.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
