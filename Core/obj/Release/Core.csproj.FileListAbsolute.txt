@@ -5,3 +5,23 @@ C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\bin\Data.
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\obj\Release\Core.dll
 C:\Users\Jonathan\Documents\Visual Studio 11\Projects\SizeUpItaly\Core\obj\Release\Core.pdb
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\Core.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\Core.pdb
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\Data.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.Helpers.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.Mvc.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.Razor.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.WebPages.Deployment.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.WebPages.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.WebPages.Razor.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\Data.pdb
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.Helpers.xml
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.Mvc.xml
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.Razor.xml
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.WebPages.xml
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.WebPages.Deployment.xml
+C:\Users\josh\Desktop\sizeup-italy\Core\bin\System.Web.WebPages.Razor.xml
+C:\Users\josh\Desktop\sizeup-italy\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
+C:\Users\josh\Desktop\sizeup-italy\Core\obj\Release\Core.dll
+C:\Users\josh\Desktop\sizeup-italy\Core\obj\Release\Core.pdb

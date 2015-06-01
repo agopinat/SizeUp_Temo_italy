@@ -321,13 +321,13 @@
                     color: '#5b0'
                 };
 
-            me.data.chart.marker =
-                {
-                    label: '$' + sizeup.util.numbers.format.addCommas(data['Nation'].Median),
-                    value: data['Nation'].Median,
-                    name: 'National Median',
-                    color: '#f60'
-                };
+            //me.data.chart.marker =
+            //    {
+            //        label: '$' + sizeup.util.numbers.format.addCommas(data['Nation'].Median),
+            //        value: data['Nation'].Median,
+            //        name: 'National Median',
+            //        color: '#f60'
+            //    };
 
                 
             me.data.table['me'] =
@@ -355,11 +355,11 @@
                     me.data.noData = false;
                 }
             }
-            me.data.table['median'] =
-              {
-                  name: 'National Median',
-                  value: '$' + sizeup.util.numbers.format.addCommas(data['Nation'].Median)
-              };
+            //me.data.table['median'] =
+            //  {
+            //      name: 'National Median',
+            //      value: '$' + sizeup.util.numbers.format.addCommas(data['Nation'].Median)
+            //  };
         };
 
 

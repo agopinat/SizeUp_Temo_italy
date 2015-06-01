@@ -1,6 +1,6 @@
 ﻿//tabs
 #tabs-container{
-    margin-top:100px;
+    margin-top:60px;
     &>ul{
         list-style-type: none;
         padding: 0px;
@@ -107,4 +107,44 @@ a.menu {
         font-size: 1.9em;
         margin: 0;
     }
+
+    #autoComplete-industryBox{
+        display:inline-block;
+    }
+
+    .heading .changeLink:after, .heading .selectList-selector:after {
+      width: 11px;
+      height: 13px;
+      background: url('/content/images/pencil.png') no-repeat 0 0 transparent;
+      display: inline-block;
+      content: "";
+      margin: 0 0.25em;
+    }
+    .heading .changeLink:hover:after,
+    .heading .selectList-selector:hover:after { background-position: 0 -17px; }
+
+    
 }
+.reportWrapper{
+        background-color:#fff;
+        border-left:solid 2px #d7d7ce;
+        border-bottom:solid 2px #d7d7ce;
+        //border-top-left-radius:2em;
+        //border-right:solid 2px #d7d7ce;
+        //border-top-right-radius:2em;
+        height:auto;
+        min-height:25em;
+
+        .report{
+            border-radius:0;
+        }
+    }
+
+.icon-gray{
+    filter:grayscale(100%);
+    -webkit-filter:grayscale(100%);
+    -moz-filter:grayscale(100%);
+    opacity:0.3;
+}
+
+@import "images/dash-icons/dash.png.less";

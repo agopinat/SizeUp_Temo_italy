@@ -166,7 +166,6 @@
 
         var onSubmit = function () {
             var current_fs, next_fs; //fieldsets
-
             if (isSubmitable()) {
                 me.errors.noValuesEntered.hide();
                 if (me.selectedCity == null || me.selectedIndustry == null) {
@@ -175,8 +174,8 @@
                 }
                 else {
                     setSelectorLinks();
-                    current_fs = $(this).closest('fieldset');
-                    next_fs = $(this).closest('fieldset').next();
+                    current_fs = $('#search');
+                    next_fs = $('#step-two');
                     current_fs.hide();
                     next_fs.show();
                     next_fs.css({ 'position': 'inherit', 'margin-top': '2.6em', 'width': '100%' });

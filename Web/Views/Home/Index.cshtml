@@ -12,36 +12,62 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/controls/industrySelector.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/controls/placeSelector.js")"></script>
 
-
- <form id="form">
-        <fieldset>
-            <div id="industry-container" class="container input-group col-lg-7 col-md-10 col-sm-12 col-xs-12">
-                <span class="input-group-addon input-group-blue">My industry is</span>
-                <input id="searchIndustry" type="text" class="form-control" placeholder="Enter Your Industry">
-            </div>
-            <div id="location-container" class="container input-group col-lg-7 col-md-10 col-sm-12 col-xs-12">
-                <span class="input-group-addon input-group-blue">I'm located in</span>
-                <input id="searchCommunity" type="text" class="form-control" placeholder="Enter Your City">
-                <p id="enteredLocation" class="text-center location hidden">
-                    Your city is <a class="changeLocation" href="javascript:void(0);"><span class="locationText"></span>&nbsp;<span class="hint">[change]</span></a>
-                </p>
-                <p id="detectedLocation" class="text-center location hidden">
-                    We think you are in <a class="changeLocation" href="javascript:void(0);"><span class="locationText"></span>&nbsp;<span class="hint">[change]</span></a>
-                </p>
-            </div>
-            <button type="button" id="row-continue" class="btn btn-green btn-primary btn-lg">Continue</button>
-            <div id="error-container" class="container input-group col-lg-7 col-md-10 col-sm-12 col-xs-12">
-                <p id="noIndustryMatchesMessage" class="info hidden">
-                    No industry matched your keyword. Please search again and select from the dropdown.
-                </p>
-                <p id="invalidCityMessage" class="info hidden">
-                    Please enter a valid city name and select from the dropdown.
-                </p>
-                <p id="noValuesEntered" class="info hidden">
-                    Please enter a city and industry and select from the dropdowns.
-                </p>
-            </div>
-        </fieldset>
+<style>
+    .input-group-addon {
+        border-radius:0;
+        padding:15px 20px;
+        background-color:#0096e0;
+        color:#fff;
+        border: none;
+        width:140px;
+    }
+    .form-control {
+        border-radius:0;
+        height:45px;
+        width:300px !important;
+    }
+    #row-continue {
+        
+    }
+</style>
+ <form id="form" style="margin:50px 0;">
+     <div id="search" class="container">
+         <div class="row">
+             <div class="col-md-2"></div>
+             <div class="col-md-8">
+                 <div style="max-width:440px;margin:auto;">
+                     <div id="industry-container" style="margin-bottom: 10px;" class="input-group">
+                     <span class="input-group-addon input-group-blue">My industry is</span>
+                     <input id="searchIndustry" type="text" class="form-control" placeholder="Enter Your Industry">
+                 </div>
+                 <div id="location-container" class="input-group">
+                     <span class="input-group-addon input-group-blue">I'm located in</span>
+                     <input id="searchCommunity" type="text" class="form-control" placeholder="Enter Your City">
+                     <p id="enteredLocation" class="text-center location hidden">
+                         Your city is <a class="changeLocation" href="javascript:void(0);"><span class="locationText"></span>&nbsp;<span class="hint">[change]</span></a>
+                     </p>
+                     <p id="detectedLocation" class="text-center location hidden">
+                         We think you are in <a class="changeLocation" href="javascript:void(0);"><span class="locationText"></span>&nbsp;<span class="hint">[change]</span></a>
+                     </p>
+                 </div>
+                 <button type="button" id="row-continue" class="btn btn-green btn-primary btn-lg pull-right" style="margin-top:20px;">Continue</button>
+                 <div id="error-container" class="container input-group col-lg-7 col-md-10 col-sm-12 col-xs-12" style="margin-left:0px;margin-top:20px;color:#d03c3c;">
+                     <p id="noIndustryMatchesMessage" class="info hidden">
+                         No industry matched your keyword. Please search again and select from the dropdown.
+                     </p>
+                     <p id="invalidCityMessage" class="info hidden">
+                         Please enter a valid city name and select from the dropdown.
+                     </p>
+                     <p id="noValuesEntered" class="info hidden">
+                         Please enter a city and industry and select from the dropdowns.
+                     </p>
+                 </div>
+                 </div>
+                 
+             </div>
+             <div class="col-md-2"></div>
+         </div>
+     </div>
      <fieldset id="step-two" class="text-center">
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
                 <div class="col-lg-4 col-md-4 container">

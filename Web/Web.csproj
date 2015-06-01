@@ -138,6 +138,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DashRowModel.cs" />
     <Compile Include="Models\Header.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -197,6 +198,17 @@
     <Content Include="Content\images\compete.png" />
     <Content Include="Content\images\competeSmall.png" />
     <Content Include="Content\images\comprehensive-icon.png" />
+    <Content Include="Content\images\dash-icons\costEffectivness.png" />
+    <Content Include="Content\images\dash-icons\dash.png" />
+    <Content Include="Content\images\dash-icons\dash.png.css" />
+    <Content Include="Content\images\dash-icons\debt.png" />
+    <Content Include="Content\images\dash-icons\netProfit.png" />
+    <Content Include="Content\images\dash-icons\netWorth.png" />
+    <Content Include="Content\images\dash-icons\operatingCost.png" />
+    <Content Include="Content\images\dash-icons\revenue.png" />
+    <Content Include="Content\images\dash-icons\revenureCapita.png" />
+    <Content Include="Content\images\dash-icons\salary.png" />
+    <Content Include="Content\images\dash-icons\year.png" />
     <Content Include="Content\images\db-arrow.jpg" />
     <Content Include="Content\images\eXpandi_logo.png" />
     <Content Include="Content\images\dashboardIcons.png" />
@@ -653,8 +665,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\db-theme.less" />
+    <Content Include="Content\images\dash-icons\dash.png.less" />
+    <Content Include="Content\images\dash-icons\dash.png.map" />
+    <Content Include="Content\images\dash-icons\dash.png.scss" />
+    <Content Include="Content\images\dash-icons\dash.sprite" />
     <None Include="Properties\PublishProfiles\sts.sizeup.com-PROD.pubxml" />
     <None Include="Properties\PublishProfiles\sts.pubxml" />
+    <Content Include="Views\Shared\DashRow.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

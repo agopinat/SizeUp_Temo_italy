@@ -60,14 +60,15 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/shared/signin.js")"></script>
 
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/dashboard/dashboard.js")"></script>
-    <link href="~/Content/db.min.css?v=1" rel="stylesheet" />
+    <link href="~/Content/db.min.css?v=2" rel="stylesheet" />
+    <link href="~/content/images/dash-icons/dash.png.css"  rel="stylesheet" />
 }
 
-<img src="~/Content/images/expandi_logo.png" />
-    <p style="margin-top:25px;">
+@*<img src="~/Content/images/expandi_logo.png" />*@
+    @*<p style="margin-top:25px;">
         eXpandi helps you understand how your business stacks up against the competition, and where
         <br /> there’s opportunity to grow.
-    </p>
+    </p>*@
     <div id="tabs-container">
         <ul>
             <li class="active">My Business</li>
@@ -75,12 +76,12 @@
             <li id="adv">Advertising</li>
         </ul>
         <div>
-            Find where your nearest competitors are located to help make better strategic decisions.
+            Find out how you measure up to the rest of the competition in your industry.
         </div>
     </div>
 
 <div id="dashboard" class="hidden">
-    <div class="headerWrapper db-theme">
+    <div class="headerWrapper db-theme" style="margin-bottom:30px;">
         <h2 class="heading">
             <span>Compare your business to the competition in the</span>
            
@@ -109,24 +110,42 @@
         </div>
 
 
-        <div id="employees" class="report">
+        <div id="employees" class="report disabled">
         @Html.Partial("Employees")
         </div>
 
-        <div id="costEffectiveness" class="report">
+        <div id="costEffectiveness" class="report disabled">
         @Html.Partial("CostEffectiveness")        
         </div>
 
-@*         <div id="netProfit" class="report">
+         <div class="report disabled" style="height:60px;">
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-operatingCost", Title = "Operating Cost", Desc = "" })        
+        </div>
+
+        <div class="report disabled" style="height:60px;">
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-netProfit", Title = "Net Profit", Desc = "" })        
+        </div>
+
+        <div class="report disabled" style="height:60px;">
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-debt", Title = "Debt/Equity Ratio", Desc = "" })        
+        </div>
+
+        <div class="report disabled" style="height:60px;">
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-netWorth", Title = "Net Worth", Desc = "" })        
+        </div>
+
+        <div class="report disabled" style="height:60px;">
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-revenureCapita", Title = "Revenue Per Capita", Desc = "" })        
+        </div>
+
+         @*<div id="netProfit" class="report">
         @Html.Partial("NetProfit")        
         </div>
 
-         <div id="operatingCost" class="report">
-        @Html.Partial("OperatingCost")        
-        </div>*@
+        
 
 
- @*
+ 
         @if (HttpContext.Current.User.Identity.IsAuthenticated)
         {
         <div id="employees" class="report">
@@ -240,8 +259,8 @@
             <div class="info">
                 <p>Your previously entered values for this city and industry have been loaded.</p>
             </div>
-        </div>*@
-    </div>
+        </div>
+    </div>*@
     
 
 

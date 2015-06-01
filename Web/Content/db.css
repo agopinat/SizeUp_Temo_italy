@@ -1,5 +1,5 @@
 #tabs-container {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 #tabs-container > ul {
   list-style-type: none;
@@ -95,3 +95,38 @@ a.menu {
   font-size: 1.9em;
   margin: 0;
 }
+#dashboard * #autoComplete-industryBox {
+  display: inline-block;
+}
+#dashboard * .heading .changeLink:after,
+#dashboard * .heading .selectList-selector:after {
+  width: 11px;
+  height: 13px;
+  background: url('/content/images/pencil.png') no-repeat 0 0 transparent;
+  display: inline-block;
+  content: "";
+  margin: 0 0.25em;
+}
+#dashboard * .heading .changeLink:hover:after,
+#dashboard * .heading .selectList-selector:hover:after {
+  background-position: 0 -17px;
+}
+.reportWrapper {
+  background-color: #fff;
+  border-left: solid 2px #d7d7ce;
+  border-bottom: solid 2px #d7d7ce;
+  height: auto;
+  min-height: 25em;
+}
+.reportWrapper .report {
+  border-radius: 0;
+}
+.icon-gray {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  opacity: 0.3;
+}
+/*
+@import this file directly into your existing Less files to use these mixins
+*/

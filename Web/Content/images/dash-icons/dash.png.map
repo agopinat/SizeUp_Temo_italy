@@ -1,0 +1,67 @@
+{
+  "images": [
+    {
+      "name": "/Content/images/costEffectivness.png",
+      "width": 60,
+      "height": 42,
+      "offsetX": 1,
+      "offsetY": 1
+    },
+    {
+      "name": "/Content/images/debt.png",
+      "width": 71,
+      "height": 54,
+      "offsetX": 1,
+      "offsetY": 44
+    },
+    {
+      "name": "/Content/images/netProfit.png",
+      "width": 62,
+      "height": 53,
+      "offsetX": 1,
+      "offsetY": 99
+    },
+    {
+      "name": "/Content/images/netWorth.png",
+      "width": 53,
+      "height": 53,
+      "offsetX": 1,
+      "offsetY": 153
+    },
+    {
+      "name": "/Content/images/operatingCost.png",
+      "width": 43,
+      "height": 48,
+      "offsetX": 1,
+      "offsetY": 207
+    },
+    {
+      "name": "/Content/images/revenue.png",
+      "width": 48,
+      "height": 49,
+      "offsetX": 1,
+      "offsetY": 256
+    },
+    {
+      "name": "/Content/images/revenureCapita.png",
+      "width": 49,
+      "height": 59,
+      "offsetX": 1,
+      "offsetY": 306
+    },
+    {
+      "name": "/Content/images/salary.png",
+      "width": 56,
+      "height": 27,
+      "offsetX": 1,
+      "offsetY": 366
+    },
+    {
+      "name": "/Content/images/year.png",
+      "width": 63,
+      "height": 50,
+      "offsetX": 1,
+      "offsetY": 394
+    }
+  ]
+}
