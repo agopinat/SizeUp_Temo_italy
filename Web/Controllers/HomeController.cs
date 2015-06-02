@@ -16,5 +16,21 @@ namespace Web.Controllers
             return View();
         }
 
+        public ActionResult FAQ()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
     }
 }

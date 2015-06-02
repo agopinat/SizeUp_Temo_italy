@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿@{
+    ViewBag.Title = "FAQ";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -19,8 +27,6 @@
     <script src="@Url.Content("~/Scripts/core/analytics.js")?" type="text/javascript"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/thirdParty/jquery.ba-bbq.min.js")?"></script>
     <script src="@Url.Content("~/Scripts/tracking/outboundLinks.js")?" type="text/javascript"></script>
-
-    @RenderSection("head", false)
 </head>
 <body>
     <div id="outer-wrap" ng-init="leftmenuon = false">
@@ -133,7 +139,33 @@
 				    </section>
 				    <section class="hidden-xs">
 				        <div class="container">
-				            <div class="hero">
+                            <h3>A cosa serve Impresa eXpandi?  </h3>
+                            <p>Impresa eXpandi fornisce tre servizi essenziali  che permettono agli imprenditori di prendere decisioni migliori.</p> 
+
+                            <h3>Da dove vengono i dati?  </h3>
+                            <p>Comparare le prestazioni dell'Azienda a tutti i concorrenti del settore. Identificare le aree di miglioramento e scoprire modi per risparmiare. </p> 
+
+                            <h3>Quali settori sono inclusi? </h3>
+                            <p>Ottenere una mappa che localizza concorrenti, clienti e fornitori. Determinare come servire al meglio i clienti esistenti, come trovare nuovi clienti e come scegliere i fornitori. Usare la mappa per individuare aree con molti clienti potenziali ma con poca concorrenza. </p> 
+
+                            <h3>Come usare i grafici?   </h3>
+                            <p>Impresa eXpandi crea specifici grafici e diagrammi per l'impresa. Uno dei più comuni è il diagramma che raffronta i risultati dell'Azienda a quelli di imprese simili dello stesso settore, localizzate nella stessa Regione, Provincia e Comune, comparate a livello nazionale. Questo diagramma può essere usato per paragonare i risultati dell'Azienda a quelli dei concorrenti in varie località.</p> 
+
+                            <h3>Le informazioni sull'Azienda sono mantenute riservate?</h3>
+                            <p>Tutte le informazioni individuali  trasmesse a Impresa eXpandi per valutare la competitività dell'Azienda sono mantenute riservate. Questi dati sono accessibili solamente da SizeUp, il provider del servizio Impresa eXpandi, e da Deutsche Bank, lo sponsor di Impresa eXpandi e di db Impresa eXtra. Alcune informazioni sono condivise fra i provider di servizi di db Impresa eXtra.   Informazioni più dettagliate sono disponibili nel documento che descrive  la nostra Politica di Privacy. </p> 
+                            
+                            <h3>Che cosa offre un account Impresa eXpandi? </h3>
+                            <p>I membri registrati di Impresa eXpandi hanno accesso a studi supplementari sulla competitività. Inoltre, Impresa eXpandi aggiorna le basi dati più importanti ripetutamente durante l’anno, il che può risultare in cambiamenti nella competitività relativa e nel benchmarking dell'Azienda. In questo caso viene inviata una e-mail per avvertire dei cambiamenti nel report di competitività, in modo da poter esaminare tempestivamente le nuove informazioni. Attraverso l'account si possono ricevere informazioni su risorse dalle quali l'Azienda può trarre vantaggio. </p>
+
+                            <h3>In che misura le informazioni di Impresa eXpandi sono specifiche per la località? </h3>
+                            <p>Impresa eXpandi è estremamente dettagliata a livello geografico, con un benchmarking e delle visualizzazioni di dati settoriali  non disponibili altrove. </p>
+
+                            <h3>Che cos’è Impresa eXpandi? </h3>
+                            <p>Impresa eXpandi è un servizio di business intelligence e di ricerca offerto da SizeUp, in associazione con Deutsche Bank. È uno dei servizi professionali inclusi in db Impresa eXtra (in associazione con BCSG). SizeUp è un servizio di GIS Planning, il leader delle soluzioni online di sviluppo economico. </p>
+
+
+
+@*				            <div class="hero">
 				                <nav class="navbar navbar-default">
 				                    <div class="navbar-header">
 				                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hero-nav">
@@ -166,22 +198,17 @@
 				                    </div>
 				                </nav>
 				                <div class="breadcrumbs">
-				                    <p>Tu sei qui: <span>Home</span><a href>eXpandi</a></p>
+				                    <p>You are here: <span>Home</span><a href>eXpandi</a></p>
 				                </div>
 				                <div class="drop-shadow-hero"></div>
-				            </div>
+				            </div>*@
 
 				        </div>
 				    </section>
 				</header>
             </div>
             <div id="content" class="container">
-                <div id="contentWrap">
-                    <img src="~/Content/images/expandi_logo.png" />
-                    <p style="margin-top: 15px;font-size:16px;">
-                        eXpandi helps you understand how your business stacks up against the competition, and where there’s opportunity to grow.
-                    </p>
-                    @RenderBody()
+                <div id="contentWrap" style="padding: 0px 20px;">
                 </div>
             </div>
             <div class="db-theme">
@@ -207,24 +234,15 @@
 			                    </div>
 			                    <div class="col-sm-6 col-xs-12 no-padding-left">
 			                        <ul class="nav navbar-nav">
-			                            <li><a href="https://dbimpresaextra.it/disclaimer">Terms of use</a></li>
+                                        <li><a href="https://dbimpresaextra.it/disclaimer">Terms of use</a></li>
 			                            <li><a href="#">Privacy policy</a></li>
-                                        <li><a href="/HowItWorks/Index">Come Funziona</a></li> @*How it works*@
-                                        <li><a href="/Home/FAQ">Domande Frequenti</a></li> @*FAQ*@
-                                        <li><a href="/Home/Contact">Contattaci</a></li>@*Contact*@
-			                            <li><a href="/Home/About">Proposito </a></li> @*About*@
+			                            <li><a href="/HowItWorks/Index">Come Funziona</a></li> @*How it works*@
+                                        <li><a href="https://dbimpresaextra.it/faq">Domande Frequenti</a></li> @*FAQ*@
+                                        <li><a href="https://dbimpresaextra.it/contatti">Contattaci</a></li>@*Contact*@
+			                            <li><a href="#">Proposito </a></li> @*About*@
 			                        </ul>
-                                    <p>Copyright © 2015 <a href="http://sizeup.com" target="_blank">SizeUp</a> and Deutsche Bank S.p.A. Patent Pending</p>
+			                        <p>Copyright © 2015 Deutsche Bank S.p.A</p>
 			                    </div>
-			                    @*<div class="col-sm-6 hidden-xs no-padding-right">
-			                        <ul class="media-links">
-			                            <li><a href="#"><i class="twitter"></i></a></li>
-			                            <li><a href="#"><i class="linkedin"></i></a></li>
-			                            <li><a href="#"><i class="youtube"></i></a></li>
-			                            <li class="print-wrapper"><a href="#"><i class="printing"></i></a></li>
-			                            <li><a href="#"><i class="star"></i></a></li>
-                                    </ul>
-			                    </div>*@
 			                </div>
 			            </div>
                     </section>
@@ -232,6 +250,12 @@
             </div>
         </div>
     </div>
-    @RenderSection("scripts", false)
 </body>
 </html>
+
+
+
+
+
+
+
