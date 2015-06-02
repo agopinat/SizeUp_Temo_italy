@@ -1,6 +1,6 @@
 ﻿<div class="header">
     <div class="icon"></div>
-    <h2>Employees</h2>
+    <h2>Dipendenti </h2>
     <span class="hint">Number of full-time equivalent employees</span>
     @*<input type="text" class="valueBox" disabled="disabled" />*@
     @*<span class="prompt">Please enter <br />how many employees you have</span>*@
@@ -70,7 +70,8 @@
             <div class="section considerations collapsable">
                 @*@Html.Raw(ViewBag.Strings["Dashboard.AverageEmployees.Considerations"])*@
                 <div class="question">
-                    <span>Are you a relatively <a href="javascript:void(0);" class="large">large</a> or <a href="javascript:void(0);" class="small">small</a> business?</span>
+                    L'Azienda è in media più grande o più piccola rispetto ad un’impresa della stessa zona
+                    <span>'Azienda è in media più <a href="javascript:void(0);" class="large">grande</a> o più <a href="javascript:void(0);" class="small">piccola</a> rispetto ad un’impresa della stessa zona?</span>
                 </div>
                 <div class="large answer collapsed hidden">
                     <h5>you are a large business</h5>
@@ -118,9 +119,6 @@
             </div>
             <a href="javascript:void(0);" class="resourcesToggle fadeToggle" data-toggleText="More" data-toggleClass="collapsed">Less</a>
         </div>
-
-
-
 
 
         <div class="reportContent employeesPerCapita reportData">

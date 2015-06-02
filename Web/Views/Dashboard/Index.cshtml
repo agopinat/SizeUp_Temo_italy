@@ -111,31 +111,31 @@
 
 
         <div id="employees" class="report disabled">
-        @Html.Partial("Employees")
+        @Html.Partial("Employees") @*Average Employees *@
         </div>
 
         <div id="costEffectiveness" class="report disabled">
-        @Html.Partial("CostEffectiveness")        
+        @Html.Partial("CostEffectiveness")        @*Rapporto Costo-Efficacia*@
         </div>
 
          <div class="report disabled" style="height:60px;">
-        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-operatingCost", Title = "Operating Cost", Desc = "" })        
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-operatingCost", Title = "Costi d’Esercizio", Desc = "" })    @*Operating Cost*@    
         </div>
 
         <div class="report disabled" style="height:60px;">
-        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-netProfit", Title = "Net Profit", Desc = "" })        
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-netProfit", Title = "Utile Netto", Desc = "" })        @*Net Cost*@
         </div>
 
         <div class="report disabled" style="height:60px;">
-        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-debt", Title = "Debt/Equity Ratio", Desc = "" })        
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-debt", Title = "Rapporto Debito-Capitale", Desc = "" })       @*Debt/Equity Ratio*@  
         </div>
 
         <div class="report disabled" style="height:60px;">
-        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-netWorth", Title = "Net Worth", Desc = "" })        
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-netWorth", Title = "Patrimonio Netto", Desc = "" })   @*Net Worth*@       
         </div>
 
         <div class="report disabled" style="height:60px;">
-        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-revenureCapita", Title = "Revenue Per Capita", Desc = "" })        
+        @Html.Partial("DashRow", new Web.Models.DashRowModel { IconPath = "Content-images-revenureCapita", Title = "Fatturato per Residente", Desc = "" })        
         </div>
 
          @*<div id="netProfit" class="report">

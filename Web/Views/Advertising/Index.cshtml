@@ -59,7 +59,7 @@
 
             <select id="attributeMenu">
                 <option value="totalRevenue">Total Revenue</option>  
-                <option value="revenuePerCapita">Revenue Per Capita</option>
+                <option value="revenuePerCapita">Fatturato per Residente</option> @*Revenue Per Capita*@
                 <option value="underservedMarkets">Most Underserved Markets</option>     
                 <option value="averageRevenue">Average Revenue</option>  
                 <option value="totalEmployees">Total Employees</option>      
@@ -145,7 +145,7 @@
                         </div>
                     </li>
                     <li class="revenuePerCapita">
-                        <span class="label">Revenue per capita:</span>
+                        <span class="label">Fatturato per Residente:</span> @*Revenue Per Capita*@
                         <span id="revenuePerCapitaLabel" class="valueLabel" data-max="at most <em>{{max}}</em>" data-min="at least <em>{{min}}</em>" data-range="between <em>{{min}}</em> and <em>{{max}}</em>" data-off="<em>No Preference</em>"></span>
                         <div class="sliderWrap">
                             <span class="sliderLabel less">less</span>
@@ -299,7 +299,7 @@
                             {{#totalRevenue}}<li>Total Annual Revenue: {{#totalRevenue.value}}{{totalRevenue.value.min}} - {{totalRevenue.value.max}}{{/totalRevenue.value}}{{^totalRevenue.value}}N/A{{/totalRevenue.value}}</li>{{/totalRevenue}}
                             {{#averageRevenue}}<li>Average Annual Revenue: {{#averageRevenue.value}}{{averageRevenue.value.min}} - {{averageRevenue.value.max}}{{/averageRevenue.value}}{{^averageRevenue.value}}N/A{{/averageRevenue.value}}</li>{{/averageRevenue}}
                             {{#totalEmployees}}<li>Total Employees: {{#totalEmployees.value}}{{totalEmployees.value.min}} - {{totalEmployees.value.max}}{{/totalEmployees.value}}{{^totalEmployees.value}}N/A{{/totalEmployees.value}}</li>{{/totalEmployees}}
-                            {{#revenuePerCapita}}<li>Revenue Per Capita: {{#revenuePerCapita.value}}{{revenuePerCapita.value.min}} - {{revenuePerCapita.value.max}}{{/revenuePerCapita.value}}{{^revenuePerCapita.value}}N/A{{/revenuePerCapita.value}}</li>{{/revenuePerCapita}}
+                            {{#revenuePerCapita}}<li>Fatturato per Residente: {{#revenuePerCapita.value}}{{revenuePerCapita.value.min}} - {{revenuePerCapita.value.max}}{{/revenuePerCapita.value}}{{^revenuePerCapita.value}}N/A{{/revenuePerCapita.value}}</li>{{/revenuePerCapita}}
                             {{#householdIncome}}<li>Household Income: {{#householdIncome.value}}{{householdIncome.value}}{{/householdIncome.value}}{{^householdIncome.value}}N/A{{/householdIncome.value}}</li>{{/householdIncome}}
                             {{#householdExpenditures}}<li>Household Expenditures (Average): {{#householdExpenditures.value}}{{householdExpenditures.value}}{{/householdExpenditures.value}}{{^householdExpenditures.value}}N/A{{/householdExpenditures.value}}</li>{{/householdExpenditures}}
                             {{#medianAge}}<li>Median Age: {{#medianAge.value}}{{medianAge.value}}{{/medianAge.value}}{{^medianAge.value}}N/A{{/medianAge.value}}</li>{{/medianAge}}
