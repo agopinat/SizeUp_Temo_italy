@@ -5,7 +5,7 @@
 
 @section head{
 <title>Competition - @ViewBag.CurrentInfo.CurrentIndustry.Name in @ViewBag.CurrentInfo.CurrentPlace.City.Name, @ViewBag.CurrentInfo.CurrentPlace.State.Abbreviation</title>
-<link href="@Url.Content("~/Content/views/competition/index.css")?v=1" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/views/competition/index.css")?v=2" rel="stylesheet" type="text/css" />
 <link href="@Url.Content("~/Content/views/competition/print.css")" rel="stylesheet" type="text/css" media="print" />
 
     @*<script src="http://api-it.sizeup.localhost/js/?callback=apiLoaded&apikey=729AB381-4F9C-451C-94A6-A8EAB245B2DE"></script>*@
@@ -43,7 +43,7 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/shared/signin.js")"></script>
 
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/competition/competition.js")"></script>
-    <link href="~/Content/db.min.css?v=2" rel="stylesheet" />
+    <link href="~/Content/db.min.css?v=3" rel="stylesheet" />
 }
 
 <div class="db-theme">
@@ -120,7 +120,7 @@
                     </ul>
                 </div>
 
-                <div class="consumerExpenditures container" style="padding:0px;display:inline-block;float:right;width:200px;">
+                <div class="consumerExpenditures container hidden" style="padding:0px;display:inline-block;float:right;width:200px;">
                     <a href="javascript:void(0);" class="menu">Consumer Expenditures</a>
                     <div class="consumerExpenditurePicker hidden">
                         <ul class="selection">
@@ -141,15 +141,16 @@
 
         <div class="list container" style="padding:0px;display:inline-block;max-width:500px;">
             <div class="industryPicker container"> 
-                <ul class="industryList">
+                <ul class="industryList" style="padding:0;margin:6px;">
                     <li data-template="industryItem" class="item" data-id="{{Id}}">                        
                         <span title="{{Name}}"><span>{{Name}}</span><a href="javascript:void(0);" class="remove" data-id="{{Id}}"></a></span>
                     </li>
                 </ul>
-        
-                <p class="competitor">Add additional categories of businesses that compete with you:</p>
-                <p class="buyer">Add categories of businesses that buy from you:</p>
-                <p class="supplier">Add categories of businesses that sell to you:</p>
+                <div style="margin-left:2.6px">
+                    <p class="competitor">Add additional categories of businesses that compete with you:</p>
+                    <p class="buyer">Add categories of businesses that buy from you:</p>
+                    <p class="supplier">Add categories of businesses that sell to you:</p>
+                </div>
                 <input type="text" class="pickerInput" data-prompt="enter an industry" />
             </div>
 

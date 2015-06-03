@@ -38,36 +38,47 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/shared/signin.js")?Core.Web.CacheBuster.Buster"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts/views/advertising/advertising.js")?Core.Web.CacheBuster.Buster"></script>
 
-
+<link href="~/Content/db.min.css?v=3" rel="stylesheet" />
 }
 
+<div id="tabs-container">
+    <ul>
+        <li id="bus">My Business</li>
+        <li id="comp">Competition</li>
+        <li class="active">Advertising</li>
+    </ul>
+    <div>
+        Invest your advertising budget in the right place. 
+    </div>
+</div>
 
 <div id="advertising">
     <div class="content container hidden">
-        <h2 class="heading">
-            <span>Best places to advertise in the </span>
-         
-            <input type="text" id="industryBox" data-prompt="enter an industry" class="hidden selectBox" />
-            <a href="javascript:void(0);" id="changeIndustry" class="changeLink">@ViewBag.CurrentInfo.CurrentIndustry.Name</a>
+        <div class="headerWrapper db-theme" style="margin-bottom: 30px;">
+            <h2 class="heading">
+                <span>Best places to advertise in the </span>
 
-            <span>industry near </span>
+                <input type="text" id="industryBox" data-prompt="enter an industry" class="hidden selectBox" />
+                <a href="javascript:void(0);" id="changeIndustry" class="changeLink">@ViewBag.CurrentInfo.CurrentIndustry.Name</a>
 
-            <input type="text" id="placeBox" data-prompt="enter a city" class="hidden selectBox" />
-            <a href="javascript:void(0);" id="changePlace" class="changeLink">@ViewBag.CurrentInfo.CurrentPlace.City.Name, @ViewBag.CurrentInfo.CurrentPlace.State.Abbreviation</a>
+                <span>industry near </span>
 
-            <span>based on </span>
+                <input type="text" id="placeBox" data-prompt="enter a city" class="hidden selectBox" />
+                <a href="javascript:void(0);" id="changePlace" class="changeLink">@ViewBag.CurrentInfo.CurrentPlace.City.Name, @ViewBag.CurrentInfo.CurrentPlace.State.Abbreviation</a>
 
-            <select id="attributeMenu">
-                <option value="totalRevenue">Total Revenue</option>  
-                <option value="revenuePerCapita">Fatturato per Residente</option> @*Revenue Per Capita*@
-                <option value="underservedMarkets">Most Underserved Markets</option>     
-                <option value="averageRevenue">Average Revenue</option>  
-                <option value="totalEmployees">Total Employees</option>      
-                <option value="householdIncome">Household Income</option>
-            </select>
+                <span>based on </span>
 
-
-        </h2>
+                <select id="attributeMenu">
+                    <option value="totalRevenue">Total Revenue</option>
+                    <option value="revenuePerCapita">Fatturato per Residente</option>
+                    @*Revenue Per Capita*@
+                    <option value="underservedMarkets">Most Underserved Markets</option>
+                    <option value="averageRevenue">Average Revenue</option>
+                    <option value="totalEmployees">Total Employees</option>
+                    <option value="householdIncome">Household Income</option>
+                </select>
+            </h2>
+        </div>
         <div class="filterLabels">
             <span class="distance fixed" data-value="Filtered for ZIP codes where: distance is at most <em>{{value}} miles</em> from your city" data-off="Filtered for ZIP codes <em>Nationwide</em>"></span>
 
@@ -344,6 +355,9 @@
 @section scripts{
 
     <script type="text/javascript">
+        function constructUrl(controllerName, info){
+            return '/' + controllerName + '/' + info.CurrentPlace.State.SEOKey + '/' + info.CurrentPlace.County.SEOKey + '/' + info.CurrentPlace.City.SEOKey + '/' + info.CurrentIndustry.SEOKey;
+        }
 
         var done = function(){
             var opts = {
@@ -351,6 +365,13 @@
                 IsAuthenticated: @(HttpContext.Current.User.Identity.IsAuthenticated ? "true" : "false")
                 };
             var driver = new sizeup.views.advertising.advertising(opts);
+
+            $('#bus').click(function(){
+                window.location = constructUrl('dashboard', opts.CurrentInfo);
+            });
+            $('#comp').click(function(){
+                window.location = constructUrl('competition', opts.CurrentInfo);
+            });
         };
 
         var notifier = new sizeup.core.notifier(done);

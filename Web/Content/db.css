@@ -20,26 +20,63 @@
 }
 #tabs-container > div {
   background-color: #eaf9ff;
-  padding: 15px 25px 40px;
+  padding: 15px 25px;
 }
-.businessList {
+#competition .businessList {
   list-style-type: none;
+  margin-left: 10px;
 }
-.businessList dl {
+#competition .businessList dl {
   display: inline-block;
 }
-.businessList img {
+#competition .businessList img {
   vertical-align: top;
   margin-right: 10px;
 }
-.businessList .name {
+#competition .businessList .name {
   font-weight: normal;
   font-size: 16px;
 }
-.businessList .address {
+#competition .businessList .address {
   color: #656565;
   margin-top: 5px;
   font-size: 12px;
+}
+#competition #autoComplete-industryBox,
+#competition #autoComplete-placeBox {
+  display: inline-block;
+}
+#competition .heading .changeLink:after,
+#competition .heading .selectList-selector:after {
+  width: 11px;
+  height: 13px;
+  background: url('/content/images/pencil.png') no-repeat 0 0 transparent;
+  display: inline-block;
+  content: "";
+  margin: 0 0.25em;
+}
+#competition .heading .changeLink:hover:after,
+#competition .heading .selectList-selector:hover:after {
+  background-position: 0 -17px;
+}
+#advertising .heading {
+  font-size: 18px;
+}
+#advertising .heading div {
+  display: inline-block;
+}
+#advertising .heading .changeLink:after,
+#advertising .heading .selectList-selector:after {
+  width: 11px;
+  height: 13px;
+  background: url('/content/images/pencil.png') no-repeat 0 0 transparent;
+  display: inline-block;
+  content: "";
+  margin: 0 0.25em;
+}
+#advertising .heading .changeLink:hover:after,
+#advertising .heading .selectList-selector:hover:after {
+  background-position: 0 -17px;
 }
 .prompt,
 .signinToggle {

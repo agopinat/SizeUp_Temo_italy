@@ -22,33 +22,75 @@
     }
     &>div{
         background-color:#eaf9ff;
-        padding:15px 25px 40px;
+        padding:15px 25px;
     }
 }
 //competition
-.businessList {
-    list-style-type: none;
+#competition {
+    .businessList {
+        list-style-type: none;
+        margin-left:10px;
 
-    dl {
-        display: inline-block;
+        dl {
+            display: inline-block;
+        }
+
+        img {
+            vertical-align: top;
+            margin-right: 10px;
+        }
+
+        .name {
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        .address {
+            color: #656565;
+            margin-top: 5px;
+            font-size: 12px;
+        }
     }
-
-    img {
-        vertical-align: top;
-        margin-right: 10px;
+    #autoComplete-industryBox, #autoComplete-placeBox{
+        display:inline-block;
     }
-
-    .name {
-        font-weight: normal;
-        font-size: 16px;
+    .heading .changeLink:after, .heading .selectList-selector:after {
+      width: 11px;
+      height: 13px;
+      background: url('/content/images/pencil.png') no-repeat 0 0 transparent;
+      display: inline-block;
+      content: "";
+      margin: 0 0.25em;
     }
-
-    .address {
-        color: #656565;
-        margin-top: 5px;
-        font-size: 12px;
+    .heading .changeLink:hover:after,
+    .heading .selectList-selector:hover:after { 
+        background-position: 0 -17px; 
     }
 }
+//advertising
+#advertising {
+    .heading {
+        font-size: 18px;
+
+        div {
+            display: inline-block;
+        }
+
+        .changeLink:after, .selectList-selector:after {
+            width: 11px;
+            height: 13px;
+            background: url('/content/images/pencil.png') no-repeat 0 0 transparent;
+            display: inline-block;
+            content: "";
+            margin: 0 0.25em;
+        }
+
+        .changeLink:hover:after, .selectList-selector:hover:after {
+            background-position: 0 -17px;
+        }
+    }
+}
+
 //signup
 .prompt, .signinToggle{
     color:#000;
@@ -121,9 +163,9 @@ a.menu {
       margin: 0 0.25em;
     }
     .heading .changeLink:hover:after,
-    .heading .selectList-selector:hover:after { background-position: 0 -17px; }
-
-    
+    .heading .selectList-selector:hover:after { 
+        background-position: 0 -17px; 
+    }
 }
 .reportWrapper{
         background-color:#fff;
