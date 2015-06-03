@@ -6,7 +6,7 @@
     #container { display: block; clear: both; float: none; margin: 0 auto; padding: 0; width: 960px; }
 </style>
 
-<script src="http://api-it.sizeup.localhost/js/?callback=apiLoaded&apikey=729AB381-4F9C-451C-94A6-A8EAB245B2DE"></script>
+<script type="text/javascript" src="//@System.Configuration.ConfigurationManager.AppSettings["API.Url"]/js/?apikey=@System.Configuration.ConfigurationManager.AppSettings["SizeUpAPI"]&callback=apiLoaded&Core.Web.CacheBuster.Buster"></script>
 @*<script src="http://api-it.sizeup.localhost/js/?callback=apiLoaded&apikey=729AB381-4F9C-451C-94A6-A8EAB245B2DE"></script>*@
     <script type="text/javascript" src="@Url.Content("~/Scripts/views/home.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/controls/industrySelector.js")"></script>
